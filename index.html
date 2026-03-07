@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Power Automate — Radio France</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rf-blue:      #1a6bff;
+    --rf-blue-dark: #0047cc;
+    --rf-black:     #0a0a0a;
+    --rf-white:     #ffffff;
+    --rf-light:     #f4f5f7;
+    --rf-border:    #dde1e9;
+    --rf-muted:     #6b7585;
+    --rf-success:   #00875a;
+    --rf-error:     #de350b;
+    --radius:       6px;
+  }
+
+  body {
+    font-family: 'Libre Franklin', 'Franklin Gothic Medium', Arial, sans-serif;
+    background: var(--rf-light);
+    color: var(--rf-black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+
+  .rf-topbar {
+    width: 100%;
+    max-width: 560px;
+    background: var(--rf-black);
+    border-radius: 8px 8px 0 0;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .rf-logo-mark {
+    width: 36px; height: 36px;
+    background: var(--rf-blue);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .rf-logo-mark svg { width: 22px; height: 22px; }
+
+  .rf-brand { display: flex; flex-direction: column; }
+
+  .rf-brand-name {
+    font-weight: 900;
+    font-size: 15px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--rf-white);
+    line-height: 1;
+  }
+
+  .rf-brand-sub {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--rf-blue);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+
+  .rf-accent-bar {
+    width: 100%;
+    max-width: 560px;
+    height: 4px;
+    background: var(--rf-blue);
+  }
+
+  .card {
+    background: var(--rf-white);
+    width: 100%;
+    max-width: 560px;
+    padding: 36px 32px 28px;
+    border: 1px solid var(--rf-border);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.08);
+  }
+
+  .card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--rf-black);
+    letter-spacing: -.01em;
+    margin-bottom: 4px;
+  }
+
+  .card-subtitle {
+    font-size: 12px;
+    color: var(--rf-muted);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #e8f0ff;
+    border: 1px solid #b3ccff;
+    color: var(--rf-blue-dark);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 100px;
+    margin-bottom: 14px;
+  }
+
+  .live-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--rf-blue);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: .3; transform: scale(.6); }
+  }
+
+  .field { margin-bottom: 16px; }
+
+  label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--rf-black);
+    margin-bottom: 6px;
+  }
+
+  input, select {
+    width: 100%;
+    background: var(--rf-white);
+    border: 1.5px solid var(--rf-border);
+    border-radius: var(--radius);
+    color: var(--rf-black);
+    font-family: 'Libre Franklin', Arial, sans-serif;
+    font-size: 13px;
+    padding: 10px 13px;
+    outline: none;
+    transition: border-color .18s, box-shadow .18s;
+    appearance: none;
+  }
+
+  input:focus, select:focus {
+    border-color: var(--rf-blue);
+    box-shadow: 0 0 0 3px rgba(26,107,255,.12);
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--rf-border);
+    margin: 24px 0;
+  }
+
+  .btn-send {
+    width: 100%;
+    padding: 13px 20px;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Libre Franklin', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .15s, transform .1s, box-shadow .2s;
+    background: var(--rf-blue);
+    color: var(--rf-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn-send:hover:not(:disabled) {
+    background: var(--rf-blue-dark);
+    box-shadow: 0 4px 16px rgba(26,107,255,.3);
+    transform: translateY(-1px);
+  }
+
+  .btn-send:active:not(:disabled) { transform: translateY(0); }
+
+  .btn-send:disabled {
+    background: #a0b4d6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .spinner {
+    width: 14px; height: 14px;
+    border: 2px solid rgba(255,255,255,.35);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+    display: none;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .status {
+    margin-top: 14px;
+    padding: 11px 14px;
+    border-radius: var(--radius);
+    font-size: 12px;
+    font-weight: 500;
+    display: none;
+    align-items: flex-start;
+    gap: 9px;
+    border: 1.5px solid transparent;
+    line-height: 1.5;
+  }
+
+  .status.success {
+    display: flex;
+    background: #e3fcef;
+    border-color: #abf5d1;
+    color: var(--rf-success);
+  }
+
+  .status.error {
+    display: flex;
+    background: #ffebe6;
+    border-color: #ffbdad;
+    color: var(--rf-error);
+  }
+
+  .status-icon { font-size: 15px; flex-shrink: 0; }
+
+  .log {
+    margin-top: 16px;
+    background: #f7f8fa;
+    border: 1px solid var(--rf-border);
+    border-radius: var(--radius);
+    padding: 10px 13px;
+    font-size: 10px;
+    font-family: 'Courier New', monospace;
+    color: var(--rf-muted);
+    max-height: 100px;
+    overflow-y: auto;
+    display: none;
+  }
+
+  .log.visible { display: block; }
+  .log-line { line-height: 1.9; }
+  .log-line.ok   { color: var(--rf-success); }
+  .log-line.err  { color: var(--rf-error); }
+  .log-line.info { color: #444d5c; }
+
+  .footer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--rf-muted);
+    letter-spacing: .04em;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--rf-black);
+    letter-spacing: .06em;
+  }
+
+  .footer-logo-dot {
+    width: 8px; height: 8px;
+    background: var(--rf-blue);
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+
+<div class="rf-topbar">
+  <div class="rf-logo-mark">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="2.8" fill="white"/>
+      <path d="M7.8 16.2 A6 6 0 0 1 7.8 7.8" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M16.2 7.8 A6 6 0 0 1 16.2 16.2" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M5.2 18.8 A9.5 9.5 0 0 1 5.2 5.2" fill="none" stroke="white" stroke-width="1.3" stroke-linecap="round" opacity=".5"/>
+      <path d="M18.8 5.2 A9.5 9.5 0 0 1 18.8 18.8" fill="none" stroke="white" stroke-width="1.3" stroke-linecap="round" opacity=".5"/>
+    </svg>
+  </div>
+  <div class="rf-brand">
+    <span class="rf-brand-name">Radio France</span>
+    <span class="rf-brand-sub">Power Automate · SI Corp</span>
+  </div>
+</div>
+<div class="rf-accent-bar"></div>
+
+<div class="card">
+
+  <div class="live-badge">
+    <span class="live-dot"></span>
+    Flux connecté
+  </div>
+
+  <h1 class="card-title">Déclencher un flux</h1>
+  <p class="card-subtitle">Déclenchement manuel d'un flux Power Automate Cloud via HTTP POST</p>
+
+  <div class="field">
+    <label>Identifiant appareil</label>
+    <input type="text" id="deviceID" value="M5StickC-MRF" />
+  </div>
+
+  <div class="field">
+    <label>Email utilisateur</label>
+    <input type="email" id="userEmail" value="carlos.rodriguez@radiofrance.com" />
+  </div>
+
+  <div class="field-row">
+    <div class="field">
+      <label>Clé API</label>
+      <input type="password" id="apiKey" value="jesuisnele25juillet1969" />
+    </div>
+    <div class="field">
+      <label>Bouton simulé</label>
+      <select id="buttonName">
+        <option value="BtnA">BtnA</option>
+        <option value="BtnB">BtnB</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Nom du flux</label>
+    <input type="text" id="fluxName" value="OK_Declenchement_PAC_BP_Profil_Utilisateur" />
+  </div>
+
+  <hr class="divider" />
+
+  <button class="btn-send" id="sendBtn" onclick="envoyerRequete()">
+    <span class="spinner" id="spinner"></span>
+    <span id="btnLabel">▶ Envoyer</span>
+  </button>
+
+  <div class="status" id="statusBox">
+    <span class="status-icon" id="statusIcon"></span>
+    <span id="statusMsg"></span>
+  </div>
+
+  <div class="log" id="logBox"></div>
+
+  <div class="footer">
+    <div class="footer-logo">
+      <span class="footer-logo-dot"></span>
+      Radio France · SI Corp · 2IA
+    </div>
+    <span id="footerTime"></span>
+  </div>
+</div>
+
+<script>
+  const PAC_URL = "https://78e424f6f1c1e7d78ba1de968569aa.f8.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/ceb26140caec4312913f09f385f7d441/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=IxHLZEYZCu_86Y0TWjJCHOUydUzPaudBOSzPwqhXsWA";
+
+  function log(msg, type = 'info') {
+    const box = document.getElementById('logBox');
+    box.classList.add('visible');
+    const line = document.createElement('div');
+    line.className = `log-line ${type}`;
+    line.textContent = `[${new Date().toLocaleTimeString('fr-FR')}] ${msg}`;
+    box.appendChild(line);
+    box.scrollTop = box.scrollHeight;
+  }
+
+  function setStatus(type, icon, msg) {
+    const box = document.getElementById('statusBox');
+    box.className = `status ${type}`;
+    document.getElementById('statusIcon').textContent = icon;
+    document.getElementById('statusMsg').textContent  = msg;
+  }
+
+  function setLoading(loading) {
+    document.getElementById('sendBtn').disabled      = loading;
+    document.getElementById('spinner').style.display = loading ? 'block' : 'none';
+    document.getElementById('btnLabel').textContent  = loading ? 'Envoi en cours…' : '▶ Envoyer';
+  }
+
+  async function envoyerRequete() {
+    document.getElementById('statusBox').className = 'status';
+    document.getElementById('logBox').innerHTML = '';
+    setLoading(true);
+    log('▶ Déclenchement…', 'info');
+
+    const payload = {
+      id:        document.getElementById('deviceID').value.trim(),
+      email:     document.getElementById('userEmail').value.trim(),
+      api_key:   document.getElementById('apiKey').value.trim(),
+      flux_name: document.getElementById('fluxName').value.trim(),
+      button:    document.getElementById('buttonName').value,
+      timestamp: Date.now()
+    };
+
+    log('Payload : ' + JSON.stringify(payload), 'info');
+
+    try {
+      const resp = await fetch(PAC_URL, {
+        method:  'POST',
+        mode:    'cors',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(payload)
+      });
+
+      log(`Réponse : HTTP ${resp.status}`, resp.ok ? 'ok' : 'err');
+      let text = ''; try { text = await resp.text(); } catch(_) {}
+      if (text) log('Corps : ' + text.substring(0, 150), resp.ok ? 'ok' : 'err');
+
+      if (resp.ok) {
+        setStatus('success', '✓', `Flux déclenché avec succès (HTTP ${resp.status})`);
+      } else {
+        setStatus('error', '✕', `Erreur serveur : HTTP ${resp.status}`);
+      }
+
+    } catch (err) {
+      log('Exception : ' + err.name + ' — ' + err.message, 'err');
+      if (err.name === 'TypeError') {
+        log('→ Blocage CORS probable. Vérifiez les en-têtes du flux PAC.', 'err');
+        setStatus('error', '⚠', 'CORS bloqué — vérifiez la configuration du flux PAC.');
+      } else {
+        setStatus('error', '⚠', 'Erreur : ' + err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function updateTime() {
+    document.getElementById('footerTime').textContent =
+      new Date().toLocaleString('fr-FR', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' });
+  }
+  updateTime();
+  setInterval(updateTime, 60000);
+
+  window.addEventListener('load', () => log('Formulaire prêt.', 'ok'));
+</script>
+
+</body>
+</html>
