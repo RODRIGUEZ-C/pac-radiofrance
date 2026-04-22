@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Cartographie applicative</title>
+
+  <script src="vis-network.min.js"></script>
+
+  <style>
+    body { font-family: Arial, sans-serif; }
+    #network {
+      width: 100%;
+      height: 800px;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Cartographie applicative</h2>
+
+<div id="network"></div>
+
+<script>
+
+// 👉 CSV SharePoint
+
+const csvUrl = "Ref_Appli_CASEWISE.csv";
+
+fetch(csvUrl, { credentials: "include" })
+  .then(r => r.text())
+  .then(csv => {
+    const lines = csv.split(/\r?\n/);
+    const nodes = [];
+    let id = 0;
+    const seen = {};
+
+    for (let i = 1; i < lines.length; i++) {
+      const name = lines[i].split(";")[0]?.trim();
+      if (!name || seen[name]) continue;
+      seen[name] = true;
+      nodes.push({ id: id++, label: name });
+    }
+
+    new vis.Network(
+      document.getElementById("network"),
+      { nodes: new vis.DataSet(nodes), edges: new vis.DataSet([]) },
+      { physics: { stabilization: true } }
+    );
+  })
+  .catch(e => console.error("Erreur CSV:", e));
+
+</script>
+
+</body>
+</html>
