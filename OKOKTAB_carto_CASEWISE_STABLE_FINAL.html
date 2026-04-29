@@ -1,0 +1,342 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Cartographie applicative CASEWISE</title>
+
+<script src="./vis-network.min.js"></script>
+<script src="./html2canvas.min.js"></script>
+<script src="./jspdf.umd.min.js"></script>
+
+<style>
+body { font-family: Arial, sans-serif; margin: 0; padding: 10px; }
+#topbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
+.group { display: flex; gap: 6px; align-items: center; border: 1px solid #ccc; padding: 6px 8px; border-radius: 6px; }
+#mynetwork { width: 100%; height: 72vh; border: 1px solid #ccc; border-radius: 8px; }
+
+#statusFilters label { margin-right: 8px; font-size: 12px; }
+
+#appDetails {
+  position: fixed; top: 70px; right: 20px;
+  width: 520px; max-height: 82vh; overflow-y: auto;
+  background: #fff; border: 1px solid #ccc;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  padding: 12px; display: none; z-index: 2000;
+}
+#appDetails h2 { margin-top: 0; color: #1f4e79; }
+.kv { margin: 6px 0; font-size: 13px; }
+.kv b { display: inline-block; min-width: 160px; }
+#counters { font-weight: bold; }
+button { cursor: pointer; }
+a { color: #1f4e79; cursor: pointer; text-decoration: underline; }
+</style>
+</head>
+
+<body>
+
+<div id="topbar">
+  <div class="group"><b>CSV</b> Ref_Appli_CASEWISE.csv</div>
+
+  <div class="group">
+    <label>Recherche</label>
+    <input id="search" list="names" placeholder="AGM">
+    <datalist id="names"></datalist>
+    <button id="goSearch">Aller</button>
+  </div>
+
+  <div class="group">
+    <button id="focusBtn">Focus</button>
+    <label>Niveau</label>
+    <select id="focusLevel">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <button id="exitFocus">Sortir focus</button>
+  </div>
+
+  <div class="group" id="statusFilters"></div>
+
+  <div class="group">
+    <button id="prodOnly">Prod seul</button>
+    <button id="allStatus">Tous statuts</button>
+    <button id="resetView">Reset vue</button>
+  </div>
+
+  <div class="group">
+    <span id="counters"></span>
+  </div>
+</div>
+
+<div id="mynetwork"></div>
+<div id="appDetails"></div>
+
+<script>
+/* ================= UTIL ================= */
+const clean = s => (s || '').replace(/^"+|"+$/g,'').trim();
+const splitMulti = v => clean(v).split(/\r?\n/).map(clean).filter(Boolean);
+
+/* ================= STATUTS ================= */
+const ALL_STATUSES = [
+  "1-Approuvé/En Projet",
+  "2-En évaluation",
+  "3-POC/Pilote",
+  "4-Consultée",
+  "5-En production",
+  "6-A décommissioner",
+  "7-Non utilisée",
+  "8-Décommissionnée"
+];
+
+/* ================= ÉTAT ================= */
+let headers=[], records=[];
+let appByName=new Map(), idByName=new Map(), nameById=new Map();
+let allEdges=[], network;
+let selectedStatuses=new Set(["5-En production"]);
+let focusActive=false, currentFocus="";
+
+/* ================= CSV PARSER ================= */
+function parseCSV(text, delimiter=';') {
+  text = text.replace(/^\uFEFF/, '');
+  let rows=[], row=[], field='', inQuotes=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i];
+    if(inQuotes){
+      if(c === '"' && text[i+1] !== '"') inQuotes=false;
+      else if(c === '"' && text[i+1] === '"'){ field+='"'; i++; }
+      else field+=c;
+    } else {
+      if(c === '"') inQuotes=true;
+      else if(c===delimiter){ row.push(field); field=''; }
+      else if(c==='\n'){ row.push(field); rows.push(row); row=[]; field=''; }
+      else if(c!=='\r') field+=c;
+    }
+  }
+  row.push(field); rows.push(row);
+  return rows;
+}
+
+/* ================= INIT ================= */
+async function init(){
+  const txt = await fetch("./Ref_Appli_CASEWISE.csv").then(r=>r.text());
+  const table = parseCSV(txt);
+
+  headers = table[0].map(clean);
+  for(let i=1;i<table.length;i++){
+    const row=table[i];
+    if(!row) continue;
+    let rec={}; headers.forEach((h,idx)=>rec[h]=clean(row[idx]));
+    if(rec["Nom"]) records.push(rec);
+  }
+
+  records.forEach((r,i)=>{
+    idByName.set(r["Nom"],i);
+    nameById.set(i,r["Nom"]);
+    appByName.set(r["Nom"],r);
+  });
+
+  buildEdges();
+  populateDatalist();
+  renderStatusFilters();
+  applyView();
+}
+
+/* ================= EDGES ================= */
+function buildEdges(){
+  const seen=new Set(); allEdges=[];
+  records.forEach(r=>{
+    const a=r["Nom"];
+    splitMulti(r["Application Alimente Application"]).forEach(b=>addEdge(a,b));
+    splitMulti(r["Application Est alimentée par Application"]).forEach(b=>addEdge(b,a));
+  });
+  function addEdge(a,b){
+    if(!idByName.has(a)||!idByName.has(b)) return;
+    const k=a+"|"+b; if(seen.has(k)) return;
+    seen.add(k); allEdges.push({from:idByName.get(a),to:idByName.get(b)});
+  }
+}
+
+/* ================= STATUS UI ================= */
+function renderStatusFilters(){
+  const box=document.getElementById("statusFilters");
+  box.innerHTML="<b>Statuts :</b>";
+  ALL_STATUSES.forEach(st=>{
+    const id="st_"+st.replace(/[^a-z0-9]/gi,"_");
+    const chk=document.createElement("input");
+    chk.type="checkbox"; chk.id=id;
+    chk.checked=selectedStatuses.has(st);
+    chk.onchange=()=>{
+      chk.checked ? selectedStatuses.add(st) : selectedStatuses.delete(st);
+      if(selectedStatuses.size===0){
+        selectedStatuses.add("5-En production");
+        document.getElementById("st_5_En_production").checked=true;
+      }
+      applyView();
+    };
+    const lab=document.createElement("label");
+    lab.appendChild(chk); lab.append(" "+st);
+    box.appendChild(lab);
+  });
+}
+
+/* ================= VUE ================= */
+function applyView(){
+  let nodes=[], edges=[];
+  let g=0,a=0,m=0;
+
+  records.forEach(r=>{
+    if(!selectedStatuses.has(r["Statut de production"])) return;
+    if(focusActive && !isInFocus(idByName.get(r["Nom"]))) return;
+
+    const lvl=r["Niveau applicatif"];
+    if(lvl==="Groupe Applicatif") g++;
+    else if(lvl==="Application") a++;
+    else m++;
+
+    nodes.push({
+      id:idByName.get(r["Nom"]),
+      label:r["Nom"],
+      shape:lvl==="Groupe Applicatif"?"box":"dot",
+      color:"#9467bd"
+    });
+  });
+
+  edges=allEdges.filter(e=>
+    nodes.some(n=>n.id===e.from)&&nodes.some(n=>n.id===e.to)
+  );
+
+  document.getElementById("counters").textContent =
+    `Groupes: ${g} | Applications: ${a} | Modules: ${m} | Flux: ${edges.length}`;
+
+  if(!network){
+    network=new vis.Network(
+      document.getElementById("mynetwork"),
+      {nodes,edges},
+      {layout:{improvedLayout:false},physics:false}
+    );
+    network.on("click",p=>{
+      if(p.nodes.length===1) openApp(p.nodes[0]);
+    });
+  } else network.setData({nodes,edges});
+}
+
+function isInFocus(id){
+  if(!currentFocus) return true;
+  const t=idByName.get(currentFocus);
+  return id===t || allEdges.some(e=>
+    (e.from===t&&e.to===id)||(e.to===t&&e.from===id)
+  );
+}
+
+/* ================= FOCUS (ANTI-COLLISION) ================= */
+focusBtn.onclick=()=>{
+  const v=search.value;
+  if(!appByName.has(v)) return;
+  currentFocus=v; focusActive=true;
+  applyView();
+
+  network.setOptions({
+    physics:{enabled:true,barnesHut:{gravitationalConstant:-3000,springLength:140,damping:0.4}}
+  });
+  setTimeout(()=>{
+    network.setOptions({physics:false});
+    network.fit({animation:true});
+  },800);
+};
+
+exitFocus.onclick=()=>{
+  focusActive=false; currentFocus=""; applyView();
+};
+
+prodOnly.onclick=()=>{
+  selectedStatuses=new Set(["5-En production"]);
+  renderStatusFilters(); applyView();
+};
+
+allStatus.onclick=()=>{
+  selectedStatuses=new Set(ALL_STATUSES);
+  renderStatusFilters(); applyView();
+};
+
+resetView.onclick=()=>{
+  selectedStatuses=new Set(["5-En production"]);
+  focusActive=false; currentFocus="";
+  renderStatusFilters(); applyView();
+  network.fit({animation:true});
+};
+
+/* ================= FICHE ================= */
+function openApp(id){
+  const r=appByName.get(nameById.get(id));
+  if(!r) return;
+
+  const inF=[], outF=[];
+  allEdges.forEach(e=>{
+    if(e.to===id) inF.push(nameById.get(e.from));
+    if(e.from===id) outF.push(nameById.get(e.to));
+  });
+
+  const d=document.getElementById("appDetails");
+  d.style.display="block";
+  d.innerHTML=`
+    <button style="float:right" onclick="appDetails.style.display='none'">✖</button>
+    <h2>${r["Nom"]}</h2>
+    <div class="kv"><b>Statut :</b> ${r["Statut de production"]||"—"}</div>
+    <div class="kv"><b>Fonctionnalité :</b> ${r["Fonctionnalité principale"]||"—"}</div>
+    <div class="kv"><b>Utilisateurs :</b> ${r["U- Nombre d'utilisateurs"]||"—"}</div>
+    <div class="kv"><b>Description :</b><br>${r["Description"]||"—"}</div>
+    <hr>
+    <h3>Flux</h3>
+    <div class="kv"><b>Entrants :</b><br>${inF.join("<br>")||"—"}</div>
+    <div class="kv"><b>Sortants :</b><br>${outF.join("<br>")||"—"}</div>
+    <hr>
+    <button onclick="exportCSV('${r["Nom"]}')">📤 Export CSV</button>
+    <button onclick="exportCombinedPDF('${r["Nom"]}')" ${window.jspdf?"":"disabled"}>📄 Export PDF</button>
+  `;
+}
+
+/* ================= EXPORTS ================= */
+function exportCSV(name){
+  const r=appByName.get(name);
+  let csv="Champ;Valeur\n";
+  Object.keys(r).forEach(k=>csv+=`${k};"${r[k]}"\n`);
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));
+  a.download=`fiche_${name}.csv`; a.click();
+}
+
+function exportCombinedPDF(name){
+  if(!window.jspdf){ alert("jsPDF manquant"); return; }
+  const pdf=new jspdf.jsPDF("p","mm","a4");
+  html2canvas(mynetwork,{scale:2}).then(c1=>{
+    pdf.addImage(c1.toDataURL("image/png"),"PNG",10,10,190,0);
+    pdf.addPage();
+    html2canvas(appDetails,{scale:2}).then(c2=>{
+      pdf.addImage(c2.toDataURL("image/png"),"PNG",10,10,190,0);
+      pdf.save(`cartographie_${name}.pdf`);
+    });
+  });
+}
+
+/* ================= SEARCH ================= */
+goSearch.onclick=()=>{
+  const v=search.value;
+  if(appByName.has(v)){
+    currentFocus=v; focusActive=true;
+    applyView();
+  }
+};
+
+function populateDatalist(){
+  const dl=document.getElementById("names");
+  appByName.forEach((_,k)=>{
+    const o=document.createElement("option"); o.value=k; dl.appendChild(o);
+  });
+}
+
+init();
+</script>
+
+</body>
+</html>
