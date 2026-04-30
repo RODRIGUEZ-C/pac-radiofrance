@@ -1370,7 +1370,7 @@ W25ABWX00127284
 W26ABWX00143017
 W29ABWX00144024
 W2BABWX00129967
-W30ABWX00152306
+W30ARWX00152306
 W31ABWX00127299
 W33ABWX00151728
 W35ARWX00142042
@@ -1906,10 +1906,7 @@ Direction de la Réalisation (DR)";"";"";""
 "XRT SBE";"XRT SBE - SAGE";"Trésorerie et communication bancaire/relevé de comptes/Paiement";"Application";"5-En production";"False";"Oui";"Oui";"Non";"2007 S1";"False";"";"";"Trésorerie/Communication bancaire/Relevés comptes et paiement.";"DF";"DF";"Perot Claire";"Dubesset Sophie";"DSI";"DSI Corp";"Dubesset Sophie";"";"";"58000";"Services internes";"Editeur";"";"";"SAGE";"";"CODILOG";"SAGE";"";"";"1-Progiciel";"";"Client léger & client lourd";"Oui";"Oui";"3 : Interfaçage applis RF et SI externe";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Pulse";"10";"20";"Redevance périodique";"2-  Lundi-Vendredi";"3- Lundi Vendredi, 7h00- 21h00";"1- 07h00-21h00";"21h-7h et WE";"21h-7h et WE";"Sauvegarde journalière";"Oui";"Oui";"0h-4h";"Non";"Non";"4 - 1 jour";"1 - Aucune perte tolérée";"4 - 1 jour";"Oui";"Oui";"";"";"";"";"";"SAP Suite";"SAP Suite";"";"";"PROXRTEST
 SMRFG19APP46
 SMRFG19APP48
-SMRFG19APP47
-SMRFG19APP53
-SMRFG19APP54
-SMRFG19APP63";"D_Finance Comptabilité
+SMRFG19APP47";"D_Finance Comptabilité
 QFIN4.1 Suivi des comptes de trésorerie
 QFIN4.2 Prévision de trésorie
 QFINR1 Compte bancaire
@@ -3640,8 +3637,7 @@ Casewise Suite
 AGM
 Fusion Inventory Agent GLPI
 CyberWatch";"Service_SYS_Dépôts-Référentiels_Inventaires";"";"SMRFGLXAPP40
-SMRFGLXAPP67
-SMRFGLXDEMOALEX";"D_Informatique
+SMRFGLXAPP67";"D_Informatique
 D_Référentiels transverses
 D_Stocks & Actifs Physiques
 QAPS2.1 Référencement éléments de parcs (affectations, immatricul., mouvements, localisations, ...)
@@ -4641,12 +4637,7 @@ RCU Amabis";"SIRHIUS";"";"";"SMRFG12APP26
 SMRFG12APP27
 SMRFG12APP41
 SMRFG12APP42
-SMRFG12APP92
-SMRFG19APP33
-SMRFG19APP34
-SMRFG19APP131
-SMRFG19APP132
-SMRFG19APP133";"D_Conception et Construction des offres de Radio France
+SMRFG12APP92";"D_Conception et Construction des offres de Radio France
 D_Concerts & Evènements
 D_Référentiels transverses
 D_Ressources Humaines
@@ -5157,7 +5148,8 @@ SMRFG19APP126
 SMRFG19APP127
 SMRFG19APP13
 SMRFG19APP92
-SMRFG19APP36";"D_Juridique
+SMRFG19APP36
+SMRFG22APP130";"D_Juridique
 QJUR5.1 Traitement des droits d'auteur et droits voisins
 ZJUR5 Gestion collective des droits";"Direction de la Réalisation (DR)";"DCP - Raison sociale";"";"Debussy"
 "Acousmographe";"Acousmographe";"Repérage de séquences audio dans un fichier sonore (par exemple séquence parlée / séquences musique)";"Application";"5-En production";"False";"Oui";"Non";"Non";"2017";"False";"";"";"L’Acousmographe est un outil logiciel développé par l’Ina-GRM visant à l’analyse et la représentation des musiques électro- acoustiques et plus généralement de tout phénomène sonore enregistré.
@@ -6639,7 +6631,7 @@ QETB2.1 Sécurité des personnes / Incendie
 QETB2.2 Gestion des accès aux locaux
 ZETB1 Gestion Etablissements & Services généraux
 ZETB2 Sécurité, Sûreté & Risques professionnels";"Direction de l'Immobilier de l'Environnement de travail et des SErvices (DIESE)";"DCP - Coordonnées professionnelles";"PA6 - app. fermées consentement implicite";""
-"Zappa / FileMaker";"Zappa";"Outil de gestion des grandes salles";"Application";"5-En production";"False";"Oui";"Oui";"Non";"01/01/2021";"False";"";"";"PROJET CALENDRIER DPA";"DPA";"DPA";"";"";"DSI";"DSI Corp";"Blanc Eric";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Hébergement Cloud";"Non";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"Non";"False";"False";"";"5";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"SMRFG12APP97";"D_Concerts & Evènements
+"Zappa / FileMaker";"Zappa";"Outil de gestion des grandes salles";"Application";"5-En production";"False";"Oui";"Oui";"Non";"01/01/2021";"False";"";"";"PROJET CALENDRIER DPA";"DPA";"DPA";"";"";"DSI";"DSI Corp";"Blanc Eric";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Hébergement Cloud";"Non";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"Non";"False";"False";"";"5";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Concerts & Evènements
 D_Fabrication radiophonique
 QFAB1.2 Planification des moyens techniques et humains
 QFAB1.5 Gestion des demandes de production (ressources, moyens, matériels, ..)
@@ -7046,7 +7038,6 @@ Harbor
 HashiCorp VAULT
 Ansible";"Nexus OSS
 Proxy SQUID";"Service_SYS_Dépôts-Référentiels_Inventaires";"";"SMRFG19APP42
-SMRFGLXAPP29
 SMRFGLXGIP01
 SMRFGLXGIR01
 SMRFGLXGNP01
@@ -8222,7 +8213,7 @@ Radio France (RF)";"";"";""
 - Catalogue des véhicules
 - Gestion de l'atelier
 - Gestion des carburants (facturations)
-- Gestion des PV.";"DE";"DE";"Djeghidel Amel";"Djeghidel Amel";"DSI";"DSI Corp";"Fanet Jean-Marie";"Djeghidel Amel";"";"";"Services internes";"Editeur";"";"";"Berger Levrault";"";"";"Berger Levrault";"Berger Levrault";"Berger Levrault";"1-Progiciel";"Hébergé en dehors des emprises RF";"SaaS";"Non";"Non";"2 : Interfaçage applis hétérogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"50";"2";"";"1-  7j/7";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"Non";"";"";"Non";"Non";"4 - 1 jour";"4 - 1 jour";"4 - 1 jour";"";"";"";"Nicolas SIMPLAT
+- Gestion des PV.";"DE";"DE";"En attente remplacement Djeghidel Amel";"En attente remplacement Djeghidel Amel";"DSI";"DSI Corp";"Blanc Eric";"En attente remplacement Djeghidel Amel";"";"";"Services internes";"Editeur";"";"";"Berger Levrault";"";"";"Berger Levrault";"Berger Levrault";"Berger Levrault";"1-Progiciel";"Hébergé en dehors des emprises RF";"SaaS";"Non";"Non";"2 : Interfaçage applis hétérogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"50";"2";"";"1-  7j/7";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"Non";"";"";"Non";"Non";"4 - 1 jour";"4 - 1 jour";"4 - 1 jour";"";"";"";"Nicolas SIMPLAT
 Directeur Commercial
 nsimplat@gac-infoparc.com
 +33 (0)6 11 48 77 07
@@ -9055,15 +9046,15 @@ SDA4GEXINF10
 SMRFGEXINF100
 SMRFGEXINF11
 SMRFGEXINF111
-SMRFGEXINF12
+SDA4GEXINF11
 SMRFGEXINF13
 SMRFGEXINF130
 SMRFGEXINF131
 SMRFGEXINF132
 SMRFGEXINF133
-SMRFGEXINF14
+SDA4GEXINF12
 SMRFGEXINF15
-SMRFGEXINF16
+SDA4GEXINF13
 SMRFGEXINF17
 SMRFGEXINF18
 SMRFGEXINF19
@@ -9151,12 +9142,7 @@ Le déploiement se fera en plusieurs phases :​
 
 - Les ordinateurs portables (juillet-octobre 2022)​
 - Les ordinateurs fixes (septembre-octobre 2022)​
-- Serveurs (fin d’année 2022-2023)";"RF";"DI";"Pôle Systèmes";"Pôle Systèmes";"DI";"DI-PI";"Pôle Systèmes";"Pôle Systèmes";"";"58000 & ATN";"Services internes";"Services internes";"Pôle Systèmes";"";"Zscaler";"";"";"";"";"";"1-Progiciel";"";"Client léger/lourd, & SaaS (Hybride)";"Oui";"Oui";"3 : Interfaçage applis RF et SI externe";"False";"True";"False";"False";"False";"False";"False";"False";"";"True";"True";"";"5500";"5500";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"Non";"";"";"";"";"6 - Pas de besoin";"";"";"";"";"support -> site web éditeur";"";"";"";"";"";"Service_SYS_Sécurité";"";"SMRFGLXAPP37
-SMRFGLXINF14
-SMRFGLXINF15
-SMRFGLXINF16
-SMRFGLXINF17
-SMRFGLXINF90";"D_Informatique
+- Serveurs (fin d’année 2022-2023)";"RF";"DI";"Pôle Systèmes";"Pôle Systèmes";"DI";"DI-PI";"Pôle Systèmes";"Pôle Systèmes";"";"58000 & ATN";"Services internes";"Services internes";"Pôle Systèmes";"";"Zscaler";"";"";"";"";"";"1-Progiciel";"";"Client léger/lourd, & SaaS (Hybride)";"Oui";"Oui";"3 : Interfaçage applis RF et SI externe";"False";"True";"False";"False";"False";"False";"False";"False";"";"True";"True";"";"5500";"5500";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"Non";"";"";"";"";"6 - Pas de besoin";"";"";"";"";"support -> site web éditeur";"";"";"";"";"";"Service_SYS_Sécurité";"";"";"D_Informatique
 QINF3.1 Protection des systèmes (Cybersécurité)
 ZINF3 Sécurité du SI & Conformité";"Radio France (RF)";"DCP - Données de connexion (adresse IP, logs, etc.)";"PA7 - applications faible risque RGPD";""
 "ClePass";"ClePass";"Application Serrurerie";"Application";"1-Approuvé/En Projet";"False";"Oui";"Oui";"Non";"12/2022";"False";"";"";"Gestion des clés, passes, portes, cylindres, utilisateurs.
@@ -10657,7 +10643,7 @@ SMRFGUXPDB2
 SMRFGUXTDB2
 SMRFGUXBDB4
 SMRFGUXTDB4
-smrftuxbdb2
+SMRFTUXBDB2
 SMRFTUXOGM01
 SMRFTUXRDB2
 SMRFGLXPDB01";"D_Informatique";"";"";"";""
