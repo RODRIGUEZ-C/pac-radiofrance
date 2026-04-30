@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Cartographie applicative CASEWISE</title>
+
+<script src="./vis-network.min.js"></script>
+<script src="./html2canvas.min.js"></script>
+<script src="./jspdf.umd.min.js"></script>
+
+<style>
+body{font-family:Arial,sans-serif;margin:0;padding:10px}
+#topbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.group{display:flex;gap:6px;align-items:center;border:1px solid #ccc;padding:6px 8px;border-radius:6px;background:#fafafa}
+#statusFilters label{font-size:12px;margin-right:6px;white-space:nowrap}
+
+#mynetwork{width:100%;height:65vh;border:1px solid #ccc;border-radius:8px}
+
+#legend{
+ margin-top:8px;
+ padding:8px;
+ border:1px solid #ccc;
+ border-radius:6px;
+ background:#fafafa;
+ font-size:12px;
+ max-width:520px
+}
+.legend-dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.legend-box{display:inline-block;width:18px;height:12px;border:2px solid #333;background:#e6f2e6;margin-right:6px;vertical-align:middle}
+
+#appDetails{
+ position:fixed;top:70px;right:20px;width:560px;max-height:80vh;
+ overflow:auto;background:#fff;border:1px solid #ccc;
+ box-shadow:0 6px 18px rgba(0,0,0,.25);
+ padding:12px;display:none
+}
+.kv{font-size:13px;margin:6px 0}
+.kv b{display:inline-block;min-width:160px}
+button{cursor:pointer}
+</style>
+</head>
+
+<body>
+
+<div id="topbar">
+ <div class="group"><b>CSV :</b> Ref_Appli_CASEWISE.csv</div>
+
+ <div class="group">
+   Recherche <input id="search" list="names" placeholder="AGM">
+   <datalist id="names"></datalist>
+   <button id="goSearch">Aller</button>
+ </div>
+
+ <div class="group">
+   <button id="focusBtn">Focus</button>
+   Niveau
+   <select id="focusLevel"><option>1</option><option>2</option><option>3</option></select>
+   <button id="exitFocus">Sortir focus</button>
+ </div>
+
+ <div class="group" id="statusFilters"></div>
+
+ <div class="group">
+   <button id="prodOnly">Prod seul</button>
+   <button id="allStatus">Tous statuts</button>
+   <button id="resetView">Reset vue</button>
+   <button id="exportPNG">Export PNG</button>
+   <button id="exportCSV">Export CSV</button>
+   <button id="exportPDF">Export PDF</button>
+ </div>
+
+ <div class="group" id="counters"></div>
+</div>
+
+<div id="mynetwork"></div>
+
+<div id="legend">
+ <b>Légende</b><br><br>
+ <div><span class="legend-box"></span> Groupe applicatif</div>
+ <div><span class="legend-dot" style="background:#9467bd"></span> Application / Module</div>
+ <div>➜ Flux applicatif</div>
+ <br><b>Statuts</b><br>
+ <div><span class="legend-dot" style="background:#9467bd"></span> En production</div>
+ <div><span class="legend-dot" style="background:#1f77b4"></span> Approuvé / Projet</div>
+ <div><span class="legend-dot" style="background:#ff7f0e"></span> En évaluation</div>
+ <div><span class="legend-dot" style="background:#2ca02c"></span> POC / Pilote</div>
+ <div><span class="legend-dot" style="background:#d62728"></span> Consultée</div>
+</div>
+
+<div id="appDetails"></div>
+
+<script>
+const STATUS_COLORS={
+ "1-Approuvé/En Projet":"#1f77b4",
+ "2-En évaluation":"#ff7f0e",
+ "3-POC/Pilote":"#2ca02c",
+ "4-Consultée":"#d62728",
+ "5-En production":"#9467bd",
+ "6-A décommissioner":"#8c564b",
+ "7-Non utilisée":"#e377c2",
+ "8-Décommissionnée":"#7f7f7f"
+};
+const ALL_STATUSES=Object.keys(STATUS_COLORS);
+const clean=s=>(s||"").replace(/^"+|"+$/g,"").trim();
+
+function parseCSV(t){
+ let r=[],R=[],f="",q=false;
+ for(let i=0;i<t.length;i++){
+  let c=t[i];
+  if(q){
+   if(c=='"'&&t[i+1]!='"')q=false;
+   else if(c=='"'&&t[i+1]=='"'){f+='"';i++;}
+   else f+=c;
+  }else{
+   if(c=='"')q=true;
+   else if(c==';'){R.push(f);f="";}
+   else if(c=='\n'){R.push(f);r.push(R);R=[];f="";}
+  }
+ }
+ R.push(f);r.push(R);return r;
+}
+
+let records=[],appByName=new Map(),idByName=new Map(),nameById=new Map(),edges=[];
+let network=null,selectedStatuses=new Set(["5-En production"]),focusApp=null;
+
+(async()=>{
+ const csv=await fetch("./Ref_Appli_CASEWISE.csv").then(r=>r.text());
+ const table=parseCSV(csv); const headers=table[0].map(clean);
+ for(let i=1;i<table.length;i++){
+  let rec={}; headers.forEach((h,j)=>rec[h]=clean(table[i][j]));
+  if(rec.Nom){records.push(rec);appByName.set(rec.Nom,rec);}
+ }
+ let id=0;records.forEach(r=>{idByName.set(r.Nom,id);nameById.set(id,r.Nom);id++;});
+ buildEdges(); populateDatalist(); renderStatuses(); renderNetwork(true);
+})();
+
+function buildEdges(){
+ const seen=new Set();edges=[];
+ records.forEach(r=>{
+  (r["Application Alimente Application"]||"").split(/\n/)
+   .forEach(b=>add(r.Nom,clean(b)));
+  (r["Application Est alimentée par Application"]||"").split(/\n/)
+   .forEach(b=>add(clean(b),r.Nom));
+ });
+ function add(a,b){
+  if(!idByName.has(a)||!idByName.has(b))return;
+  const k=a+"|"+b;if(seen.has(k))return;seen.add(k);
+  edges.push({from:idByName.get(a),to:idByName.get(b)});
+ }
+}
+
+function visibleIds(){
+ const ok=new Set();
+ appByName.forEach((r,n)=>selectedStatuses.has(r["Statut de production"])&&ok.add(idByName.get(n)));
+ if(!focusApp)return ok;
+ let res=new Set([idByName.get(focusApp)]),f=[idByName.get(focusApp)];
+ for(let l=0;l<+focusLevel.value;l++){
+  let n=[];edges.forEach(e=>f.forEach(x=>{
+   if(e.from===x&&!res.has(e.to)){res.add(e.to);n.push(e.to);}
+   if(e.to===x&&!res.has(e.from)){res.add(e.from);n.push(e.from);}
+  }));f=n;
+ }
+ return new Set([...res].filter(x=>ok.has(x)));
+}
+
+function renderNetwork(spread){
+ let ids=visibleIds(),n=[],e=[],g=0,a=0,m=0;
+ ids.forEach(id=>{
+  const r=appByName.get(nameById.get(id)),l=r["Niveau applicatif"];
+  l==="Groupe Applicatif"?g++:l==="Application"?a++:m++;
+  n.push({
+    id, label:r.Nom,
+    shape:l==="Groupe Applicatif"?"box":"dot",
+    color:STATUS_COLORS[r["Statut de production"]],
+    title:
+      "<b>"+r.Nom+"</b><br>"+
+      (r["Fonctionnalité principale"]||"")+
+      "<br><i>"+(r["Statut de production"]||"")+"</i>"
+  });
+ });
+ edges.forEach((x,i)=>ids.has(x.from)&&ids.has(x.to)&&e.push({id:i,from:x.from,to:x.to,arrows:"to"}));
+ counters.textContent=`Groupes:${g} | Applications:${a} | Modules:${m} | Flux:${e.length}`;
+ if(!network){
+  network=new vis.Network(mynetwork,{nodes:new vis.DataSet(n),edges:new vis.DataSet(e)},
+   {interaction:{hover:true},layout:{improvedLayout:false},physics:false});
+  network.on("click",p=>p.nodes.length&&openApp(nameById.get(p.nodes[0])));
+ }else network.setData({nodes:n,edges:e});
+ if(spread)spreadLayout();
+}
+
+function spreadLayout(){
+ network.setOptions({physics:{enabled:true,barnesHut:{gravitationalConstant:-7000,springLength:280,damping:0.35}}});
+ setTimeout(()=>network.setOptions({physics:false}),1200);
+}
+
+function renderStatuses(){
+ statusFilters.innerHTML="<b>Statuts :</b>";
+ ALL_STATUSES.forEach(s=>{
+  const c=document.createElement("input");c.type="checkbox";c.checked=selectedStatuses.has(s);
+  c.onchange=()=>{c.checked?selectedStatuses.add(s):selectedStatuses.delete(s);renderNetwork(false);}
+  const l=document.createElement("label");l.append(c," ",s);
+  statusFilters.append(l);
+ })
+}
+
+function openApp(name){
+ const r=appByName.get(name);if(!r)return;
+ const inF=[],outF=[];
+ edges.forEach(e=>{
+  if(nameById.get(e.to)===name)inF.push(nameById.get(e.from));
+  if(nameById.get(e.from)===name)outF.push(nameById.get(e.to));
+ });
+ appDetails.style.display="block";
+ appDetails.innerHTML=`
+  <button style="float:right" onclick="appDetails.style.display='none'">✖</button>
+  <h2>${name}</h2>
+  <div class="kv"><b>Statut :</b> ${r["Statut de production"]}</div>
+  <div class="kv"><b>Fonctionnalité :</b> ${r["Fonctionnalité principale"]}</div>
+  <div class="kv"><b>Utilisateurs :</b> ${r["U- Nombre d'utilisateurs"]}</div>
+  <div class="kv"><b>Description :</b><br>${r["Description"]}</div>
+  <hr>
+  <div class="kv"><b>Entrants :</b><br>${inF.join("<br>")}</div>
+  <div class="kv"><b>Sortants :</b><br>${outF.join("<br>")}</div>
+ `;
+}
+
+exportPNG.onclick=()=>html2canvas(mynetwork,{scale:2}).then(c=>{
+ const a=document.createElement("a");a.href=c.toDataURL("image/png");
+ a.download="cartographie.png";a.click();
+});
+
+exportCSV.onclick=()=>{
+ let csv="from;to\n";
+ edges.forEach(e=>csv+=`${nameById.get(e.from)};${nameById.get(e.to)}\n`);
+ const a=document.createElement("a");
+ a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));
+ a.download="cartographie_flux.csv";a.click();
+};
+
+exportPDF.onclick=()=>{
+ const {jsPDF}=window.jspdf;
+ const pdf=new jsPDF();
+ html2canvas(appDetails,{scale:2}).then(c1=>{
+  pdf.addImage(c1.toDataURL(),"PNG",10,10,190,0);
+  pdf.addPage();
+  html2canvas(mynetwork,{scale:2}).then(c2=>{
+   pdf.addImage(c2.toDataURL(),"PNG",10,10,190,0);
+   pdf.save("cartographie_fiche.pdf");
+  });
+ });
+};
+
+goSearch.onclick=()=>{focusApp=search.value||null;renderNetwork(true);}
+focusBtn.onclick=goSearch.onclick;
+exitFocus.onclick=()=>{focusApp=null;renderNetwork(false);}
+prodOnly.onclick=()=>{selectedStatuses=new Set(["5-En production"]);renderStatuses();renderNetwork(true);}
+allStatus.onclick=()=>{selectedStatuses=new Set(ALL_STATUSES);renderStatuses();renderNetwork(true);}
+resetView.onclick=()=>{selectedStatuses=new Set(["5-En production"]);focusApp=null;renderStatuses();renderNetwork(true);}
+
+function populateDatalist(){
+ names.innerHTML="";
+ appByName.forEach((_,k)=>{
+  const o=document.createElement("option");
+  o.value=k;names.append(o);
+ });
+}
+</script>
+
+</body>
+</html>
