@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartographie applicative CASEWISE</title>
+
+<!-- Dépendances locales (même dossier) -->
+<script src="./vis-network.min.js"></script>
+<script src="./html2canvas.min.js"></script>
+<script src="./jspdf.umd.min.js"></script>
+
+<style>
+body{font-family:Arial,sans-serif;margin:0;padding:10px}
+#topbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.group{display:flex;gap:6px;align-items:center;border:1px solid #ccc;padding:6px 8px;border-radius:6px;background:#fafafa}
+.group input[type=text]{padding:5px 8px;border:1px solid #ccc;border-radius:5px;min-width:220px}
+.group button{padding:5px 10px;border:1px solid #ccc;border-radius:5px;background:#fff;cursor:pointer}
+.group button:hover{background:#f4f4f4}
+#statusFilters label{font-size:12px;margin-right:6px;white-space:nowrap}
+#mynetwork{width:100%;height:65vh;border:1px solid #ccc;border-radius:8px}
+
+/* Tooltip custom (fiable) */
+#tooltip{
+  position:fixed;
+  display:none;
+  max-width:360px;
+  background:rgba(0,0,0,.78);
+  color:#fff;
+  padding:7px 9px;
+  border-radius:6px;
+  font-size:12px;
+  line-height:1.25;
+  pointer-events:none;
+  z-index:5000;
+}
+
+#legend{margin-top:8px;padding:8px;border:1px solid #ccc;border-radius:6px;background:#fafafa;font-size:12px;max-width:560px}
+.legend-dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.legend-box{display:inline-block;width:18px;height:12px;border:2px solid #333;background:#e6f2e6;margin-right:6px;vertical-align:middle}
+
+#appDetails{position:fixed;top:70px;right:20px;width:560px;max-height:80vh;overflow:auto;background:#fff;border:1px solid #ccc;box-shadow:0 6px 18px rgba(0,0,0,.25);padding:12px;display:none;z-index:3000}
+#appDetails h2{margin:0 0 6px 0;color:#1f4e79}
+.kv{font-size:13px;margin:6px 0}
+.kv b{display:inline-block;min-width:160px}
+button:disabled{opacity:.45;cursor:not-allowed}
+</style>
+</head>
+
+<body>
+<div id="topbar">
+  <div class="group"><b>CSV :</b> Ref_Appli_CASEWISE.csv</div>
+
+  <div class="group">
+    Recherche <input id="search" list="names" placeholder="AGM">
+    <datalist id="names"></datalist>
+    <button id="goSearch">Aller</button>
+  </div>
+
+  <div class="group">
+    <button id="focusBtn">Focus</button>
+    Niveau
+    <select id="focusLevel">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <button id="exitFocus">Sortir focus</button>
+  </div>
+
+  <div class="group" id="statusFilters"></div>
+
+  <div class="group">
+    <button id="prodOnly">Prod seul</button>
+    <button id="allStatus">Tous statuts</button>
+    <button id="resetView">Reset vue</button>
+    <button id="exportPNG">Export PNG</button>
+    <button id="exportCSV">Export CSV</button>
+    <button id="exportPDF">Export PDF</button>
+  </div>
+
+  <div class="group" id="counters"></div>
+</div>
+
+<div id="mynetwork"></div>
+<div id="tooltip"></div>
+
+<div id="legend">
+  <b>Légende</b><br><br>
+  <div><span class="legend-box"></span> Groupe applicatif</div>
+  <div><span class="legend-dot" style="background:#9467bd"></span> Application / Module</div>
+  <div>➜ Flux applicatif</div>
+  <br><b>Statuts</b><br>
+  <div><span class="legend-dot" style="background:#1f77b4"></span> 1‑Approuvé / Projet</div>
+  <div><span class="legend-dot" style="background:#ff7f0e"></span> 2‑En évaluation</div>
+  <div><span class="legend-dot" style="background:#2ca02c"></span> 3‑POC / Pilote</div>
+  <div><span class="legend-dot" style="background:#d62728"></span> 4‑Consultée</div>
+  <div><span class="legend-dot" style="background:#9467bd"></span> 5‑En production</div>
+  <div><span class="legend-dot" style="background:#8c564b"></span> 6‑À décommissionner</div>
+  <div><span class="legend-dot" style="background:#e377c2"></span> 7‑Non utilisée</div>
+  <div><span class="legend-dot" style="background:#7f7f7f"></span> 8‑Décommissionnée</div>
+</div>
+
+<div id="appDetails"></div>
+
+<script>
+// ===== Config =====
+const STATUS_COLORS={
+  '1-Approuvé/En Projet':'#1f77b4',
+  '2-En évaluation':'#ff7f0e',
+  '3-POC/Pilote':'#2ca02c',
+  '4-Consultée':'#d62728',
+  '5-En production':'#9467bd',
+  '6-A décommissioner':'#8c564b',
+  '7-Non utilisée':'#e377c2',
+  '8-Décommissionnée':'#7f7f7f'
+};
+const ALL_STATUSES=Object.keys(STATUS_COLORS);
+const clean = s => (s||'').replace(/^"+|"+$/g,'').trim();
+
+function parseCSV(text, delimiter=';'){
+  text = text.replace(/^\uFEFF/, '');
+  const rows=[]; let row=[]; let field=''; let inQuotes=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i];
+    if(inQuotes){
+      if(c==='"'){
+        if(text[i+1]==='"'){ field+='"'; i++; }
+        else { inQuotes=false; }
+      } else field+=c;
+    } else {
+      if(c==='"') inQuotes=true;
+      else if(c===delimiter){ row.push(field); field=''; }
+      else if(c==='\n'){ row.push(field); rows.push(row); row=[]; field=''; }
+      else if(c==='\r'){} else field+=c;
+    }
+  }
+  row.push(field); rows.push(row);
+  return rows;
+}
+
+// ===== Data state =====
+let records=[]; // objects
+let appByName=new Map();
+let idByName=new Map();
+let nameById=new Map();
+let allEdges=[]; // {from,to}
+let network=null;
+let selectedStatuses=new Set(['5-En production']);
+let focusApp=null;
+
+const tooltip=document.getElementById('tooltip');
+
+function pdfReady(){ return !!(window.jspdf && window.jspdf.jsPDF); }
+
+// ===== Build edges (dedup) =====
+function buildEdges(){
+  const seen=new Set();
+  allEdges=[];
+  for(const rec of records){
+    const from=rec['Nom'];
+    if(!from) continue;
+    for(const t of (rec['Application Alimente Application']||'').split(/\r?\n/)) add(from, clean(t));
+    for(const s of (rec['Application Est alimentée par Application']||'').split(/\r?\n/)) add(clean(s), from);
+  }
+  function add(a,b){
+    if(!idByName.has(a) || !idByName.has(b)) return;
+    const key=a+'|'+b;
+    if(seen.has(key)) return;
+    seen.add(key);
+    allEdges.push({from:idByName.get(a), to:idByName.get(b)});
+  }
+}
+
+// ===== Visible ids with optional focus BFS =====
+function visibleIds(){
+  const ok=new Set();
+  for(const [name, rec] of appByName.entries()){
+    if(selectedStatuses.has(rec['Statut de production']||'')) ok.add(idByName.get(name));
+  }
+  if(!focusApp || !idByName.has(focusApp)) return ok;
+
+  const hops=parseInt(document.getElementById('focusLevel').value,10);
+  const start=idByName.get(focusApp);
+  const res=new Set([start]);
+  let frontier=[start];
+  for(let h=0; h<hops; h++){
+    const next=[];
+    for(const e of allEdges){
+      for(const x of frontier){
+        if(e.from===x && !res.has(e.to) && ok.has(e.to)){ res.add(e.to); next.push(e.to); }
+        if(e.to===x && !res.has(e.from) && ok.has(e.from)){ res.add(e.from); next.push(e.from); }
+      }
+    }
+    frontier=next;
+    if(frontier.length===0) break;
+  }
+  return res;
+}
+
+// ===== Spread layout (BarnesHut only) =====
+function spreadLayout(){
+  if(!network) return;
+  network.setOptions({
+    physics:{ enabled:true, barnesHut:{ gravitationalConstant:-7000, springLength:280, damping:0.35, avoidOverlap:1 } },
+    stabilization:{ enabled:true, iterations:120 }
+  });
+  setTimeout(()=>{
+    network.setOptions({ physics:false });
+  }, 1100);
+}
+
+// ===== Render network =====
+function renderNetwork(spread){
+  const ids=visibleIds();
+  const nodes=[]; const edges=[];
+  let g=0,a=0,m=0;
+
+  for(const id of ids){
+    const name=nameById.get(id);
+    const rec=appByName.get(name);
+    const lvl=rec ? (rec['Niveau applicatif']||'') : '';
+    const st=rec ? (rec['Statut de production']||'') : '';
+    if(lvl==='Groupe Applicatif') g++; else if(lvl==='Application') a++; else m++;
+
+    nodes.push({
+      id,
+      label:name,
+      shape:(lvl==='Groupe Applicatif')?'box':'dot',
+      color:STATUS_COLORS[st]||'#97c2fc',
+      // pas de title natif: on utilise un tooltip custom (fiable)
+      _tooltipText: `${name}\n${st}\n${(rec && rec['Fonctionnalité principale'])?rec['Fonctionnalité principale']:''}`
+    });
+  }
+
+  let eid=0;
+  for(const e of allEdges){
+    if(ids.has(e.from) && ids.has(e.to)){
+      edges.push({id:eid++, from:e.from, to:e.to, arrows:'to', width:1, color:{color:'#5b2a86', opacity:.6}});
+    }
+  }
+
+  document.getElementById('counters').textContent = `Groupes:${g} | Applications:${a} | Modules:${m} | Flux:${edges.length}`;
+
+  const data={ nodes:new vis.DataSet(nodes), edges:new vis.DataSet(edges) };
+
+  if(!network){
+    network=new vis.Network(document.getElementById('mynetwork'), data, {
+      layout:{ improvedLayout:false },
+      physics:false,
+      interaction:{ hover:true, navigationButtons:true, keyboard:true }
+    });
+
+    // click -> fiche
+    network.on('click', (p)=>{
+      if(p.nodes && p.nodes.length===1){
+        const id=p.nodes[0];
+        openApp(nameById.get(id));
+      }
+    });
+
+    // Tooltip custom
+    network.on('hoverNode', (p)=>{
+      const id=p.node;
+      const name=nameById.get(id);
+      const rec=appByName.get(name);
+      const st=rec ? (rec['Statut de production']||'') : '';
+      const fn=rec ? (rec['Fonctionnalité principale']||'') : '';
+
+      tooltip.innerHTML = `<b>${escapeHtml(name)}</b><br>${escapeHtml(st)}<br>${escapeHtml(fn)}`;
+
+      const ev = p.event && p.event.srcEvent ? p.event.srcEvent : null;
+      if(ev){
+        tooltip.style.left = (ev.clientX + 14) + 'px';
+        tooltip.style.top  = (ev.clientY + 14) + 'px';
+      }
+      tooltip.style.display = 'block';
+    });
+    network.on('blurNode', ()=>{ tooltip.style.display='none'; });
+    network.on('dragStart', ()=>{ tooltip.style.display='none'; });
+  } else {
+    network.setData(data);
+  }
+
+  if(spread) spreadLayout();
+}
+
+function escapeHtml(s){
+  return (s||'').replace(/[&<>"']/g, c=>({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[c]));
+}
+
+// ===== Status filters UI =====
+function renderStatuses(){
+  const box=document.getElementById('statusFilters');
+  box.innerHTML='<b>Statuts :</b>';
+  for(const st of ALL_STATUSES){
+    const cb=document.createElement('input');
+    cb.type='checkbox';
+    cb.checked=selectedStatuses.has(st);
+    cb.onchange=()=>{
+      if(cb.checked) selectedStatuses.add(st); else selectedStatuses.delete(st);
+      if(selectedStatuses.size===0){ selectedStatuses.add('5-En production'); }
+      renderStatuses();
+      renderNetwork(false);
+    };
+    const lab=document.createElement('label');
+    lab.append(cb,' ',st);
+    box.appendChild(lab);
+  }
+}
+
+// ===== Datalist =====
+function populateDatalist(){
+  const dl=document.getElementById('names');
+  dl.innerHTML='';
+  [...appByName.keys()].sort((a,b)=>a.localeCompare(b,'fr')).forEach(n=>{
+    const o=document.createElement('option'); o.value=n; dl.appendChild(o);
+  });
+}
+
+// ===== App details =====
+function openApp(name){
+  const rec=appByName.get(name);
+  if(!rec) return;
+  const inF=[]; const outF=[];
+  const id=idByName.get(name);
+  for(const e of allEdges){
+    if(e.to===id) inF.push(nameById.get(e.from));
+    if(e.from===id) outF.push(nameById.get(e.to));
+  }
+  document.getElementById('appDetails').style.display='block';
+  document.getElementById('appDetails').innerHTML = `
+    <button style="float:right" onclick="document.getElementById('appDetails').style.display='none'">✖</button>
+    <h2>${escapeHtml(name)}</h2>
+    <div class="kv"><b>Statut :</b> ${escapeHtml(rec['Statut de production']||'')}</div>
+    <div class="kv"><b>Fonctionnalité :</b> ${escapeHtml(rec['Fonctionnalité principale']||'')}</div>
+    <div class="kv"><b>Utilisateurs :</b> ${escapeHtml(rec["U- Nombre d'utilisateurs"]||'')}</div>
+    <div class="kv"><b>Description :</b><br>${escapeHtml(rec['Description']||'').replace(/\n/g,'<br>')}</div>
+    <hr>
+    <div class="kv"><b>Entrants :</b><br>${inF.map(escapeHtml).join('<br>')}</div>
+    <div class="kv"><b>Sortants :</b><br>${outF.map(escapeHtml).join('<br>')}</div>
+  `;
+}
+
+// ===== Exports =====
+async function exportPDF(){
+  if(!pdfReady()){
+    alert('jsPDF non chargé : vérifiez jspdf.umd.min.js');
+    return;
+  }
+  if(typeof html2canvas !== 'function'){
+    alert('html2canvas non chargé');
+    return;
+  }
+
+  // si la fiche est fermée, on exporte quand même la carto + un encart vide
+  const details=document.getElementById('appDetails');
+  const detailsWasHidden = (details.style.display==='none' || getComputedStyle(details).display==='none');
+  if(detailsWasHidden){
+    details.style.display='block';
+    details.innerHTML = '<h2>Fiche applicative</h2><div class="kv">(ouvrir une application pour une fiche complète)</div>';
+  }
+
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF('p','mm','a4');
+  const pageW = 210, pageH = 297, margin = 10;
+  const usableW = pageW - 2*margin;
+
+  async function addCanvasAsJpegPages(canvas){
+    // découpe en pages pour éviter "Incomplete or corrupt PNG" et les pages trop grandes
+    const scale = usableW / canvas.width;
+    const usableH = pageH - 2*margin;
+    const sliceH = Math.floor(usableH / scale);
+
+    let y = 0;
+    let first = true;
+    while(y < canvas.height){
+      const h = Math.min(sliceH, canvas.height - y);
+      const slice = document.createElement('canvas');
+      slice.width = canvas.width;
+      slice.height = h;
+      const ctx = slice.getContext('2d', { willReadFrequently: true });
+      ctx.drawImage(canvas, 0, y, canvas.width, h, 0, 0, canvas.width, h);
+      const img = slice.toDataURL('image/jpeg', 0.92);
+      if(!first) pdf.addPage();
+      const mmH = h * scale;
+      pdf.addImage(img, 'JPEG', margin, margin, usableW, mmH);
+      y += h;
+      first = false;
+    }
+  }
+
+  // Page 1..n : fiche
+  const canvasFiche = await html2canvas(details, { scale: 2, backgroundColor:'#ffffff' });
+  await addCanvasAsJpegPages(canvasFiche);
+
+  // Dernière page : carto
+  pdf.addPage();
+  const canvasMap = await html2canvas(document.getElementById('mynetwork'), { scale: 2, backgroundColor:'#ffffff' });
+  // carto tient en général sur une page, mais on découpe si besoin
+  await addCanvasAsJpegPages(canvasMap);
+
+  pdf.save('cartographie_fiche.pdf');
+
+  if(detailsWasHidden){
+    details.style.display='none';
+    details.innerHTML='';
+  }
+}
+
+function exportPNG(){
+  if(typeof html2canvas !== 'function') return alert('html2canvas non chargé');
+  html2canvas(document.getElementById('mynetwork'), {scale:2, backgroundColor:'#ffffff'}).then(c=>{
+    const a=document.createElement('a');
+    a.href=c.toDataURL('image/png');
+    a.download='cartographie.png';
+    a.click();
+  });
+}
+
+function exportCSV(){
+  // export des flux visibles (vue courante)
+  const ids=visibleIds();
+  let csv='from;to\n';
+  for(const e of allEdges){
+    if(ids.has(e.from) && ids.has(e.to)){
+      csv += `${nameById.get(e.from)};${nameById.get(e.to)}\n`;
+    }
+  }
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download='cartographie_flux.csv'; a.click();
+  setTimeout(()=>URL.revokeObjectURL(url), 500);
+}
+
+// ===== UI wiring =====
+document.getElementById('goSearch').onclick = ()=>{
+  const v=clean(document.getElementById('search').value);
+  if(!v) return;
+  const alt = idByName.has(v) ? v : ([...idByName.keys()].find(x=>x.toLowerCase()===v.toLowerCase())||'');
+  if(!alt) return alert('Application introuvable');
+  focusApp = null; // Aller = juste ouvrir la fiche et écarter
+  renderNetwork(true);
+  openApp(alt);
+};
+
+document.getElementById('focusBtn').onclick = ()=>{
+  const v=clean(document.getElementById('search').value);
+  const alt = idByName.has(v) ? v : ([...idByName.keys()].find(x=>x.toLowerCase()===v.toLowerCase())||'');
+  if(!alt) return alert('Application introuvable');
+  focusApp = alt;
+  renderNetwork(true);
+  openApp(alt);
+};
+
+document.getElementById('exitFocus').onclick = ()=>{ focusApp=null; renderNetwork(false); };
+
+document.getElementById('prodOnly').onclick = ()=>{ selectedStatuses=new Set(['5-En production']); renderStatuses(); renderNetwork(true); };
+
+document.getElementById('allStatus').onclick = ()=>{ selectedStatuses=new Set(ALL_STATUSES); renderStatuses(); renderNetwork(true); };
+
+document.getElementById('resetView').onclick = ()=>{ selectedStatuses=new Set(['5-En production']); focusApp=null; renderStatuses(); renderNetwork(true); };
+
+document.getElementById('exportPNG').onclick = exportPNG;
+
+document.getElementById('exportCSV').onclick = exportCSV;
+
+document.getElementById('exportPDF').onclick = exportPDF;
+
+// ===== Init =====
+(async function init(){
+  const csv=await fetch('./Ref_Appli_CASEWISE.csv').then(r=>r.text());
+  const table=parseCSV(csv,';');
+  const headers=table[0].map(clean);
+
+  records=[]; appByName=new Map();
+  for(let i=1;i<table.length;i++){
+    const row=table[i];
+    if(!row || row.length===0) continue;
+    const rec={};
+    for(let c=0;c<headers.length;c++) rec[headers[c]] = clean(row[c] ?? '');
+    if(!rec['Nom']) continue;
+    records.push(rec);
+    appByName.set(rec['Nom'], rec);
+  }
+
+  let id=0;
+  idByName=new Map(); nameById=new Map();
+  for(const rec of records){
+    const name=rec['Nom'];
+    if(!idByName.has(name)){
+      idByName.set(name,id);
+      nameById.set(id,name);
+      id++;
+    }
+  }
+
+  buildEdges();
+  populateDatalist();
+  renderStatuses();
+
+  // vue par défaut: prod uniquement, sans focus
+  focusApp=null;
+  renderNetwork(true);
+
+  // désactive PDF si jsPDF absent
+  document.getElementById('exportPDF').disabled = !pdfReady();
+})();
+</script>
+</body>
+</html>
