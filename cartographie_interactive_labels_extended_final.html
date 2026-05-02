@@ -58,7 +58,47 @@ body{font-family:Arial,sans-serif;margin:0;padding:10px}
 button:disabled{opacity:.45;cursor:not-allowed}
 </style>
 </head>
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const app = params.get("app");
 
+  if (!app) return;
+
+  // Attendre que le graphe soit chargé
+  const tryFocus = setInterval(() => {
+    if (
+      typeof idByName !== "undefined" &&
+      typeof network !== "undefined" &&
+      idByName.has(app)
+    ) {
+      clearInterval(tryFocus);
+
+      // Renseigne le champ Recherche
+      const searchInput = document.getElementById("search");
+      if (searchInput) {
+        searchInput.value = app;
+      }
+
+      // Ouvre la fiche applicative
+      if (typeof openApp === "function") {
+        openApp(app);
+      }
+
+      // Zoom / focus sur l'app
+      const nodeId = idByName.get(app);
+      network.selectNodes([nodeId]);
+      network.focus(nodeId, {
+        scale: 1.8,
+        animation: {
+          duration: 800,
+          easingFunction: "easeInOutQuad"
+        }
+      });
+    }
+  }, 300);
+})();
+</script>
 <body>
 <div id="topbar">
   <div class="group"><b>CSV :</b> Ref_Appli_CASEWISE.csv</div>
