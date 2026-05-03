@@ -519,5 +519,104 @@ document.getElementById('exportPDF').onclick = exportPDF;
   document.getElementById('exportPDF').disabled = !pdfReady();
 })();
 </script>
+<style>
+  #exportBanner{
+    position:fixed; left:12px; bottom:12px; z-index:9999;
+    background:#111; color:#fff; padding:10px 12px; border-radius:10px;
+    box-shadow:0 6px 18px rgba(0,0,0,.25); display:none; max-width:420px;
+    font-family: Arial, sans-serif; font-size:12px;
+  }
+  #exportBanner b{display:block; margin-bottom:6px}
+  #exportBanner .row{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
+  #exportBanner button{
+    border:1px solid #444; background:#fff; color:#111; padding:6px 10px;
+    border-radius:8px; cursor:pointer; font-size:12px
+  }
+  #exportBanner button:hover{background:#f2f2f2}
+  #exportBanner .muted{opacity:.85}
+</style>
+
+<div id="exportBanner">
+  <b>Exports demandés</b>
+  <div class="muted" id="exportBannerText"></div>
+  <div class="row" style="margin-top:8px">
+    <button id="runPdfBtn">Lancer Export PDF</button>
+    <button id="runPngBtn">Lancer Export PNG</button>
+    <button id="closeBannerBtn">Fermer</button>
+  </div>
+</div>
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const app = params.get("app");
+  const wantPdf = params.get("pdf") === "1";
+  const wantPng = params.get("png") === "1";
+
+  function safeEncode(s){ return (s||"").toString(); }
+
+  // 1) Focus automatique sur l'app (si fournie)
+  if (app) {
+    const tryFocus = setInterval(() => {
+      // idByName + network + openApp doivent exister dans ta page (c’est ton cas)
+      if (typeof idByName !== "undefined" &&
+          typeof network !== "undefined" &&
+          typeof openApp === "function" &&
+          idByName.has(app)) {
+
+        clearInterval(tryFocus);
+
+        // Remplit la recherche (si présent)
+        const searchInput = document.getElementById("search");
+        if (searchInput) searchInput.value = app;
+
+        // Ouvre la fiche
+        openApp(app);
+
+        // Centre/zoom
+        const nodeId = idByName.get(app);
+        try {
+          network.selectNodes([nodeId]);
+          network.focus(nodeId, { scale: 1.8, animation: { duration: 700 } });
+        } catch(e){}
+      }
+    }, 300);
+  }
+
+  // 2) Préparer les exports (via bandeau)
+  if (wantPdf || wantPng) {
+    const banner = document.getElementById("exportBanner");
+    const txt = document.getElementById("exportBannerText");
+    const runPdfBtn = document.getElementById("runPdfBtn");
+    const runPngBtn = document.getElementById("runPngBtn");
+    const closeBtn = document.getElementById("closeBannerBtn");
+
+    if (!banner || !txt) return;
+
+    const parts = [];
+    if (wantPdf) parts.push("PDF fiche + cartographie");
+    if (wantPng) parts.push("PNG cartographie");
+    txt.textContent = `Application: ${safeEncode(app || "(non précisée)")} — ` + parts.join(" + ");
+
+    // On masque les boutons non demandés
+    if (!wantPdf) runPdfBtn.style.display = "none";
+    if (!wantPng) runPngBtn.style.display = "none";
+
+    // On relie aux fonctions existantes de ta page
+    runPdfBtn.onclick = () => {
+      if (typeof exportPDF === "function") exportPDF();
+      else alert("Fonction exportPDF introuvable dans la page.");
+    };
+    runPngBtn.onclick = () => {
+      // selon ta page : exportPNG ou exportGraphPNG
+      if (typeof exportPNG === "function") exportPNG();
+      else if (typeof exportGraphPNG === "function") exportGraphPNG();
+      else alert("Fonction exportPNG introuvable dans la page.");
+    };
+    closeBtn.onclick = () => banner.style.display = "none";
+
+    banner.style.display = "block";
+  }
+})();
+</script>  
 </body>
 </html>
