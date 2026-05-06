@@ -742,11 +742,11 @@ Radio France (RF)";"";"";"BgInfo"
 QPRO4.2 Réalisation & conduite expression éditoriale - audio
 ZFAB4 Production & diffusion des sons";"France Bleu Réseau";"";"";""
 "Bleu Ressource";"Bleu Ressource";"Catalogue commun des éléments sonores du réseau Bleu";"Application";"8-Décommissionnée";"False";"";"cf groupe applicatif";"cf groupe applicatif";"";"False";"";"";"Catalogue Commun des éléments sonores du réseau France Bleu. Vue ITEMA pour France Bleue au sens Base de données.";"France Bleu Réseau";"";"";"";"DSI";"DSI-SIC";"Printemps Olivier";"";"DI-ESR";"";"";"";"";"";"Radio France";"";"";"";"";"";"3-Dev. Spécifique";"";"Client léger";"Non";"Non";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"True";"";"200";"0";"";"1-  7j/7";"";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Itema Groupe";"";"";"";"France Bleu Réseau";"";"";""
-"BI (Business Objects)";"BO";"Requêteur multi applications, utilisés pour faire des statistiques (RH, bilans sociaux, AGM, Vertigo, Secutix, Cindy ...)";"Application";"5-En production";"True";"Oui";"Oui";"Oui";"1994 S1";"False";"";"";"Requêteur multi applications de type Business Intelligence (BI)
+"BO (Business Objects)";"BO";"Requêteur multi applications, utilisés pour faire des statistiques (RH, bilans sociaux, AGM, Vertigo, Secutix, Cindy ...)";"Application";"5-En production";"True";"Oui";"Oui";"Oui";"1994 S1";"False";"";"";"Requêteur multi applications de type Business Intelligence (BI)
 Réalisation des statistiques , de rapports multi-formats (RH, bilans sociaux, AGM, Vertigo, Secutix, Cindy ...).
 GLPI: https://rfonline.sharepoint.com/sites/Projets/Appli/SAP-BO
 
-Client HTTP et Client Lourd";"DRH, DTSI, DE, DF, Régie Publicitaire";"DSI";"Delhomel Julien, Radford Sophie";"Topola Isabelle (AGM), Ozenne Gérald";"DSI";"DSI Corp";"Bastero Laura";"";"";"58000";"Services internes";"Editeur";"";"";"SAP (BO)";"MERLET";"Décivision";"";"";"";"1-Progiciel";"";"Client léger & client lourd";"Oui";"Oui";"2 : Interfaçage applis hétérogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"True";"Via Portail Web Pulse pour client léger (qq restrictions) et via le client VPN Pulse pour client lourd";"220";"220";"";"2-  Lundi-Vendredi";"3- Lundi Vendredi, 7h00- 21h00";"1- 07h00-21h00";"";"";"";"";"";"";"Non";"Non";"4 - 1 jour";"4 - 1 jour";"";"Non";"Non";"";"Décivision
+Client HTTP et Client Lourd";"DRH, DTSI, DE, DF, Régie Publicitaire";"DSI";"Madiama DIENE";"Topola Isabelle (AGM), Ozenne Gérald";"DSI";"DSI Corp";"Madiama DIENE";"";"";"58000";"Services internes";"Editeur";"";"";"SAP (BO)";"MERLET";"Décivision";"";"";"";"1-Progiciel";"";"Client léger & client lourd";"Oui";"Oui";"2 : Interfaçage applis hétérogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"True";"Via Portail Web Pulse pour client léger (qq restrictions) et via le client VPN Pulse pour client lourd";"220";"220";"";"2-  Lundi-Vendredi";"3- Lundi Vendredi, 7h00- 21h00";"1- 07h00-21h00";"";"";"";"";"";"";"Non";"Non";"4 - 1 jour";"4 - 1 jour";"";"Non";"Non";"";"Décivision
 claire.ghienne@decivision.com - Claire GHIENNE
 01 42 50 16 87";"Décivision
 claire.ghienne@decivision.com - Claire GHIENNE
@@ -755,12 +755,7 @@ claire.ghienne@decivision.com - Claire GHIENNE
 ";"";"Non";"SaSAP (Service Autonome de Suivi Administratif et de Pilotage)";"Secutix
 SIRHIUS
 Media Pilot/JAM
-SAP Suite";"";"";"SMRFG19APP50
-SMRFG19APP68
-SMRFGUXPDB1
-SMRFG19APP95
-SMRFGLXAPP24
-SMRFGUXTDB3";"D_Référentiels transverses
+SAP Suite";"";"";"";"D_Référentiels transverses
 D_Relation Client & Vente
 D_Ressources Humaines
 D_Stocks & Actifs Physiques
@@ -1285,7 +1280,7 @@ Outil VSM supporté par ESR.";"FIP";"";"";"";"DSI";"DSI-SIC";"Duminil Eric";"";"
 "Adobe Flash Player";"Adobe Flash Player";"Player WEB";"Application";"8-Décommissionnée";"False";"";"Non";"Non";"";"False";"";"";"Adobe Flash Player  était un plugin de navigateur web ou un lecteur multimédia autonome utilisant la technologie Flash d'Adobe. Son développement et son support sont arrêtés en 2020. En janvier 2021, il n'est plus supporté par les navigateurs";"MRF";"";"";"";"DI";"DI-ESI";"Leroux Didier";"";"";"58000";"Services internes";"Editeur";"";"";"Adobe";"";"";"Radio France";"";"";"1-Progiciel";"";"Sur Poste de travail ou Machine autonome";"Non";"Oui";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"1-  7j/7";"";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Adobe Suite Web Premium
 Outils Lecteurs multimedia divers Groupe";"";"";"D_Distribution Publication & Réception de contenus média
 D_Gestion des Actifs Média et leurs manifestations matérielles";"Radio France (RF)";"";"";""
-"Foederis";"Foederis";"Gestion de la formation professionnelle";"Application";"5-En production";"True";"Oui";"Oui";"Oui";"2011 S1";"False";"";"";"Gestion de la formation professionnelle. Planification des formations.";"DRH-Campus";"";"Christelle Flain";"Flain Christelle";"DSI";"DSI Corp";"Juliette Diricq";"";"DI-ESI";"58000";"Editeur";"Editeur";"";"";"Foederis";"Juliette Artus";"Foederis";"Foederis";"";"";"1-Progiciel";"";"SaaS";"Non";"Non";"2 : Interfaçage applis hétérogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"True";"Accès direct, non filtré par RF.";"100";"0";"";"2-  Lundi-Vendredi";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"";"Non";"";"Non";"Non";"4 - 1 jour";"3 - 4h";"";"";"";"";"jean-pierre.ranchon@foederis.fr  - Responsable Maintenance Applicative    - 04 72 18 76 80";"";"";"Non";"SIRHIUS
+"Foederis";"Foederis";"Gestion de la formation professionnelle";"Application";"5-En production";"True";"Oui";"Oui";"Oui";"2011 S1";"False";"";"";"Gestion de la formation professionnelle. Planification des formations.";"DRH-Campus";"";"Christelle Flain";"Flain Christelle";"DSI";"DSI Corp";"Juliette Diricq";"";"DI-ESI";"58000";"Editeur";"Editeur";"";"";"Foederis";"";"Foederis";"Foederis";"";"";"1-Progiciel";"";"SaaS";"Non";"Non";"2 : Interfaçage applis hétérogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"True";"Accès direct, non filtré par RF.";"100";"0";"";"2-  Lundi-Vendredi";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"";"Non";"";"Non";"Non";"4 - 1 jour";"3 - 4h";"";"";"";"";"jean-pierre.ranchon@foederis.fr  - Responsable Maintenance Applicative    - 04 72 18 76 80";"";"";"Non";"SIRHIUS
 SAP Suite";"SIRHIUS";"";"";"";"D_Référentiels transverses
 D_Ressources Humaines
 QGRH2.3 Formation professionnelle
@@ -1906,7 +1901,10 @@ Direction de la Réalisation (DR)";"";"";""
 "XRT SBE";"XRT SBE - SAGE";"Trésorerie et communication bancaire/relevé de comptes/Paiement";"Application";"5-En production";"False";"Oui";"Oui";"Non";"2007 S1";"False";"";"";"Trésorerie/Communication bancaire/Relevés comptes et paiement.";"DF";"DF";"Perot Claire";"Dubesset Sophie";"DSI";"DSI Corp";"Dubesset Sophie";"";"";"58000";"Services internes";"Editeur";"";"";"SAGE";"";"CODILOG";"SAGE";"";"";"1-Progiciel";"";"Client léger & client lourd";"Oui";"Oui";"3 : Interfaçage applis RF et SI externe";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Pulse";"10";"20";"Redevance périodique";"2-  Lundi-Vendredi";"3- Lundi Vendredi, 7h00- 21h00";"1- 07h00-21h00";"21h-7h et WE";"21h-7h et WE";"Sauvegarde journalière";"Oui";"Oui";"0h-4h";"Non";"Non";"4 - 1 jour";"1 - Aucune perte tolérée";"4 - 1 jour";"Oui";"Oui";"";"";"";"";"";"SAP Suite";"SAP Suite";"";"";"PROXRTEST
 SMRFG19APP46
 SMRFG19APP48
-SMRFG19APP47";"D_Finance Comptabilité
+SMRFG19APP47
+SMRFG19APP53
+SMRFG19APP54
+SMRFG19APP63";"D_Finance Comptabilité
 QFIN4.1 Suivi des comptes de trésorerie
 QFIN4.2 Prévision de trésorie
 QFINR1 Compte bancaire
@@ -2241,7 +2239,7 @@ Données à Caractère Personnel et Données sensibles :
 - Données de Connexion (@IP, logs, ...)
 - Etat Civil, identité, données d'identification, photos
 - Informations d'ordre économiques
-- Vie professionnelle";"DRH";"";"Karl Isabelle";"Viney Florence";"DTSI-EC";"DSI Corp";"SOUCI RICHARD";"";"";"58000";"TMA";"TMA";"";"";"TALENT SOFT";"";"";"";"";"";"1-Progiciel";"Client HTTP";"SaaS";"Oui";"Non";"1 : Interfaçage applis homogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Accès direct non filtré par RF.";"4500";"0";"Redevance à l'utilisation";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"4 - 1 jour";"";"";"";"";"";"Ronan De Kergaradec
+- Vie professionnelle";"DRH";"";"Frederique Lafaurie";"Viney Florence";"DTSI-EC";"DSI Corp";"Juliette Diricq";"";"";"58000";"TMA";"TMA";"";"";"TALENT SOFT";"";"";"";"";"";"1-Progiciel";"Client HTTP";"SaaS";"Oui";"Non";"1 : Interfaçage applis homogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Accès direct non filtré par RF.";"4500";"0";"Redevance à l'utilisation";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"4 - 1 jour";"";"";"";"";"";"Ronan De Kergaradec
 rdekergaradec@cegid.com
 Responsable commercial";"";"";"Non";"";"SIRHIUS";"";"";"";"D_Référentiels transverses
 D_Ressources Humaines
@@ -2711,7 +2709,8 @@ Point d’entrée du centre de production: 0800 510 391
 
 Pour une difficulté de PRODUCTION Majeure
 Groupement Managers N2 Téléphone : 05 34 54 30 40";"";"";"";"";"";"TOIP Groupe";"";"SMRFTOIP16K138
-SMRFTOIP8K137";"";"Pôle Réseaux-Télécoms-Salles Techniques (RTS)
+SMRFTOIP8K137
+SMRFG22TOP05";"";"Pôle Réseaux-Télécoms-Salles Techniques (RTS)
 Direction Adjointe des Services Socle IT (DSSIT)";"";"";""
 "Telisca TSSO";"Telisca TSSO - TOIP";"TOIP - Sécurisation des connexions et communications TOIP (verrouillage/dev du téléphone IP avec la session utilisateur)";"Application";"5-En production";"False";"Oui";"cf groupe applicatif";"Non";"";"False";"";"";"";"DTSI-DI-ERT";"";"Pôle Réseaux, Télécoms et Salles Techniques";"Pôle Réseaux, Télécoms et Salles Techniques";"DI";"DI-ERT";"Pôle Réseaux, Télécoms et Salles Techniques";"Pôle Réseaux, Télécoms et Salles Techniques";"";"";"";"";"Pôle Réseaux, Télécoms et Salles Techniques";"";"Telisca";"";"";"";"";"";"7-Autre";"";"Sur Serveur ou Machine autonome";"Oui";"Non";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"7000";"0";"?";"1-  7j/7";"";"3- 24h/24";"";"";"";"";"";"";"";"";"2 - 2h";"3 - 4h";"";"";"";"";"OBS
 
@@ -2749,7 +2748,9 @@ Point d’entrée du centre de production: 0800 510 391
 
 Pour une difficulté de PRODUCTION Majeure
 Groupement Managers N2 Téléphone : 05 34 54 30 40";"";"";"";"";"";"TOIP Groupe";"";"SMRFTOIP16K148
-SMRFTOIP16K149";"";"Pôle Réseaux-Télécoms-Salles Techniques (RTS)
+SMRFTOIP16K149
+SMRFG22TOP09
+SMRFG22TOP10";"";"Pôle Réseaux-Télécoms-Salles Techniques (RTS)
 Radio France (RF)";"";"";""
 "XMedius";"XMedius";"TOIP - Solution de fax et d'impression";"Application";"8-Décommissionnée";"False";"Oui";"cf groupe applicatif";"Non";"";"False";"";"";"Service de FAX et d""impression ToIP";"DTSI-DI-ERT";"";"Pôle Réseaux, Télécoms et Salles Techniques";"Pôle Réseaux, Télécoms et Salles Techniques";"DI";"DI-ERT";"Pôle Réseaux, Télécoms et Salles Techniques";"Pôle Réseaux, Télécoms et Salles Techniques";"";"";"";"";"Pôle Réseaux, Télécoms et Salles Techniques";"";"";"";"OBS";"OBS";"";"";"5-Equipement ou infra";"";"";"Non";"Non";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"7000";"0";"?";"1-  7j/7";"";"3- 24h/24";"";"";"";"";"";"";"";"";"2 - 2h";"3 - 4h";"";"";"";"";"OBS
 
@@ -2824,7 +2825,9 @@ Point d’entrée du centre de production: 0800 510 391
 
 Pour une difficulté de PRODUCTION Majeure
 Groupement Managers N2 Téléphone : 05 34 54 30 40";"";"";"";"";"";"TOIP Groupe";"";"SMRFTOIP16K132
-SMRFTOIP16K133";"";"Pôle Réseaux-Télécoms-Salles Techniques (RTS)
+SMRFTOIP16K133
+SMRFG22TOP03
+SMRFG22TOP04";"";"Pôle Réseaux-Télécoms-Salles Techniques (RTS)
 Radio France (RF)";"";"";""
 "Cisco Unity Connection";"Cisco Unity Connection - TOIP";"TOIP - Messagerie vocale";"Application";"5-En production";"False";"Oui";"cf groupe applicatif";"Non";"";"False";"";"";"Solution de messagerie vocale et de messagerie unifiée. Elle permet aux utilisateurs de gérer leurs messages vocaux, leurs e-mails et leurs calendriers à partir d'une interface unique. 
 
@@ -3148,7 +3151,7 @@ Données à Caractère Personnel et Données sensibles :
 - Données de connexion (@IP, logs, ...)
 - Etat civil, identité, données d'identification, photos
 - Vie professionnelle
-- Zone de commentaire libre (ZLC)";"MRF, DRH";"";"Isabelle Cost";"Viney";"DSI";"DSI Corp";"SOUCI RIchard";"";"";"58000";"Editeur";"Editeur";"";"";"Talent Soft";"";"Talent Soft";"Talent Soft";"";"";"1-Progiciel";"Client HTTP";"SaaS";"Oui";"Non";"3 : Interfaçage applis RF et SI externe";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"SaaS (accès direct)";"4500";"0";"Redevance périodique";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"4 - 1 jour";"";"";"";"";"";"Ronan De Kergaradec
+- Zone de commentaire libre (ZLC)";"MRF, DRH";"";"Frederique Lafaurie";"Viney";"DSI";"DSI Corp";"Juliette Diricq";"";"";"58000";"Editeur";"Editeur";"";"";"Talent Soft";"";"Talent Soft";"Talent Soft";"";"";"1-Progiciel";"Client HTTP";"SaaS";"Oui";"Non";"3 : Interfaçage applis RF et SI externe";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"SaaS (accès direct)";"4500";"0";"Redevance périodique";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"4 - 1 jour";"";"";"";"";"";"Ronan De Kergaradec
 rdekergaradec@cegid.com
 Responsable commercial";"";"";"Non";"";"SIRHIUS";"";"";"";"D_Référentiels transverses
 D_Ressources Humaines
@@ -3422,7 +3425,7 @@ C'est ainsi que Radio France s'est doté d'une nouvelle solution de billetterie 
 
 https://rafr.pos.secutix.com";"Service Billeterie";"DMCC";"Marichez Arnaud";"Marichez Arnaud";"DTSI-EC";"DSI Corp";"Blanc Eric";"";"";"";"";"";"";"";"ELCA";"";"ELCA";"ELCA";"";"ELCA";"1-Progiciel";"Client HTTP";"SaaS";"Non";"Non";"2 : Interfaçage applis hétérogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Accès direct non filtré par RF.";"15";"0";"Redevance à l'utilisation";"1-  7j/7";"";"3- 24h/24";"";"";"";"";"";"";"";"";"4 - 1 jour";"";"";"";"";"";"";"";"";"Non";"Edeal
 SAP Suite
-BI (Business Objects)
+BO (Business Objects)
 Salles partenaires
 RCU Amabis";"";"";"";"";"D_Référentiels transverses
 D_Relation Client & Vente
@@ -3497,7 +3500,7 @@ GLPI
 Microsoft ADFS
 Elastic
 MDM (EBX5)
-LCMS
+360LEARNING
 Messagerie (Outlook)
 CyberWatch
 Rundeck";"MDM (EBX5)";"Service_SYS_Infrastructure_Authentification";"";"S06ADCRFW01
@@ -4356,7 +4359,7 @@ Chorus
 BDMI
 Media Pilot/JAM
 XRT Tréso
-BI (Business Objects)
+BO (Business Objects)
 MDM (EBX5)
 GMAO - Bâtiment";"Foederis
 Cindy
@@ -4512,7 +4515,7 @@ DCP - Vie professionnelle";"PA4 - app. non fermées consentement implicite";"MDM
 "SIRHIUS";"Pleïade - SI RH/Paie";"SI RH et gestion de la paie";"Application";"5-En production";"True";"Oui";"Oui";"Oui";"06/04/2022";"False";"";"";"Outil de Gestion, d'administration et de paie du personnel.
 
 URL des environnements :
-Sirhius Production Internet                      https://sirhius-radiofrance.soprahronline.com/";"RF";"DRH";"Nakhla Nadia";"Delhomel Julien";"DTSI-EC";"DSI Corp";"SOUCI RICHARD";"";"SOPRA (éditeur)";"58000";"Services internes";"TMA";"";"RSSI";"SOPRA";"";"SOPRA";"";"SOPRA";"SOPRA";"2-Progiciel + dev. spécifique";"";"SaaS";"Oui";"Non";"2 : Interfaçage applis hétérogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Accessible via Intranet";"9000";"9000";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"quotidienne/hebdo/mensuelle/..";"Non";"Oui";"";"Non";"";"";"";"";"Oui";"Oui";"SOPRA :
+Sirhius Production Internet                      https://sirhius-radiofrance.soprahronline.com/";"RF";"DRH";"Nakhla Nadia";"Delhomel Julien";"DTSI-EC";"DSI Corp";"Juliette Diricq";"";"SOPRA (éditeur)";"58000";"Services internes";"TMA";"";"RSSI";"SOPRA";"";"SOPRA";"";"SOPRA";"SOPRA";"2-Progiciel + dev. spécifique";"";"SaaS";"Oui";"Non";"2 : Interfaçage applis hétérogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Accessible via Intranet";"9000";"9000";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"quotidienne/hebdo/mensuelle/..";"Non";"Oui";"";"Non";"";"";"";"";"Oui";"Oui";"SOPRA :
 
 L’équipe support SOPRA, 5459.rc.radiofrance@soprahr.com
 
@@ -4523,7 +4526,7 @@ Foederis
 Quintiq
 SAP Suite
 Opas
-BI (Business Objects)
+BO (Business Objects)
 TalentSoft (Recrutement)
 MDM (EBX5)
 Docaposte
@@ -5674,7 +5677,9 @@ Point d’entrée du centre de production: 0800 510 391
 
 Pour une difficulté de PRODUCTION Majeure
 Groupement Managers N2 Téléphone : 05 34 54 30 40";"";"";"Non";"";"";"TOIP Groupe";"";"SMRFTOIP16K141
-SMRFTOIP16K142";"";"Pôle Réseaux-Télécoms-Salles Techniques (RTS)
+SMRFTOIP16K142
+SMRFG19TOP07
+SMRFG19TOP08";"";"Pôle Réseaux-Télécoms-Salles Techniques (RTS)
 Direction Adjointe des Services Socle IT (DSSIT)";"";"PA7 - applications faible risque RGPD";"Imagicle"
 "Putty";"Putty";"Client SSH";"Application";"5-En production";"False";"Oui";"Non";"Non";"";"False";"";"";"";"DTSI-DI-ERT";"";"Pôle Systèmes";"Pôle Systèmes";"DI";"DI-ERT";"Pôle Systèmes";"Pôle Systèmes";"DI-ERT";"";"";"";"Pôle Systèmes";"";"Putty";"Pôle Systèmes";"";"";"";"";"1-Progiciel";"";"Sur Serveur ou Machine autonome";"Non";"Non";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"10";"0";"OpenSource";"1-  7j/7";"";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"pas de support";"";"";"";"";"";"";"";"";"";"Pôle Réseaux-Télécoms-Salles Techniques (RTS)
 Direction Adjointe des Services Socle IT (DSSIT)
@@ -6498,7 +6503,7 @@ If you need help escalating a case outside my business hours you can email 24x7c
 SMRFG12INF03
 SMRFG19INF06";"";"Pôle Système (SYS)
 Direction Adjointe des Services Socle IT (DSSIT)";"";"";""
-"Linksoft";"Linksoft";"Gestion des risques RH (Psycho, ...)";"Application";"7-Non utilisée";"False";"";"Oui";"Oui";"";"False";"";"";"Habilitations, prévention, accidents du travail, ...";"DRH";"DRH";"";"";"DSI";"DSI Corp";"Souci Richard";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"SaaS";"Non";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Non";"";"";"";"";"";"D_Ressources Humaines
+"Linksoft";"Linksoft";"Gestion des risques RH (Psycho, ...)";"Application";"7-Non utilisée";"False";"";"Oui";"Oui";"";"False";"";"";"Habilitations, prévention, accidents du travail, ...";"DRH";"DRH";"";"";"DSI";"DSI Corp";"Juliette Diricq";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"SaaS";"Non";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Non";"";"";"";"";"";"D_Ressources Humaines
 QGRHP3 Pilotage & maîtrise des risques RH (RPS, ...)
 ZGRHP Pilotage RH";"Direction des Ressources Humaines (DRH)";"";"";""
 "Papivar";"Papivar";"Dispositif d'Alertes crues pour la ville de NICE (Var)";"Application";"8-Décommissionnée";"False";"";"";"";"";"False";"";"";"Dans le cadre du Programme d'actions de  Prévention des innondations dans le département du VAR (travaux prioritaires de Protection de la Basse Vallée), Papivar est un Système d'alertes de crues sur la CUB de NICE via une interface pilotée en RDS, à migrer sur un autre Azure déjà existant où il y a de la place, ce service est très light, il permet entre autre à la préfecture de lancer une alerte vers des boitiers situés dans des bâtiments sensibles , il nécessite une exposition web pour ouvrir la page de pilotage donc le choix Azure a été fait, le service a été développé par Vizion’R suite à un appel d’offres de la direction des achats";"Villle de Nice";"";"";"";"DSI";"DSI-SIC";"Duminil Eric";"";"";"";"";"";"";"";"";"";"";"";"";"";"2-Progiciel + dev. spécifique";"Infrastructure chez Azure, WEB";"Autre";"N/A";"";"";"False";"False";"False";"False";"False";"False";"True";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Distribution Publication & Réception de contenus média
@@ -6554,11 +6559,11 @@ Production & Antennes - Production studios";"";"";""
 "Catalogue Produits DTSI";"";"Catalogue matériel IPT à destination des France Bleu (Demande originelle F.Guillaume)";"Application";"5-En production";"False";"";"";"";"";"False";"";"";"Commande de F. Guillaume (FB) : dév. d'une app de mise à dispo catalogue matériels. (IPT)";"France Bleu Réseau";"";"Guillaume François";"";"DI";"DI-ID";"Leroux Didier";"Riboreau Julien";"DI-ID";"";"Services internes";"Services internes";"";"";"";"";"";"";"";"";"3-Dev. Spécifique";"Site et Application Sharepoint, PowerApps";"Autre";"";"";"";"False";"False";"False";"False";"True";"True";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Référentiels transverses
 D_Stocks & Actifs Physiques";"France Bleu
 France Bleu Réseau";"";"";""
-"LCMS";"e-campus";"E-Learning (LCMS-Learning Content Management System)";"Application";"5-En production";"True";"";"Oui";"Non";"2020/09";"False";"";"";"Solution de E-Learning avec une partie création / gestion du contenu
+"360LEARNING";"e-campus";"E-Learning (LCMS-Learning Content Management System)";"Application";"5-En production";"True";"";"Oui";"Non";"2020/09";"False";"";"";"Solution de E-Learning avec une partie création / gestion du contenu
 LCMS : Learning Content Management System
 Digital Learning
 Social Learning, collaborative Learning, Learning Engagement Plateform
-Mobile Learning";"MRF, Campus";"DRH";"Fulgence Céline";"";"DSI";"DSI Corp";"Souci Richard";"";"";"58000";"TMA";"Editeur";"";"";"360Learning";"";"";"";"";"";"1-Progiciel";"";"SaaS";"Oui";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"True";"sso - https://e-campusradiofrance.360learning.com/home/";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"Non";"Oui";"";"Non";"";"4 - 1 jour";"4 - 1 jour";"";"";"Non";"";"Le support se fait 100% par mail – pas de téléphone – via l’adresse support@360learning.com";"";"";"Non";"";"Microsoft Active Directory";"";"";"";"D_Ressources Humaines
+Mobile Learning";"MRF, Campus";"DRH";"Fulgence Céline";"";"DSI";"DSI Corp";"Juliette Diricq";"";"";"58000";"TMA";"Editeur";"";"";"360Learning";"";"";"";"";"";"1-Progiciel";"";"SaaS";"Oui";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"True";"sso - https://e-campusradiofrance.360learning.com/home/";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"Non";"Oui";"";"Non";"";"4 - 1 jour";"4 - 1 jour";"";"";"Non";"";"Le support se fait 100% par mail – pas de téléphone – via l’adresse support@360learning.com";"";"";"Non";"";"Microsoft Active Directory";"";"";"";"D_Ressources Humaines
 QGRH2.3 Formation professionnelle
 ZGRH2 Gestion des talents (GT)";"Délégation à la Formation (Campus)
 Maison de la Radio et de la Musique (MRM)";"DCP - Coordonnées personnelles
@@ -6586,7 +6591,7 @@ Direction Adjointe des Services aux Utilisateurs (DASU)";"DCP - Données de conn
 Maison de la Radio et de la Musique (MRM)";"";"";""
 "Annuaire des personnels";"Annuaire (intranet)";"Annuaire de personnels de Radio France basé sur Sharepoint 2010 On promise accessible via l'Iintranet";"Application";"5-En production";"False";"";"Oui";"Non";"";"True";"";"";"";"MRF";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"2-Progiciel + dev. spécifique";"Intranet Sharepoint";"Client léger";"Oui";"";"";"False";"False";"False";"False";"True";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Non";"";"";"";"";"";"";"Radio France (RF)";"";"PA4 - app. non fermées consentement implicite";""
 "Media Pilot/JAM";"Media Pilot/JAM";"Gestion de la Publicité et de ses Ecrans";"Application";"5-En production";"False";"Oui";"Non";"Non";"T4 2020 (MP) T1 2026 (JAM)";"False";"";"";"En remplacement de Cindy.";"Régie publicitaire";"";"Ozenne Gérald";"Ozenne Gérald";"DSI";"Régie Publicitaire";"Blanc Eric";"Ozenne Gérald";"";"58000 & ATN";"Services internes";"Editeur";"";"";"Creative Systems Engineering (CSE)";"";"CSE";"";"";"";"2-Progiciel + dev. spécifique";"Plateforme AIX puis NUTANIX";"Client lourd";"Oui";"Oui";"2 : Interfaçage applis hétérogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"Oui";"False";"False";"";"70";"4";"Licence illimitée (à l'achat)";"2-  Lundi-Vendredi";"3- Lundi Vendredi, 7h00- 21h00";"1- 07h00-21h00";"";"";"Airman";"Oui";"Non";"";"Non";"Non";"2 - 2h";"2 - 2h";"4 - 1 jour";"Oui";"Non";"https://jira.cse.fr/secure/Dashboard.jspa";"";"";"";"";"Medialand pige
-BI (Business Objects)
+BO (Business Objects)
 SAP Suite
 GSelector";"Medialand pige
 SAP Suite
@@ -6607,7 +6612,8 @@ SMRFGLXAPP142
 SMRFGLXAPP143
 SMRFGUXBDB2
 SMRFGUXPDB2
-SMRFGUXTDB2";"D_Conception et Construction des offres de Radio France
+SMRFGUXTDB2
+SMRFG19APP200";"D_Conception et Construction des offres de Radio France
 D_Finance Comptabilité
 D_Programmation
 D_Référentiels transverses
@@ -6631,7 +6637,7 @@ QETB2.1 Sécurité des personnes / Incendie
 QETB2.2 Gestion des accès aux locaux
 ZETB1 Gestion Etablissements & Services généraux
 ZETB2 Sécurité, Sûreté & Risques professionnels";"Direction de l'Immobilier de l'Environnement de travail et des SErvices (DIESE)";"DCP - Coordonnées professionnelles";"PA6 - app. fermées consentement implicite";""
-"Zappa / FileMaker";"Zappa";"Outil de gestion des grandes salles";"Application";"5-En production";"False";"Oui";"Oui";"Non";"01/01/2021";"False";"";"";"PROJET CALENDRIER DPA";"DPA";"DPA";"";"";"DSI";"DSI Corp";"Blanc Eric";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Hébergement Cloud";"Non";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"Non";"False";"False";"";"5";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Concerts & Evènements
+"Zappa / FileMaker";"Zappa";"Outil de gestion des grandes salles";"Application";"5-En production";"False";"Oui";"Oui";"Non";"01/01/2021";"False";"";"";"PROJET CALENDRIER DPA";"DPA";"DPA";"";"";"DSI";"DSI Corp";"Blanc Eric";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Hébergement Cloud";"Non";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"Non";"False";"False";"";"5";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"SMRFG12APP97";"D_Concerts & Evènements
 D_Fabrication radiophonique
 QFAB1.2 Planification des moyens techniques et humains
 QFAB1.5 Gestion des demandes de production (ressources, moyens, matériels, ..)
@@ -8397,7 +8403,7 @@ ZFAB6 Production & enregistrement des flux antenne
 ZPRO3 Elaboration des conducteurs de programme & d'antenne";"France Bleu
 France Bleu Réseau
 Secrétariat Général de l'information";"";"PA3 - app. non fermées consentement nécessaire";""
-"SaSAP (Service Autonome de Suivi Administratif et de Pilotage)";"Suivi Budgétaire";"Suivi dépenses et recettes par le DRHG de la DMCC";"Application";"6-A décommissioner";"True";"";"Oui";"Non";"01/10/2022";"False";"";"";"";"DMCC";"DMCC";"Girard Florent";"";"DSI";"DSI-SAR";"Topola Isabelle";"";"";"58000 & ATN";"";"";"";"";"";"";"";"Insight";"";"Insight";"3-Dev. Spécifique";"Microsoft Power Platform";"SaaS";"Oui";"Non";"2 : Interfaçage applis hétérogènes RF";"False";"False";"False";"False";"False";"True";"False";"False";"";"False";"False";"";"50";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Power BI";"BI (Business Objects)
+"SaSAP (Service Autonome de Suivi Administratif et de Pilotage)";"Suivi Budgétaire";"Suivi dépenses et recettes par le DRHG de la DMCC";"Application";"6-A décommissioner";"True";"";"Oui";"Non";"01/10/2022";"False";"";"";"";"DMCC";"DMCC";"Girard Florent";"";"DSI";"DSI-SAR";"Topola Isabelle";"";"";"58000 & ATN";"";"";"";"";"";"";"";"Insight";"";"Insight";"3-Dev. Spécifique";"Microsoft Power Platform";"SaaS";"Oui";"Non";"2 : Interfaçage applis hétérogènes RF";"False";"False";"False";"False";"False";"True";"False";"False";"";"False";"False";"";"50";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Power BI";"BO (Business Objects)
 SAP";"";"";"";"";"Direction de la Musique et de la Création (DMC)";"";"";""
 "Catalogue Matériel";"Produit FB";"Outil de consultation des produits commandables et annotables  France Bleu";"Application";"7-Non utilisée";"False";"";"";"";"2021";"False";"";"";"";"France Bleu Réseau";"";"";"";"DSI";"DSI-SAR";"Montabord Marc";"";"";"58000 & ATN";"";"";"";"";"";"";"";"";"";"";"3-Dev. Spécifique";"Microsoft Power Platform";"SaaS";"Oui";"";"";"False";"False";"False";"False";"False";"True";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"France Bleu
 France Bleu Réseau";"";"";""
@@ -8913,7 +8919,7 @@ IINF4.4.1 Identification & caractérisation des services IT
 QINF5.1  Supervision, alertes et métrologie du SI
 ZINF5 Métrologie & Supervision du SI";"Pôle Supervision et Sécurité IT (S2I)
 Direction Adjointe des Services Socle IT (DSSIT)";"";"";""
-"Power BI";"Power BI";"Solution Microsoft d'analyse de données et de visualisation de ces données.";"Application";"5-En production";"False";"Non";"Oui";"Non";"2021";"False";"";"";"Power BI est un ensemble de services logiciels, d'applications et de connecteurs qui fonctionnent ensemble pour transformer différentes sources de données en informations visuelles, immersives et interactives. Plusieurs sources de données peuvent être utilisées telles que des fichiers Excel, des sources SQL, ou des entrepôts de données hybrides locaux ou sur le cloud. Les données sont personnalisées et interactives avec une interface suffisamment simple pour que les utilisateurs finaux créent leurs propres rapports et tableaux de bord. L'objectif est de faciliter la création des tableaux de bord afin d'améliorer les moyens de communications et de collaboration proposés par Microsoft.";"";"";"";"";"DSI";"DSI Corp";"Montabord Marc";"";"";"58000 & ATN";"";"";"";"";"Microsoft";"";"";"";"";"";"1-Progiciel";"";"Client léger/lourd, & SaaS (Hybride)";"Oui";"Non";"2 : Interfaçage applis hétérogènes RF";"False";"False";"False";"False";"False";"True";"False";"False";"";"False";"False";"";"0";"110";"";"1-  7j/7";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"";"Non";"";"";"";"6 - Pas de besoin";"6 - Pas de besoin";"";"";"";"";"";"";"";"";"";"SaSAP (Service Autonome de Suivi Administratif et de Pilotage)
+"Power BI";"Power BI";"Solution Microsoft d'analyse de données et de visualisation de ces données.";"Application";"5-En production";"False";"Non";"Oui";"Non";"2021";"False";"";"";"Power BI est un ensemble de services logiciels, d'applications et de connecteurs qui fonctionnent ensemble pour transformer différentes sources de données en informations visuelles, immersives et interactives. Plusieurs sources de données peuvent être utilisées telles que des fichiers Excel, des sources SQL, ou des entrepôts de données hybrides locaux ou sur le cloud. Les données sont personnalisées et interactives avec une interface suffisamment simple pour que les utilisateurs finaux créent leurs propres rapports et tableaux de bord. L'objectif est de faciliter la création des tableaux de bord afin d'améliorer les moyens de communications et de collaboration proposés par Microsoft.";"";"";"";"";"DSI";"DSI Corp";"";"";"";"58000 & ATN";"";"";"";"";"Microsoft";"";"";"";"";"";"1-Progiciel";"";"Client léger/lourd, & SaaS (Hybride)";"Oui";"Non";"2 : Interfaçage applis hétérogènes RF";"False";"False";"False";"False";"False";"True";"False";"False";"";"False";"False";"";"0";"110";"";"1-  7j/7";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"";"Non";"";"";"";"6 - Pas de besoin";"6 - Pas de besoin";"";"";"";"";"";"";"";"";"";"SaSAP (Service Autonome de Suivi Administratif et de Pilotage)
 Congés Prévisionnels des Techniciens
 DPU";"";"";"";"D_Informatique";"";"";"";""
 "Cytric";"Cytric";"Gestion de voyages d'affaires et des frais professionnels";"Application";"5-En production";"False";"Oui";"Oui";"Non";"2021";"False";"";"";"Gestion de voyages d'affaire : vol, train, hôtel. Permet aux entreprises de gérer l'ensemble du processus de voyage d'affaires, de la réservation à la justification des dépenses.";"MRF";"DE";"Avart Christine";"";"DSI";"DSI Corp";"Diene Madiama (externe)";"";"";"58000";"";"Editeur";"";"";"";"";"";"";"";"";"6-NA : SI Tiers";"Existe aussi en version mobile";"SaaS";"";"";"";"False";"False";"False";"False";"False";"False";"False";"True";"";"False";"True";"";"4500";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"";"";"i:FAO";"";"";"";"";"SAP Suite";"";"";"";"";"";"Maison de la Radio et de la Musique (MRM)";"";"";""
@@ -9142,7 +9148,7 @@ Le déploiement se fera en plusieurs phases :​
 
 - Les ordinateurs portables (juillet-octobre 2022)​
 - Les ordinateurs fixes (septembre-octobre 2022)​
-- Serveurs (fin d’année 2022-2023)";"RF";"DI";"Pôle Systèmes";"Pôle Systèmes";"DI";"DI-PI";"Pôle Systèmes";"Pôle Systèmes";"";"58000 & ATN";"Services internes";"Services internes";"Pôle Systèmes";"";"Zscaler";"";"";"";"";"";"1-Progiciel";"";"Client léger/lourd, & SaaS (Hybride)";"Oui";"Oui";"3 : Interfaçage applis RF et SI externe";"False";"True";"False";"False";"False";"False";"False";"False";"";"True";"True";"";"5500";"5500";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"Non";"";"";"";"";"6 - Pas de besoin";"";"";"";"";"support -> site web éditeur";"";"";"";"";"";"Service_SYS_Sécurité";"";"";"D_Informatique
+- Serveurs (fin d’année 2022-2023)";"RF";"DI";"Pôle Systèmes";"Pôle Systèmes";"DI";"DI-PI";"Pôle Systèmes";"Pôle Systèmes";"";"58000 & ATN";"Services internes";"Services internes";"Pôle Systèmes";"";"Zscaler";"";"";"";"";"";"1-Progiciel";"";"Client léger/lourd, & SaaS (Hybride)";"Oui";"Oui";"3 : Interfaçage applis RF et SI externe";"False";"True";"False";"False";"False";"False";"False";"False";"";"True";"True";"";"5500";"5500";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"Non";"";"";"";"";"6 - Pas de besoin";"";"";"";"";"support -> site web éditeur";"";"";"";"";"";"Service_SYS_Sécurité";"";"SMRFGLXAPP37";"D_Informatique
 QINF3.1 Protection des systèmes (Cybersécurité)
 ZINF3 Sécurité du SI & Conformité";"Radio France (RF)";"DCP - Données de connexion (adresse IP, logs, etc.)";"PA7 - applications faible risque RGPD";""
 "ClePass";"ClePass";"Application Serrurerie";"Application";"1-Approuvé/En Projet";"False";"Oui";"Oui";"Non";"12/2022";"False";"";"";"Gestion des clés, passes, portes, cylindres, utilisateurs.
@@ -10111,7 +10117,7 @@ SMRFGLXAPP144";"D_Informatique";"";"";"";""
 "Liaison ExpressRoute";"";"";"";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Informatique";"";"";"";""
 "Liaison inter DCs";"";"";"";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Informatique";"";"";"";""
 "Liaison FTV";"";"";"";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"6-NA : SI Tiers";"";"Autre";"";"";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Informatique";"";"";"";""
-"SQL TOIP";"";"Serveur BDD de la TOIP - TOIP";"Application";"5-En production";"False";"";"";"";"";"False";"";"";"";"";"";"	Pôle Réseaux, Télécoms et Salles Techniques";"	Pôle Réseaux, Télécoms et Salles Techniques";"";"";"	Pôle Réseaux, Télécoms et Salles Techniques";"	Pôle Réseaux, Télécoms et Salles Techniques";"";"58000";"Services internes";"TMA";"	Pôle Réseaux, Télécoms et Salles Techniques";"";"";"	Pôle Réseaux, Télécoms et Salles Techniques";"";"";"";"";"5-Equipement ou infra";"";"Sur Serveur ou Machine autonome";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"Non";"";"";"";"";"";"";"";"";"";"";"Support ORANGE :
+"SQL TOIP";"";"Serveur BDD de la TOIP - TOIP";"Application";"5-En production";"False";"";"";"";"";"False";"";"";"";"";"";"	Pôle Réseaux, Télécoms et Salles Techniques";"	Pôle Réseaux, Télécoms et Salles Techniques";"";"";"	Pôle Réseaux, Télécoms et Salles Techniques";"	Pôle Réseaux, Télécoms et Salles Techniques";"";"58000";"Services internes";"TMA";"	Pôle Réseaux, Télécoms et Salles Techniques";"";"";"";"";"";"";"";"5-Equipement ou infra";"";"Sur Serveur ou Machine autonome";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"Non";"";"";"";"";"";"";"";"";"";"";"Support ORANGE :
 INCIDENT
 Pour prévenir d’un incident sur votre réseau
 Créer le ticket d'incident sur votre espace client
@@ -10144,7 +10150,8 @@ Pour un complément de d’information (de 8h à 18h, du lundi au vendredi hors 
 Point d’entrée du centre de production: 0800 510 391 
 
 Pour une difficulté de PRODUCTION Majeure
-Groupement Managers N2 Téléphone : 05 34 54 30 40";"";"";"";"";"";"TOIP Groupe";"";"";"D_Informatique
+Groupement Managers N2 Téléphone : 05 34 54 30 40";"";"";"";"";"";"TOIP Groupe";"";"SMRFG22TOP01
+SMRFG22TOP02";"D_Informatique
 QCOL3.1 Téléphonie & téléconférences
 QDIP1.5 Réception flux téléphonique pour l'antenne
 ZCOL3 Communication & Collaboration
