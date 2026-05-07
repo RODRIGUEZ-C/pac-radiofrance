@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartographie applicative CASEWISE</title>
+
+<script src="./vis-network.min.js"></script>
+<script src="./html2canvas.min.js"></script>
+<script src="./jspdf.umd.min.js"></script>
+
+<style>
+body{font-family:Arial,sans-serif;margin:0;padding:10px}
+#topbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.group{display:flex;gap:6px;align-items:center;border:1px solid #ccc;padding:6px 8px;border-radius:6px;background:#fafafa}
+.group input[type=text]{padding:5px 8px;border:1px solid #ccc;border-radius:5px;min-width:220px}
+.group button{padding:5px 10px;border:1px solid #ccc;border-radius:5px;background:#fff;cursor:pointer}
+.group button:hover{background:#f4f4f4}
+#mynetwork{width:100%;height:65vh;border:1px solid #ccc;border-radius:8px}
+#tooltip{position:fixed;display:none;max-width:360px;background:rgba(0,0,0,.78);color:#fff;padding:7px 9px;border-radius:6px;font-size:12px;pointer-events:none;z-index:5000}
+#appDetails{position:fixed;top:140px;right:20px;width:560px;max-height:calc(100vh - 180px);overflow-y:auto;background:#fff;border:1px solid #ccc;box-shadow:0 6px 18px rgba(0,0,0,.25);padding:12px;z-index:3000}
+</style>
+</head>
+
+<body>
+
+<div id="topbar">
+  <div class="group">
+    Recherche <input id="search" list="names" placeholder="AGM">
+    <datalist id="names"></datalist>
+    <button id="goSearch">Aller</button>
+  </div>
+
+  <div class="group">
+    <button id="focusBtn">Focus</button>
+    Niveau
+    <select id="focusLevel">
+      <option value="1">1</option>
+      <option value="2" selected>2</option>
+      <option value="3">3</option>
+    </select>
+    <button id="exitFocus">Sortir focus</button>
+  </div>
+
+  <div class="group">
+    <button id="exportPDF">Export PDF</button>
+    <button id="exportPNG">Export PNG</button>
+  </div>
+</div>
+
+<div id="mynetwork"></div>
+<div id="tooltip"></div>
+<div id="appDetails"></div>
+
+<script>
+/* ================== DATA ================== */
+let records=[];
+let appByName=new Map();
+let idByName=new Map();
+let nameById=new Map();
+let allEdges=[];
+let network=null;
+let focusApp=null;
+
+/* ================== CSV ================== */
+function parseCSV(text){
+  const rows=[];
+  const lines=text.split(/\r?\n/);
+  const headers=lines[0].split(';').map(x=>x.replace(/^"|"$/g,''));
+  for(let i=1;i<lines.length;i++){
+    if(!lines[i].trim()) continue;
+    const cols=lines[i].split(';').map(x=>x.replace(/^"|"$/g,''));
+    const r={};
+    headers.forEach((h,j)=>r[h]=cols[j]||'');
+    records.push(r);
+    appByName.set(r.Nom,r);
+  }
+}
+
+/* ================== NETWORK ================== */
+function buildEdges(){
+  allEdges=[];
+  records.forEach(r=>{
+    const from=r.Nom;
+    ['Application Alimente Application','Application Est alimentée par Application']
+    .forEach(f=>{
+      (r[f]||'').split(/\r?\n/).forEach(t=>{
+        if(idByName.has(from)&&idByName.has(t)){
+          allEdges.push({from:idByName.get(from),to:idByName.get(t)});
+        }
+      });
+    });
+  });
+}
+
+function visibleIds(){
+  if(!focusApp) return new Set([...idByName.values()]);
+  const res=new Set([idByName.get(focusApp)]);
+  let frontier=[idByName.get(focusApp)];
+  const hops=parseInt(document.getElementById("focusLevel").value,10);
+  for(let i=0;i<hops;i++){
+    const next=[];
+    allEdges.forEach(e=>{
+      frontier.forEach(f=>{
+        if(e.from===f && !res.has(e.to)){res.add(e.to);next.push(e.to);}
+        if(e.to===f && !res.has(e.from)){res.add(e.from);next.push(e.from);}
+      });
+    });
+    frontier=next;
+  }
+  return res;
+}
+
+function renderNetwork(){
+  const ids=visibleIds();
+  const nodes=[], edges=[];
+  ids.forEach(id=>{
+    nodes.push({id,label:nameById.get(id),shape:'dot'});
+  });
+  allEdges.forEach(e=>{
+    if(ids.has(e.from)&&ids.has(e.to)){
+      edges.push({from:e.from,to:e.to,arrows:'to'});
+    }
+  });
+  const data={nodes:new vis.DataSet(nodes),edges:new vis.DataSet(edges)};
+  if(!network){
+    network=new vis.Network(document.getElementById("mynetwork"),data,{physics:false});
+  } else {
+    network.setData(data);
+  }
+}
+
+function openApp(name){
+  document.getElementById("appDetails").innerHTML="<h2>"+name+"</h2>";
+}
+
+/* ================== UI ================== */
+document.getElementById("goSearch").onclick=()=>{
+  const v=document.getElementById("search").value;
+  focusApp=null;
+  renderNetwork();
+  openApp(v);
+};
+
+document.getElementById("focusBtn").onclick=()=>{
+  const v=document.getElementById("search").value;
+  focusApp=v;
+  renderNetwork();
+  openApp(v);
+};
+
+document.getElementById("exitFocus").onclick=()=>{
+  focusApp=null;
+  renderNetwork();
+};
+
+/* ================== INIT ================== */
+(async function(){
+  const csv=await fetch("./Ref_Appli_CASEWISE.csv").then(r=>r.text());
+  parseCSV(csv);
+  let i=0;
+  appByName.forEach((v,k)=>{idByName.set(k,i);nameById.set(i++,k);});
+  buildEdges();
+  renderNetwork();
+
+  /* ====== FOCUS VIA URL (IDENTIQUE AU BOUTON) ====== */
+  const params=new URLSearchParams(location.search);
+  const app=params.get("app");
+  const doFocus=params.get("focus")==="1";
+  const level=params.get("focusLevel");
+
+  if(app){
+    document.getElementById("search").value=app;
+  }
+
+  if(level){
+    document.getElementById("focusLevel").value=level;
+  }
+
+  if(app && doFocus){
+    focusApp=app;
+    renderNetwork();
+    openApp(app);
+  }
+})();
+</script>
+
+</body>
+</html>
