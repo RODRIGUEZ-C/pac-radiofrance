@@ -551,7 +551,7 @@ document.getElementById('exportPDF').onclick = exportPDF;
 <script>
 (function () {
   const params = new URLSearchParams(window.location.search);
-  const rawApp = (params.get('app') || '').trim();
+  const rawApp = clean(params.get('app') || '');
   const wantFocus = params.get('focus') === '1';
   const rawFocusLevel = (params.get('focusLevel') || '').trim();
   const wantPdf = params.get('pdf') === '1';
@@ -559,19 +559,24 @@ document.getElementById('exportPDF').onclick = exportPDF;
 
   function safeEncode(s){ return (s || '').toString(); }
 
-  function findAppName(input){
-    if (!input) return '';
-    // 1) exact
-    if (typeof idByName !== 'undefined' && idByName && idByName.has(input)) return input;
-    // 2) case-insensitive match
-    if (typeof idByName !== 'undefined' && idByName) {
-      const low = input.toLowerCase();
-      for (const k of idByName.keys()) {
-        if ((k || '').toLowerCase() === low) return k;
-      }
+  function normalize(s){
+  return clean(s).toLowerCase();
+}
+
+function findAppName(input){
+  if (!input || !idByName) return '';
+
+  const target = normalize(input);
+
+  for (const k of idByName.keys()) {
+    if (normalize(k) === target) {
+      return k; // retourne la vraie clé CSV
     }
-    return '';
   }
+
+  return '';
+}
+
 
   function applyParams(){
     // Attendre que les objets globaux soient prêts
