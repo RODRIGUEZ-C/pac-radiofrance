@@ -514,7 +514,6 @@ document.getElementById('exportPDF').onclick = exportPDF;
   // vue par défaut: prod uniquement, sans focus
   focusApp=null;
   renderNetwork(true);
-  window.networkReady = true;
 
   // désactive PDF si jsPDF absent
   document.getElementById('exportPDF').disabled = !pdfReady();
@@ -562,7 +561,7 @@ document.getElementById('exportPDF').onclick = exportPDF;
   const tryInit = setInterval(() => {
     if (
       typeof idByName !== "undefined" &&
-      typeof network !== "undefined" && window.networkReady
+      typeof network !== "undefined"
       typeof openApp === "function" &&
       idByName.has(app)
     ) {
