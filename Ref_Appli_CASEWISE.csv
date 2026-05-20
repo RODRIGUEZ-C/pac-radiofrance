@@ -755,7 +755,12 @@ claire.ghienne@decivision.com - Claire GHIENNE
 ";"";"Non";"SaSAP (Service Autonome de Suivi Administratif et de Pilotage)";"Secutix
 SIRHIUS
 Media Pilot/JAM
-SAP Suite";"";"";"";"D_Référentiels transverses
+SAP Suite";"";"";"SMRFGLXAPP24
+SMRFGUXTDB3
+SMRFG19APP50
+SMRFG19APP68
+SMRFG19APP95
+SMRFGUXPDB1";"D_Référentiels transverses
 D_Relation Client & Vente
 D_Ressources Humaines
 D_Stocks & Actifs Physiques
@@ -1903,8 +1908,7 @@ SMRFG19APP46
 SMRFG19APP48
 SMRFG19APP47
 SMRFG19APP53
-SMRFG19APP54
-SMRFG19APP63";"D_Finance Comptabilité
+SMRFG19APP54";"D_Finance Comptabilité
 QFIN4.1 Suivi des comptes de trésorerie
 QFIN4.2 Prévision de trésorie
 QFINR1 Compte bancaire
@@ -2239,7 +2243,7 @@ Données à Caractère Personnel et Données sensibles :
 - Données de Connexion (@IP, logs, ...)
 - Etat Civil, identité, données d'identification, photos
 - Informations d'ordre économiques
-- Vie professionnelle";"DRH";"";"Frederique Lafaurie";"Viney Florence";"DTSI-EC";"DSI Corp";"Juliette Diricq";"";"";"58000";"TMA";"TMA";"";"";"TALENT SOFT";"";"";"";"";"";"1-Progiciel";"Client HTTP";"SaaS";"Oui";"Non";"1 : Interfaçage applis homogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Accès direct non filtré par RF.";"4500";"0";"Redevance à l'utilisation";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"4 - 1 jour";"";"";"";"";"";"Ronan De Kergaradec
+- Vie professionnelle";"DRH";"";"Frederique Lafaurie";"";"DTSI-EC";"DSI Corp";"Juliette Diricq";"";"";"58000";"TMA";"TMA";"";"";"TALENT SOFT";"";"";"";"";"";"1-Progiciel";"Client HTTP";"SaaS";"Oui";"Non";"1 : Interfaçage applis homogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Accès direct non filtré par RF.";"4500";"0";"Redevance à l'utilisation";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"4 - 1 jour";"";"";"";"";"";"Ronan De Kergaradec
 rdekergaradec@cegid.com
 Responsable commercial";"";"";"Non";"";"SIRHIUS";"";"";"";"D_Référentiels transverses
 D_Ressources Humaines
@@ -2254,7 +2258,8 @@ ZGRH2 Gestion des talents (GT)
 ZGRHP Pilotage RH
 ZREF2 Référentiels Tiers";"Direction des Ressources Humaines (DRH)
 Tous collaborateurs
-Pole SI RH et Planification";"DCP - Coordonnées personnelles
+Pole SI RH et Planification
+Radio France (RF)";"DCP - Coordonnées personnelles
 DCP - Coordonnées professionnelles
 DCP - Données de connexion (adresse IP, logs, etc.)
 DCP - Informations d'ordre économique et financier (revenus, situation financière, situation fiscale, etc.)
@@ -2872,7 +2877,7 @@ Pour une difficulté de PRODUCTION Majeure
 Groupement Managers N2 Téléphone : 05 34 54 30 40";"";"";"";"";"";"TOIP Groupe";"";"SMRFGLXINF08
 SMRFGLXINF09";"";"Pôle Réseaux-Télécoms-Salles Techniques (RTS)
 Radio France (RF)";"";"";""
-"Preventiel";"Preventiel";"Outil de gestion du service médical et de l'infirmerie";"Application";"5-En production";"False";"Oui";"Oui";"Oui";"2014 S1";"False";"";"";"Gestion de dossiers médicauxl des collaborateurs de Radio France et de certains visiteurs amenés à consulter le médecin de travail de Radio France.
+"Preventiel";"Preventiel";"Outil de gestion du service médical et de l'infirmerie";"Application";"5-En production";"False";"Oui";"Oui";"Oui";"2014 S1";"True";"";"";"Gestion de dossiers médicauxl des collaborateurs de Radio France et de certains visiteurs amenés à consulter le médecin de travail de Radio France.
 Réalisation de statistiques épidémiologiques à des fins de Prévention des risques et d'amélioration des conditions de travail des salariés.";"Service Médical";"";"Docteur Francois Brescia";"";"DSI";"DSI Corp";"Souci Richard";"";"";"";"";"";"";"";"";"";"";"";"";"";"1-Progiciel";"";"SaaS";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"5";"0";"";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Centre de Services
 
 04 68 41 86 41
@@ -3151,7 +3156,7 @@ Données à Caractère Personnel et Données sensibles :
 - Données de connexion (@IP, logs, ...)
 - Etat civil, identité, données d'identification, photos
 - Vie professionnelle
-- Zone de commentaire libre (ZLC)";"MRF, DRH";"";"Frederique Lafaurie";"Viney";"DSI";"DSI Corp";"Juliette Diricq";"";"";"58000";"Editeur";"Editeur";"";"";"Talent Soft";"";"Talent Soft";"Talent Soft";"";"";"1-Progiciel";"Client HTTP";"SaaS";"Oui";"Non";"3 : Interfaçage applis RF et SI externe";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"SaaS (accès direct)";"4500";"0";"Redevance périodique";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"4 - 1 jour";"";"";"";"";"";"Ronan De Kergaradec
+- Zone de commentaire libre (ZLC)";"MRF, DRH";"";"Frederique Lafaurie";"";"DSI";"DSI Corp";"Juliette Diricq";"";"";"58000";"Editeur";"Editeur";"";"";"Talent Soft";"";"Talent Soft";"Talent Soft";"";"";"1-Progiciel";"Client HTTP";"SaaS";"Oui";"Non";"3 : Interfaçage applis RF et SI externe";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"SaaS (accès direct)";"4500";"0";"Redevance périodique";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"4 - 1 jour";"";"";"";"";"";"Ronan De Kergaradec
 rdekergaradec@cegid.com
 Responsable commercial";"";"";"Non";"";"SIRHIUS";"";"";"";"D_Référentiels transverses
 D_Ressources Humaines
@@ -3161,9 +3166,9 @@ QREF2.2 Référentiel Personnes physiques ""Intervenants Radio France"" -
 ZGRH2 Gestion des talents (GT)
 ZGRHP Pilotage RH
 ZREF2 Référentiels Tiers";"Direction des Ressources Humaines (DRH)
-Maison de la Radio et de la Musique (MRM)
 Tous collaborateurs
-Pole SI RH et Planification";"DCP - Coordonnées professionnelles
+Pole SI RH et Planification
+Radio France (RF)";"DCP - Coordonnées professionnelles
 DCP - Données de connexion (adresse IP, logs, etc.)
 DCP - Informations d'ordre économique et financier (revenus, situation financière, situation fiscale, etc.)
 DCP - Vie professionnelle
@@ -4515,7 +4520,7 @@ DCP - Vie professionnelle";"PA4 - app. non fermées consentement implicite";"MDM
 "SIRHIUS";"Pleïade - SI RH/Paie";"SI RH et gestion de la paie";"Application";"5-En production";"True";"Oui";"Oui";"Oui";"06/04/2022";"False";"";"";"Outil de Gestion, d'administration et de paie du personnel.
 
 URL des environnements :
-Sirhius Production Internet                      https://sirhius-radiofrance.soprahronline.com/";"RF";"DRH";"Nakhla Nadia";"Delhomel Julien";"DTSI-EC";"DSI Corp";"Juliette Diricq";"";"SOPRA (éditeur)";"58000";"Services internes";"TMA";"";"RSSI";"SOPRA";"";"SOPRA";"";"SOPRA";"SOPRA";"2-Progiciel + dev. spécifique";"";"SaaS";"Oui";"Non";"2 : Interfaçage applis hétérogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Accessible via Intranet";"9000";"9000";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"quotidienne/hebdo/mensuelle/..";"Non";"Oui";"";"Non";"";"";"";"";"Oui";"Oui";"SOPRA :
+Sirhius Production Internet                      https://sirhius-radiofrance.soprahronline.com/";"RF";"DRH";"Nakhla Nadia";"Delhomel Julien";"DTSI-EC";"DSI Corp";"Juliette Diricq";"Delhomel Julien";"SOPRA (éditeur)";"58000";"Services internes";"TMA";"";"RSSI";"SOPRA";"";"SOPRA";"";"SOPRA";"SOPRA";"2-Progiciel + dev. spécifique";"";"SaaS";"Oui";"Non";"2 : Interfaçage applis hétérogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Accessible via Intranet";"9000";"9000";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"quotidienne/hebdo/mensuelle/..";"Non";"Oui";"";"Non";"";"";"";"";"Oui";"Oui";"SOPRA :
 
 L’équipe support SOPRA, 5459.rc.radiofrance@soprahr.com
 
@@ -4566,31 +4571,9 @@ ZGRHS Fonctions Support RH
 ZREF1 Référentiel Structures
 ZREF2 Référentiels Tiers";"Direction des Ressources Humaines (DRH)
 Tous collaborateurs
-Direction Technique et des Systèmes d'Information (DTSI)
-Direction de l'Immobilier de l'Environnement de travail et des SErvices (DIESE)
-Direction de la Production & Antennes (DPA)
-Direction de la Réhabilitation (DRHB)
-Direction Financiere (DF)
-Mission d'Accompagnement de la Transformation (MAT)
-Maison de la Radio et de la Musique (MRM)
-Direction de la Réalisation (DR)
-Direction Audit, Contrôle Interne et Ethique (DACIE)
-Direction de l'Accélération et du Partage de l'Innovation (DAPI)
-Direction de l'information et des Sports
-Direction de l'Offre et du Marketing Numérique
-Direction de la Communication (COM) et des Relations Publiques
-Direction de la Documentation (DOC) et des Métadonnées
-Direction de la Musique et de la Création (DMC)
-Direction des Achats (DA)
-Direction des Affaires Juridiques (DAJ)
-Direction des Antennes et de la Stratégie éditoriale
-Direction du Numérique et de la Stratégie d'Innovation (DNSI)
 Service des Archives Ecrites & Musée (SAEM)
-Direction des Etudes et de la Prospective
-Délégation Aménagements Esp. et Déménagements
-Direction des Marques et du Développement (DMD)
-Présidence Direction Générale (PDG)
-Pole SI RH et Planification";"DCP - Coordonnées personnelles
+Pole SI RH et Planification
+Radio France (RF)";"DCP - Coordonnées personnelles
 DCP - Coordonnées professionnelles
 DCP - Données de connexion (adresse IP, logs, etc.)
 DCP - Données de localisation (déplacements, données GPS, GSM, etc.)
@@ -6389,7 +6372,9 @@ SMRFT22APP32
 SMRFT22APP41
 SMRFTLXAPP31
 SMRFTLXAPP32
-SMRFTLXAPP41";"D_Fabrication radiophonique
+SMRFTLXAPP41
+SMFPT22ODAAWR3
+SMFPT22ODABWR3";"D_Fabrication radiophonique
 QFAB4.1 Production & caractérisation essence sonore
 QFAB4.2 Diffusion son & ses données & historisation
 ZFAB4 Production & diffusion des sons";"FIP
@@ -6566,7 +6551,7 @@ Social Learning, collaborative Learning, Learning Engagement Plateform
 Mobile Learning";"MRF, Campus";"DRH";"Fulgence Céline";"";"DSI";"DSI Corp";"Juliette Diricq";"";"";"58000";"TMA";"Editeur";"";"";"360Learning";"";"";"";"";"";"1-Progiciel";"";"SaaS";"Oui";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"True";"sso - https://e-campusradiofrance.360learning.com/home/";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"Non";"Oui";"";"Non";"";"4 - 1 jour";"4 - 1 jour";"";"";"Non";"";"Le support se fait 100% par mail – pas de téléphone – via l’adresse support@360learning.com";"";"";"Non";"";"Microsoft Active Directory";"";"";"";"D_Ressources Humaines
 QGRH2.3 Formation professionnelle
 ZGRH2 Gestion des talents (GT)";"Délégation à la Formation (Campus)
-Maison de la Radio et de la Musique (MRM)";"DCP - Coordonnées personnelles
+Radio France (RF)";"DCP - Coordonnées personnelles
 DCP - Coordonnées professionnelles";"PA4 - app. non fermées consentement implicite";""
 "AL'In";"Hermes";"Gestion du 1% logement";"Application";"5-En production";"True";"Oui";"Oui";"Non";"";"False";"";"";"Dans le cadre d'une recherche de logement pour un salarié, site WEB du collecteur, permettant de faciliter cette recherche et de monter un dossier ad hoc.";"DRH";"DRH";"D'Acher Fabienne";"";"DSI";"DSI Corp";"Souci Richard";"";"";"58000";"Editeur";"Editeur";"";"";"";"";"";"";"";"";"1-Progiciel";"";"Hébergement Cloud";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Web";"10";"0";"";"2-  Lundi-Vendredi";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"";"Oui";"";"";"";"4 - 1 jour";"6 - Pas de besoin";"";"";"";"";"";"";"";"Non";"";"";"";"";"";"D_Ressources Humaines
 ZGRH3 Gestion sociale & Médecine du Tavail";"Direction des Ressources Humaines (DRH)";"DCP - Coordonnées personnelles
@@ -6637,7 +6622,7 @@ QETB2.1 Sécurité des personnes / Incendie
 QETB2.2 Gestion des accès aux locaux
 ZETB1 Gestion Etablissements & Services généraux
 ZETB2 Sécurité, Sûreté & Risques professionnels";"Direction de l'Immobilier de l'Environnement de travail et des SErvices (DIESE)";"DCP - Coordonnées professionnelles";"PA6 - app. fermées consentement implicite";""
-"Zappa / FileMaker";"Zappa";"Outil de gestion des grandes salles";"Application";"5-En production";"False";"Oui";"Oui";"Non";"01/01/2021";"False";"";"";"PROJET CALENDRIER DPA";"DPA";"DPA";"";"";"DSI";"DSI Corp";"Blanc Eric";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Hébergement Cloud";"Non";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"Non";"False";"False";"";"5";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"SMRFG12APP97";"D_Concerts & Evènements
+"Zappa / FileMaker";"Zappa";"Outil de gestion des grandes salles";"Application";"5-En production";"False";"Oui";"Oui";"Non";"01/01/2021";"False";"";"";"PROJET CALENDRIER DPA";"DPA";"DPA";"";"";"DSI";"DSI Corp";"Blanc Eric";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Hébergement Cloud";"Non";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"Non";"False";"False";"";"5";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Concerts & Evènements
 D_Fabrication radiophonique
 QFAB1.2 Planification des moyens techniques et humains
 QFAB1.5 Gestion des demandes de production (ressources, moyens, matériels, ..)
@@ -7223,7 +7208,7 @@ QAPS1.1 Gestion de stocks (affectations, immatricul., mouvements,  localisations
 QREF2.2 Référentiel Personnes physiques ""Intervenants Radio France"" -
 ZAPS1 Gestion de stocks
 ZREF2 Référentiels Tiers";"Service des Archives Ecrites & Musée (SAEM)";"";"";""
-"Lastria";"Lastria";"Progiciel Services Sociaux";"Application";"8-Décommissionnée";"False";"Oui";"Oui";"Oui";"2022";"False";"";"";"Suivi des demandes, main courante, ...";"Service Sociaux";"DRH";"CISZAK Séphora";"";"DSI";"DSI Corp";"Depresle Frédéric";"";"";"";"Editeur";"Editeur";"";"";"";"";"";"";"";"";"1-Progiciel";"";"SaaS";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"5";"0";"";"2-  Lundi-Vendredi";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Non";"";"";"";"";"";"D_Ressources Humaines
+"Lastria";"Lastria";"Progiciel Services Sociaux";"Application";"5-En production";"False";"Oui";"Oui";"Oui";"2022";"False";"";"";"Suivi des demandes, main courante, ...";"Service Sociaux";"DRH";"CISZAK Séphora";"";"DSI";"DSI Corp";"Depresle Frédéric";"";"";"";"Editeur";"Editeur";"";"";"";"";"";"";"";"";"1-Progiciel";"";"SaaS";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"5";"0";"";"2-  Lundi-Vendredi";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Non";"";"";"";"";"";"D_Ressources Humaines
 QGRH3.4 Assistance sociale
 ZGRH3 Gestion sociale & Médecine du Tavail";"Direction des Ressources Humaines (DRH)
 Service des Affaires sociales";"DCP - Coordonnées personnelles
@@ -9148,7 +9133,7 @@ Le déploiement se fera en plusieurs phases :​
 
 - Les ordinateurs portables (juillet-octobre 2022)​
 - Les ordinateurs fixes (septembre-octobre 2022)​
-- Serveurs (fin d’année 2022-2023)";"RF";"DI";"Pôle Systèmes";"Pôle Systèmes";"DI";"DI-PI";"Pôle Systèmes";"Pôle Systèmes";"";"58000 & ATN";"Services internes";"Services internes";"Pôle Systèmes";"";"Zscaler";"";"";"";"";"";"1-Progiciel";"";"Client léger/lourd, & SaaS (Hybride)";"Oui";"Oui";"3 : Interfaçage applis RF et SI externe";"False";"True";"False";"False";"False";"False";"False";"False";"";"True";"True";"";"5500";"5500";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"Non";"";"";"";"";"6 - Pas de besoin";"";"";"";"";"support -> site web éditeur";"";"";"";"";"";"Service_SYS_Sécurité";"";"SMRFGLXAPP37";"D_Informatique
+- Serveurs (fin d’année 2022-2023)";"RF";"DI";"Pôle Systèmes";"Pôle Systèmes";"DI";"DI-PI";"Pôle Systèmes";"Pôle Systèmes";"";"58000 & ATN";"Services internes";"Services internes";"Pôle Systèmes";"";"Zscaler";"";"";"";"";"";"1-Progiciel";"";"Client léger/lourd, & SaaS (Hybride)";"Oui";"Oui";"3 : Interfaçage applis RF et SI externe";"False";"True";"False";"False";"False";"False";"False";"False";"";"True";"True";"";"5500";"5500";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"Non";"";"";"";"";"6 - Pas de besoin";"";"";"";"";"support -> site web éditeur";"";"";"";"";"";"Service_SYS_Sécurité";"";"";"D_Informatique
 QINF3.1 Protection des systèmes (Cybersécurité)
 ZINF3 Sécurité du SI & Conformité";"Radio France (RF)";"DCP - Données de connexion (adresse IP, logs, etc.)";"PA7 - applications faible risque RGPD";""
 "ClePass";"ClePass";"Application Serrurerie";"Application";"1-Approuvé/En Projet";"False";"Oui";"Oui";"Non";"12/2022";"False";"";"";"Gestion des clés, passes, portes, cylindres, utilisateurs.
@@ -10478,7 +10463,8 @@ Numéro de Série : A49Y9ERAWWSMGBND6PEGK0D
 ";"";"";"";"";"";"Service_SYS_Transfert_de_Fichiers";"";"SMRFG19APP32";"D_Informatique";"";"";"";""
 "Proxy SQUID";"SQUID";"";"Application";"5-En production";"False";"";"";"";"Mai 2025";"False";"";"";"";"";"";"Pôle Systèmes (SYS)";"Pôle Systèmes (SYS)";"";"";"Pôle Systèmes (SYS)";"Pôle Systèmes (SYS)";"";"";"";"";"Pôle Systèmes (SYS)";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Gitlab";"";"Service_SYS_Sécurité";"";"SAZUGLXPWP01
 SMRFGLXPWP01
-SMRFGLXPWR01";"D_Informatique
+SMRFGLXPWR01
+SMRFGLXPWP02";"D_Informatique
 QINF3.1 Protection des systèmes (Cybersécurité)
 ZINF3 Sécurité du SI & Conformité";"";"";"";""
 "Ordalie";"outil d’IA qui permet d’interroger en langage naturel une base de connaissance juridique (dans les codes, la jurisprudence) qui est utilisée par le service juridique";"";"Application";"5-En production";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Juridique
@@ -10559,7 +10545,9 @@ ZPRO2 Programmations thématiques
 ZREF4 Référentiels documentaires";"FIP
 France Musique";"DCP - Données de connexion (adresse IP, logs, etc.)";"";""
 "SIA Divers test";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Informatique";"";"";"";""
-"ESR Divers test";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"SMRCTLXAPP01";"D_Informatique";"";"";"";""
+"ESR Divers test";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"SMRCTLXAPP01
+SMRCTLXAPP10
+SMRCTLXAPP11";"D_Informatique";"";"";"";""
 "SI Corp Divers test";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Informatique";"";"";"";""
 "RTS Divers test";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Informatique";"";"";"";""
 "AID Divers test";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Informatique";"";"";"";""
@@ -10697,3 +10685,14 @@ NetBox";"";"D_Informatique";"";"";"";""
 APC Suite";"";"D_Informatique";"";"";"";""
 "Service_RTS_Infrastructure_Télécoms";"";"";"Groupe Applicatif";"5-En production";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"TOIP Groupe";"";"D_Informatique";"";"";"";""
 "INFRA Divers Prod";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Informatique";"";"";"";""
+"Talentplug";"Talentplug";"Multidiffusion d'offres d'emploi, Recherche CV, Recrutement.";"Application";"5-En production";"False";"";"";"";"";"False";"";"";"Solution de multidiffusion qui s’intègre aux logiciels RH.
+Diffuse les offres d’emploi des recruteurs vers plus de 300 sites emplois.
+Gestion des abonnements sur une seule et même plateforme, sourcing des profils.
+";"";"";"";"";"";"";"";"";"";"";"";"Editeur";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Ressources Humaines
+ZGRH2 Gestion des talents (GT)
+QGRH2.2 Gestion du recrutement et de la mobilité";"Direction des Ressources Humaines (DRH)";"";"";""
+"Edko";"Edko";"Evaluation des formations";"Application";"5-En production";"False";"";"";"";"";"False";"";"";"Evaluation à chaud, à froid des formations.";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"1-Progiciel";"";"SaaS";"";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Ressources Humaines";"Direction des Ressources Humaines (DRH)";"";"";""
+"Uegard";"Uegard";"Logiciel de Prévention et Santé au travail";"Application";"1-Approuvé/En Projet";"False";"Oui";"Oui";"Oui";"";"False";"";"";"Gestion et suivi Médecine du travail";"";"";"";"";"";"";"";"";"";"";"Editeur";"Editeur";"";"";"";"";"";"";"";"";"1-Progiciel";"";"SaaS";"";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Non";"";"";"";"";"";"D_Ressources Humaines
+ZGRH3 Gestion sociale & Médecine du Tavail
+QGRH3.3 Médecine du travail";"Médecine du Travail";"";"";""
+"Pigment";"Pigment";"Elaboration et suivi budgétaire";"Application";"1-Approuvé/En Projet";"False";"Oui";"";"";"01/12/2026";"False";"";"";"Elaboration et suivi budgétaire";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"SaaS";"";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Finance Comptabilité";"Direction Financiere (DF)";"";"";""
