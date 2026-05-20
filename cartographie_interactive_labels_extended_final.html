@@ -549,6 +549,8 @@ document.getElementById('exportPDF').onclick = exportPDF;
 (function () {
   const params = new URLSearchParams(window.location.search);
   const app = params.get("app");
+  const wantFocus = params.get("focus") === "1";
+  const focusLevelParam = params.get("focusLevel");
   const wantPdf = params.get("pdf") === "1";
   const wantPng = params.get("png") === "1";
 
