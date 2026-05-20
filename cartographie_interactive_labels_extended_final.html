@@ -517,6 +517,9 @@ document.getElementById('exportPDF').onclick = exportPDF;
 
   // désactive PDF si jsPDF absent
   document.getElementById('exportPDF').disabled = !pdfReady();
+  // ✅ Signal : données chargées + network initialisé
+  window.__casewiseReady = true;
+  window.dispatchEvent(new Event('casewiseReady'));
 })();
 </script>
 <style>
@@ -548,93 +551,112 @@ document.getElementById('exportPDF').onclick = exportPDF;
 <script>
 (function () {
   const params = new URLSearchParams(window.location.search);
-  const app = params.get("app");
-  const wantFocus = params.get("focus") === "1";
-  const focusLevelParam = params.get("focusLevel");
-  const wantPdf = params.get("pdf") === "1";
-  const wantPng = params.get("png") === "1";
+  const rawApp = clean(params.get('app') || '');
+  const wantFocus = params.get('focus') === '1';
+  const rawFocusLevel = (params.get('focusLevel') || '').trim();
+  const wantPdf = params.get('pdf') === '1';
+  const wantPng = params.get('png') === '1';
 
-  function safeEncode(s){ return (s||"").toString(); }
+  function safeEncode(s){ return (s || '').toString(); }
 
-  // 1) Focus automatique sur l'app (si fournie)
-  if (app) {
-  const tryInit = setInterval(() => {
-    if (
-      typeof idByName !== "undefined" &&
-      typeof network !== "undefined"
-      typeof openApp === "function" &&
-      idByName.has(app)
-    ) {
-      clearInterval(tryInit);
+  function normalize(s){
+  return clean(s).toLowerCase();
+}
 
-      // ✅ injecte dans le champ recherche
-      const searchInput = document.getElementById("search");
-      if (searchInput) searchInput.value = app;
+function findAppName(input){
+  if (!input || !idByName) return '';
 
-      // ✅ applique le niveau de focus si fourni
-      if (focusLevelParam) {
-        const focusSelect = document.getElementById("focusLevel");
-        if (focusSelect) focusSelect.value = focusLevelParam;
-      }
+  const target = normalize(input);
 
-      if (wantFocus) {
-        // ✅ ACTIVE le vrai focus (BFS de ta fonction)
-        focusApp = app;
-
-        // ✅ recalcul graphe avec filtre
-        renderNetwork(true);
-      } else {
-        // ✅ comportement sans focus
-        renderNetwork(true);
-      }
-
-      // ✅ ouvre la fiche
-      openApp(app);
-
-      // ✅ centre
-      const nodeId = idByName.get(app);
-      try {
-        network.selectNodes([nodeId]);
-        network.focus(nodeId, { scale: 1.8, animation: { duration: 700 } });
-      } catch (e) {}
+  for (const k of idByName.keys()) {
+    if (normalize(k) === target) {
+      return k; // retourne la vraie clé CSV
     }
-  }, 300);
+  }
+
+  return '';
 }
 
 
-  // 2) Préparer les exports (via bandeau)
-  if (wantPdf || wantPng) {
-    const banner = document.getElementById("exportBanner");
-    const txt = document.getElementById("exportBannerText");
-    const runPdfBtn = document.getElementById("runPdfBtn");
-    const runPngBtn = document.getElementById("runPngBtn");
-    const closeBtn = document.getElementById("closeBannerBtn");
+  function applyParams(){
+    // Attendre que les objets globaux soient prêts
+    if (typeof idByName === 'undefined' || !idByName || typeof renderNetwork !== 'function' || typeof openApp !== 'function') {
+      return; // on sera rappelé par l'event
+    }
 
-    if (!banner || !txt) return;
+    const appName = findAppName(rawApp);
 
-    const parts = [];
-    if (wantPdf) parts.push("PDF fiche + cartographie");
-    if (wantPng) parts.push("PNG cartographie");
-    txt.textContent = `Application: ${safeEncode(app || "(non précisée)")} — ` + parts.join(" + ");
+    // Appliquer focusLevel sur l'UI si fourni
+    if (rawFocusLevel) {
+      const focusSelect = document.getElementById('focusLevel');
+      if (focusSelect) {
+        const v = ['1','2','3'].includes(rawFocusLevel) ? rawFocusLevel : focusSelect.value;
+        focusSelect.value = v;
+      }
+    }
 
-    // On masque les boutons non demandés
-    if (!wantPdf) runPdfBtn.style.display = "none";
-    if (!wantPng) runPngBtn.style.display = "none";
+    // Remplir champ recherche
+    const searchInput = document.getElementById('search');
+    if (searchInput && appName) searchInput.value = appName;
 
-    // On relie aux fonctions existantes de ta page
-    runPdfBtn.onclick = () => {
-      if (typeof exportPDF === "function") exportPDF();
-      else alert("Fonction exportPDF introuvable dans la page.");
-    };
-    runPngBtn.onclick = () => {
-      // selon ta page : exportPNG ou exportGraphPNG
-      if (typeof exportPNG === "function") exportPNG();
-      else if (typeof exportGraphPNG === "function") exportGraphPNG();
-      else alert("Fonction exportPNG introuvable dans la page.");
-    };
-    closeBtn.onclick = () => banner.style.display = "none";
+    // Appliquer le focus logique (BFS) AVANT render
+    if (wantFocus && appName) {
+      focusApp = appName;
+    } else {
+      focusApp = null;
+    }
 
-    banner.style.display = "block";
+    // Re-render (prise en compte focus + niveaux)
+    renderNetwork(true);
+
+    // Ouvrir la fiche applicative et centrer
+    if (appName) {
+      openApp(appName);
+
+      // Focus/zoom visuel une fois le network créé
+      const nodeId = idByName.get(appName);
+      if (nodeId !== undefined && window.network) {
+        try {
+          network.selectNodes([nodeId]);
+          network.focus(nodeId, { scale: 1.8, animation: { duration: 700 } });
+        } catch(e) {}
+      }
+    }
+
+    // Bandeau export
+    if (wantPdf || wantPng) {
+      const banner = document.getElementById('exportBanner');
+      const txt = document.getElementById('exportBannerText');
+      const runPdfBtn = document.getElementById('runPdfBtn');
+      const runPngBtn = document.getElementById('runPngBtn');
+      const closeBtn = document.getElementById('closeBannerBtn');
+      if (banner && txt && runPdfBtn && runPngBtn && closeBtn) {
+        const parts = [];
+        if (wantPdf) parts.push('PDF fiche + cartographie');
+        if (wantPng) parts.push('PNG cartographie');
+        txt.textContent = `Application: ${safeEncode(appName || rawApp || '(non précisée)')} — ` + parts.join(' + ');
+        if (!wantPdf) runPdfBtn.style.display = 'none';
+        if (!wantPng) runPngBtn.style.display = 'none';
+        runPdfBtn.onclick = () => {
+          if (typeof exportPDF === 'function') exportPDF();
+          else alert('Fonction exportPDF introuvable dans la page.');
+        };
+        runPngBtn.onclick = () => {
+          if (typeof exportPNG === 'function') exportPNG();
+          else if (typeof exportGraphPNG === 'function') exportGraphPNG();
+          else alert('Fonction exportPNG introuvable dans la page.');
+        };
+        closeBtn.onclick = () => banner.style.display = 'none';
+        banner.style.display = 'block';
+      }
+    }
+  }
+
+  // Exécuter dès que prêt (sans polling fragile)
+  if (window.__casewiseReady) {
+    applyParams();
+  } else {
+    window.addEventListener('casewiseReady', applyParams, { once: true });
   }
 })();
 </script>  
