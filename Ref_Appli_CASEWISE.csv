@@ -765,10 +765,10 @@ SMRFGUXTDB3
 SMRFG19APP50
 SMRFG19APP68
 SMRFG19APP95
-SMRFGUXPDB1
 SMIRT19APP43
 SMRFG22APP07
-SMRFG22APP08";"D_Référentiels transverses
+SMRFG22APP08
+SMRFGLXPDB01";"D_Référentiels transverses
 D_Relation Client & Vente
 D_Ressources Humaines
 D_Stocks & Actifs Physiques
@@ -1047,7 +1047,7 @@ QAMM1.4 Gestion manif matérielle d'actif média (rattach. , caractéris.commune
 QAMM2.1 Caractérisation fichier d'actif média (hors données héritées)
 ZAMM1 Gestion & valorisation des actifs média & leurs manif. matérielles
 ZAMM2 Traitement, stockage & archivage des fichiers d'AM";"Direction de la Documentation (DOC) et des Métadonnées";"";"";""
-"Casewise Suite";"CaseWise";"Gestion de Patrimoine applicatif et Modélisation du SI (cartographies & données fonctionnelles & applicatives). Données RGPD.";"Application";"2-Essentiel pour la productivité";"5-En production";"True";"Oui";"Oui";"Non";"2008 S1";"False";"";"";"Gestion du patrimoine applicatif Radio France et modélisation de son SI. Publication de POS et de Diagrammes.
+"Casewise Suite";"CaseWise";"Gestion de Patrimoine applicatif et Modélisation du SI (cartographies & données fonctionnelles & applicatives). Données RGPD.";"Application";"2-Essentiel pour la productivité";"5-En production";"True";"Oui";"Oui";"Non";"2008 S1";"True";"oui";"01/03/2027";"Gestion du patrimoine applicatif Radio France et modélisation de son SI. Publication de POS et de Diagrammes.
 Sont décrites, : couche fonctionnelle/couche applicative et couche infrastructure, mais aussi Données applicatives, entités organisationnelles, ...
 Couche métier à l'état de POC.
 Inventaire des applications Sensibles dans le cadre de la RGPD. L'ensemble des applications sont flaguées suivant le type de Données personnelles qu'elles embarquent.
@@ -1335,7 +1335,7 @@ Moyens techniques - Infrastructure Cablage Filaire (ICF)";"";"";""
 
 2 postes à la serrurerie + Radios locales
 
-26 postes en Radios Locales";"DE";"DE";"Révolte Franck";"";"DSI";"DSI Corp";"Chebboub Mahfoud (externe)";"";"";"58000";"Editeur";"Editeur";"";"";"Salto";"";"";"Salto";"";"Salto";"1-Progiciel";"Postes dédiés";"Client lourd";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"31";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"Quotidienne";"Non";"";"";"Non";"Non";"3 - 4h";"3 - 4h";"";"Non";"Non";"";"1/ Support : techsupport.fr@saltosystems.com
+26 postes en Radios Locales";"DE";"DE";"Révolte Franck";"";"DSI";"DSI Corp";"Blanc Eric";"";"";"58000";"Editeur";"Editeur";"";"";"Salto";"";"";"Salto";"";"Salto";"1-Progiciel";"Postes dédiés";"Client lourd";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"31";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"Quotidienne";"Non";"";"";"Non";"Non";"3 - 4h";"3 - 4h";"";"Non";"Non";"";"1/ Support : techsupport.fr@saltosystems.com
 2/ Responsable technique :
 Elisabeth VINCENT
 Service Technique
@@ -1567,7 +1567,7 @@ France Musique";"";"";""
 "MagRF";"MagRF";"Pour FIP province, secours audio coupure satellite (playlist locale) & historique des rouges micro";"Application";"0-Non Critique";"8-Décommissionnée";"False";"";"Non";"Non";"";"False";"";"";"Pour les FIP de province, secours audio coupure satellite (playlist locale) & historique des rouges micro. 
 Les historiques sont envoyés à Itema, et permettent l'écoute des interventions des animateurs de province.";"";"";"";"";"DSI";"DSI-SIC";"Duminil Eric";"";"";"";"";"";"";"";"Radio France";"";"";"";"";"";"3-Dev. Spécifique";"";"Sur Serveur ou Machine autonome";"Non";"Non";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"3 - 4h";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"FIP";"";"";""
 "Osgrim";"Main Courante & Rondes";"Gestion Main courante et Ronde pour Sécurité Incendie (pompiers) et Accueil et Sécurité";"Application";"0-Non Critique";"5-En production";"True";"Oui";"Oui";"Oui";"2009 S1";"False";"";"";"Traitement automatisé de données ayant pour finalité de permettre aux services ""Sécurité Incendie"" et ""Accueil Sécurité"" de Radio France de tracer les interventions du service (feu, assistance à personne, ronde des pompiers, vérification des matériels de sécurité, dommage, interpellation ...), d'établir des rapports et d'assurer la gestion des interventions.
-Paris";"DE";"DE";"Millet Frédéric";"Millet Frédéric";"DSI";"DSI Corp";"Fanet Jean-Marie";"";"";"58000";"Services internes";"Editeur";"Vu Vincent";"";"OSGRIM";"";"Aucun";"OSGRIM";"";"Aucun";"1-Progiciel";"";"Client lourd";"Non";"Oui";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"21";"0";"";"1-  7j/7";"3- Lundi Vendredi, 7h00- 21h00";"3- 24h/24";"";"";"";"";"";"";"";"Non";"3 - 4h";"4 - 1 jour";"";"Non";"Non";"Philippe CHELLE
+Paris";"DE";"DE";"Millet Frédéric";"Millet Frédéric";"DSI";"DSI Corp";"Depresle Frédéric";"";"";"58000";"Services internes";"Editeur";"Vu Vincent";"";"OSGRIM";"";"Aucun";"OSGRIM";"";"Aucun";"1-Progiciel";"";"Client lourd";"Non";"Oui";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"21";"0";"";"1-  7j/7";"3- Lundi Vendredi, 7h00- 21h00";"3- 24h/24";"";"";"";"";"";"";"";"Non";"3 - 4h";"4 - 1 jour";"";"Non";"Non";"Philippe CHELLE
 Service Informatique
 Tel direct : 05.34.61.46.64
 
@@ -1907,8 +1907,11 @@ ZFAB4 Production & diffusion des sons";"Direction de la Production & Antennes (D
 Direction de la Réalisation (DR)";"";"";""
 "XRT SBE";"XRT SBE - SAGE";"Trésorerie et communication bancaire/relevé de comptes/Paiement";"Application";"3-Critique pour le métier";"5-En production";"False";"Oui";"Oui";"Non";"2007 S1";"False";"";"";"Trésorerie/Communication bancaire/Relevés comptes et paiement.";"DF";"DF";"Perot Claire";"Dubesset Sophie";"DSI";"DSI Corp";"Dubesset Sophie";"";"";"58000";"Services internes";"Editeur";"";"";"SAGE";"";"CODILOG";"SAGE";"";"";"1-Progiciel";"";"Client léger & client lourd";"Oui";"Oui";"3 : Interfaçage applis RF et SI externe";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Pulse";"10";"20";"Redevance périodique";"2-  Lundi-Vendredi";"3- Lundi Vendredi, 7h00- 21h00";"1- 07h00-21h00";"21h-7h et WE";"21h-7h et WE";"Sauvegarde journalière";"Oui";"Oui";"0h-4h";"Non";"Non";"4 - 1 jour";"1 - Aucune perte tolérée";"4 - 1 jour";"Oui";"Oui";"";"";"";"";"";"SAP Suite";"SAP Suite";"";"";"PROXRTEST
 SMRFG19APP46
+SMRFG19APP47
 SMRFG19APP48
-SMRFG19APP47";"D_Finance Comptabilité
+SMRFG19APP53
+SMRFG19APP54
+SMRFG19APP63";"D_Finance Comptabilité
 QFIN4.1 Suivi des comptes de trésorerie
 QFIN4.2 Prévision de trésorie
 QFINR1 Compte bancaire
@@ -1969,7 +1972,7 @@ QREF2.2 Référentiel Personnes physiques ""Intervenants Radio France"" -
 ZINF5 Métrologie & Supervision du SI
 ZREF2 Référentiels Tiers";"Pôle Supervision et Sécurité IT (S2I)
 Direction Adjointe des Services Socle IT (DSSIT)";"";"";""
-"Mezzoteam";"Mezzoteam - GED & SEDI";"DIESE : gestion Documentaire (Inter) & Système d'échange de documents (Exterieur)";"Application";"3-Critique pour le métier";"1-Approuvé/En Projet";"False";"Non";"Non";"Non";"2026 - S1";"True";"";"";"";"Direction de la réhabilitation";"Direction de la réhabilitation";"Sophie Egel";"Sophie Egel";"DSI";"DSI Corp";"Chebboub Mahfoud";"Sophie Egel";"";"Autre";"TMA";"TMA";"";"";"Prosys";"";"Prosys";"Prosys";"";"Prosys";"1-Progiciel";"Client HTTP";"SaaS";"Oui";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"True";"App. hébergée à l'extérieur avec accès direct, non filtré par RF.";"100";"0";"";"2-  Lundi-Vendredi";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"Non";"";"";"";"Non";"4 - 1 jour";"4 - 1 jour";"";"";"";"";"Tassadit ZIMOUCHE
+"Mezzoteam";"Mezzoteam - GED & SEDI";"DIESE : gestion Documentaire (Inter) & Système d'échange de documents (Exterieur)";"Application";"3-Critique pour le métier";"5-En production";"False";"Non";"Non";"Non";"2026 - S1";"False";"";"";"";"Direction de la réhabilitation";"Direction de la réhabilitation";"Engel Sophie";"Engel Sophie";"DSI";"DSI Corp";"Depresle Frédéric";"Engel Sophie";"";"Autre";"TMA";"TMA";"";"";"Prosys";"";"Prosys";"Prosys";"";"Prosys";"1-Progiciel";"Client HTTP";"SaaS";"Oui";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"True";"App. hébergée à l'extérieur avec accès direct, non filtré par RF.";"100";"0";"";"2-  Lundi-Vendredi";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"Non";"";"";"";"Non";"4 - 1 jour";"4 - 1 jour";"";"";"";"";"Tassadit ZIMOUCHE
 Directrice de Comptes - Prosys
 Tel. : +33 1 79 06 74 65 | Cell. : +33 6 32 48 46 31 | Std. : +33 1 79 06 76 76
 tzimouche@prosys.fr | www.prosys.fr ";"Tassadit ZIMOUCHE
@@ -2375,11 +2378,35 @@ S89AG12INF11
 S90AG12INF11
 S99AG12INF11
 SMRFG16INF01
-SMRFG16INF03
 SMRFG16INF04
 SMRFG16INF05
 SMRFG16INF06
-SMRFG19INF11";"D_Informatique
+SMRFG19INF11
+S06AG19INF11
+S13AG19INF11
+S17AG19INF11
+S24AG19INF11
+S2AAG19INF11
+S40AG19INF11
+S2BAG19INF11
+S80AG19INF11
+S90AG19INF11
+S57AG19INF11
+S64AG19INF11
+S72AG19INF11
+S73AG19INF11
+S86AG19INF11
+S25AG19INF11
+S31AG19INF11
+S33AG19INF11
+S35AG19INF11
+S37AG19INF11
+S14AG19INF11
+S21AG19INF11
+S29AG19INF11
+S38AG19INF11
+S54AG19INF11
+S67AG19INF11";"D_Informatique
 D_Référentiels transverses
 D_Stocks & Actifs Physiques
 QAPS2.5 Inventaires de contrôle (comptages pour reloc, réappro, réaffect.)
@@ -3413,7 +3440,7 @@ DCP - Vie professionnelle";"";"Doc Presse"
 
 Dans les faits, en l'absence de ressources côté DE, seule la gestion des baux avait été mise en place mais les baux ne sont plus utilisés pour l'instant.
 
-Application non utilisée et plus maintenue. la DE souhaite relancer le projet.";"DE";"DE";"Sophie-Laure Weill";"";"DSI";"DSI Corp";"Fanet Jean-Marie";"";"";"";"";"";"";"";"As-Tech";"MERLET";"";"As-Tech";"";"";"1-Progiciel";".NET";"Client lourd";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"False";"";"0";"5";"Redevance périodique";"2-  Lundi-Vendredi";"3- Lundi Vendredi, 7h00- 21h00";"1- 07h00-21h00";"21h00-08h00";"N/A";"Quotidienne (base Oracle, système, fichiers applicatifs)";"Oui";"Oui";"L-D après 20:00";"";"Non";"5 - 7 jours";"4 - 1 jour";"5 - 7 jours";"Non";"Non";"Guillaume DESJEUX
+Application non utilisée et plus maintenue. la DE souhaite relancer le projet.";"DE";"DE";"Grégoire Galliath";"";"DSI";"DSI Corp";"Frédéric Depresle";"";"";"";"";"";"";"";"As-Tech";"";"";"As-Tech";"";"";"1-Progiciel";".NET";"Client lourd";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"False";"";"0";"5";"Redevance périodique";"2-  Lundi-Vendredi";"3- Lundi Vendredi, 7h00- 21h00";"1- 07h00-21h00";"21h00-08h00";"N/A";"Quotidienne (base Oracle, système, fichiers applicatifs)";"Oui";"Oui";"L-D après 20:00";"";"Non";"5 - 7 jours";"4 - 1 jour";"5 - 7 jours";"Non";"Non";"Guillaume DESJEUX
 Commercial
 AS-TECH Solutions 
 Tél. : 01.60.42.74.40";"Guillaume DESJEUX
@@ -3429,7 +3456,8 @@ QETB3.6 Gestion des baux
 QREF1.4 Référentiels Lieux (internes, externes)
 ZETB3 Gestion des biens immobiliers & des locaux
 ZREF1 Référentiel Structures";"Direction des Achats (DA)
-Direction des Affaires Juridiques (DAJ)";"";"";""
+Direction des Affaires Juridiques (DAJ)
+Direction de l'Immobilier de l'Environnement de travail et des SErvices (DIESE)";"";"";""
 "Secutix";"Billetterie";"Vente de services pour les évènements Radio France (concerts, évènements, ...)";"Application";"3-Critique pour le métier";"5-En production";"False";"Oui";"Oui";"Non";"2015 S1";"False";"";"";"Le contexte : l'important projet de réhabilitation de la Maison de la Radio débouche en 2014 sur la création d’un Grand Auditorium de 1460 places, et la rénovation du Studio 104 (852 places).Par ailleurs plus globalement, la Maison de la Radio s'ouvre au Grand Public, en proposant de nouveaux types d’évènements payants ou gratuits (conférences, ateliers pédagogiques, visites guidées…), et une offre élargie de services (librairie, restauration, parking…) : 
 - Retour dès la saison 2014-2015 des concerts des 4 formations musicales et de leur public au sein de la Maison de la Radio ; 
 - Transformation de la Maison de la Radio en un lieu multiculturel ouvert au public 365 jours par an. 
@@ -3651,12 +3679,14 @@ Shinken
 Casewise Suite
 Elastic
 Odin
-CyberWatch";"Microsoft Active Directory
+CyberWatch
+Boldo";"Microsoft Active Directory
 Shinken
 Casewise Suite
 AGM
 Fusion Inventory Agent GLPI
-CyberWatch";"Service_SYS_Dépôts-Référentiels_Inventaires";"";"SMRFGLXAPP40
+CyberWatch
+Boldo";"Service_SYS_Dépôts-Référentiels_Inventaires";"";"SMRFGLXAPP40
 SMRFGLXAPP67";"D_Informatique
 D_Référentiels transverses
 D_Stocks & Actifs Physiques
@@ -3708,7 +3738,7 @@ Supervision de plus de 24000 points de mesure dans le bâtiment pour une Gestion
 
 Application s'interfaçant avec un ""milieu"" de bus industriels et de dispositifs industriels de gestion de bâtiment.
 
-Ainsi utilisation de protocoles très spécifiques à cet univers bâtiment et cités ici dans la rubrique ""Technologies"".";"DE";"DE";"Hamel Rachid";"";"DSI";"DSI Corp";"Chebboub Mahfoud (externe)";"";"DTSI-SSIT-SYS";"";"TMA";"TMA";"";"";"Arc Info";"";"Semeru";"Semeru";"";"Semeru";"2-Progiciel + dev. spécifique";"";"Client léger & client lourd";"Non";"Non";"1 : Interfaçage applis homogènes RF";"False";"False";"False";"True";"False";"False";"False";"False";"";"False";"False";"";"15";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"Sur un NAS";"Oui";"Oui";"";"Non";"Non";"0 - Aucune indispo tolérée";"3 - 4h";"";"Non";"Non";"";"SEMERU
+Ainsi utilisation de protocoles très spécifiques à cet univers bâtiment et cités ici dans la rubrique ""Technologies"".";"DE";"DE";"Hamel Rachid";"";"DSI";"DSI Corp";"Depresle Frédéric";"";"DTSI-SSIT-SYS";"";"TMA";"TMA";"";"";"Arc Info";"";"Semeru";"Semeru";"";"Semeru";"2-Progiciel + dev. spécifique";"";"Client léger & client lourd";"Non";"Non";"1 : Interfaçage applis homogènes RF";"False";"False";"False";"True";"False";"False";"False";"False";"";"False";"False";"";"15";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"Sur un NAS";"Oui";"Oui";"";"Non";"Non";"0 - Aucune indispo tolérée";"3 - 4h";"";"Non";"Non";"";"SEMERU
 Nicolas Ducrocq
 Chef d'entreprise (Resp. de la B.U.) Bâtiment Connecté
 Tel. : +33 (0)1 56 72 77 00
@@ -3991,7 +4021,7 @@ ZCOL3 Communication & Collaboration";"Présidence Direction Générale (PDG)";""
 - Automates GTA pour tous les accès sensibles (G-1 / A+1 / étages / Ascenceurs etc… ) sur le VLAN CAS de la VRF GTB.
 GLPI: Application de gestion des accès, pour les serrures connectées. Le serveur ''pousse'' les configurations et les mises à jours des automates (appelés UTLs), qui sont effectuées via le logiciel Micro Sésame installé sur les postes clients.
 
-Si le serveur tombe en panne : les mises à jours ne sont plus possibles, mais les automates assurent toujours les contrôles d'accès.";"DE";"DE";"Guégan Sylvie";"Guégan Sylvie";"DSI";"DSI Corp";"Chebboub Mahfoud (externe)";"SEMERU";"DTSI-SSIT-SYS";"58000";"TMA";"Editeur";"";"";"TIL Technologies";"";"Semeru";"Semeru";"";"Semeru";"2-Progiciel + dev. spécifique";"";"Client lourd";"Oui";"Non";"1 : Interfaçage applis homogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"5";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"Sauvegardé sur un NAS";"Non";"";"";"Non";"Non";"3 - 4h";"4 - 1 jour";"";"Non";"";"";"Vincent GIZARD
+Si le serveur tombe en panne : les mises à jours ne sont plus possibles, mais les automates assurent toujours les contrôles d'accès.";"DE";"DE";"Guégan Sylvie";"Guégan Sylvie";"DSI";"DSI Corp";"Blanc Eric";"SEMERU";"DTSI-SSIT-SYS";"58000";"TMA";"Editeur";"";"";"TIL Technologies";"";"Semeru";"Semeru";"";"Semeru";"2-Progiciel + dev. spécifique";"";"Client lourd";"Oui";"Non";"1 : Interfaçage applis homogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"5";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"Sauvegardé sur un NAS";"Non";"";"";"Non";"Non";"3 - 4h";"4 - 1 jour";"";"Non";"";"";"Vincent GIZARD
 Responsable d’affaires
 SPIE Service Protection Systèmes et Réseaux (PSR)
 
@@ -4016,7 +4046,7 @@ DCP - Vie professionnelle";"";"Micro Sésame - Badges"
 
 - Apporter l'interface utilisateur à la Sécurité Générale : 2 postes opérateurs / 1 poste chef de salle / 1 poste relecture des archives / 2 diffuseurs pour le mur d'image.
 
-Nota : l'exploitation est sur un 24/7 réel, il y a toujours de opérateurs présents devant les consoles.";"DE";"Délégation accueil et Sécurité des Personnes et des Biens";"Poucel Loïc";"Guegan Sylvie";"DSI";"DSI Corp";"Chebboub Mahfoud (externe)";"Loïc Poucel";"";"58000";"Services internes";"Editeur";"";"";"Genetec";"";"Onet Telem";"Onet Telem";"";"Onet Telem";"1-Progiciel";"";"Client lourd";"Non";"Non";"0 : Pas d'interfaçage";"False";"False";"False";"True";"False";"False";"False";"False";"";"False";"False";"";"100";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"Mirroring serveurs";"Non";"Non";"";"Non";"";"1 - 1h";"2 - 2h";"";"";"";"";"Bruno Marques
+Nota : l'exploitation est sur un 24/7 réel, il y a toujours de opérateurs présents devant les consoles.";"DE";"Délégation accueil et Sécurité des Personnes et des Biens";"Poucel Loïc";"Guegan Sylvie";"DSI";"DSI Corp";"Depresle Frédéric";"Loïc Poucel";"";"58000";"Services internes";"Editeur";"";"";"Genetec";"";"Onet Telem";"Onet Telem";"";"Onet Telem";"1-Progiciel";"";"Client lourd";"Non";"Non";"0 : Pas d'interfaçage";"False";"False";"False";"True";"False";"False";"False";"False";"";"False";"False";"";"100";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"Mirroring serveurs";"Non";"Non";"";"Non";"";"1 - 1h";"2 - 2h";"";"";"";"";"Bruno Marques
 Resp PROD SAV
 i0672268868
 0160959070
@@ -4036,7 +4066,7 @@ SMRFG19APP83";"D_Etablissements & Services généraux
 QETB2.3 Gardiennage / Sécurité générale
 ZETB2 Sécurité, Sûreté & Risques professionnels";"Direction de l'Immobilier de l'Environnement de travail et des SErvices (DIESE)";"";"";"Omniview"
 "GIR";"Armoire à clés véhicules - Hypérion";"Gestion de la boite à clefs (véhicules administratifs & journalistes)";"Application";"0-Non Critique";"5-En production";"False";"Oui";"Oui";"Non";"2015";"False";"";"";"Mutualisé sur le serveur SALTO
-Gestion clés pour flotte de véhicules administratifs et journalistes. Les armoirs sont connectées.";"DE, MRF, France Bleu Réseau";"DE";"Philipp Marie-Laure";"";"DSI";"DSI Corp";"Chebboub Mahfoud (externe)";"";"";"";"";"";"";"";"GIR";"";"";"GIR";"";"";"1-Progiciel";"Armoire à clés physique";"Client léger";"Non";"Non";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"3 - 4h";"4 - 1 jour";"";"Non";"";"Technical Support
+Gestion clés pour flotte de véhicules administratifs et journalistes. Les armoirs sont connectées.";"DE, MRF, France Bleu Réseau";"DE";"Philipp Marie-Laure";"";"DSI";"DSI Corp";"Depresle Frédéric";"";"";"";"";"";"";"";"GIR";"";"";"GIR";"";"";"1-Progiciel";"Armoire à clés physique";"Client léger";"Non";"Non";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"3 - 4h";"4 - 1 jour";"";"Non";"";"Technical Support
 support@gir.fr 04 78 76 53 55";"Joan Grangis, 
 Resp. Commercial France Ouest
 j.grangis@gir.fr | +33 6 11 01 74 29
@@ -4099,7 +4129,7 @@ Evolution avec les nouveaux espaces publics livrés (Foyer F, Restaurant…)
 Pas de postes clients.
 
 axper.com (détail temps réel)
-Rapport par mail à destination de la Préfecture et des Pompiers.";"DE";"DE";"Millet Frédéric";"";"DSI";"DSI Corp";"Chebboub Mahfoud (externe)";"";"";"58000 & ATN";"TMA";"TMA";"";"";"Axper";"";"Axper";"";"";"";"2-Progiciel + dev. spécifique";"VLAN CAS";"Client léger";"Non";"Non";"1 : Interfaçage applis homogènes RF";"False";"False";"False";"True";"False";"False";"False";"False";"";"False";"False";"";"15";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"Sauvegarde des données sur un NAS.";"";"Oui";"";"";"Non";"";"";"";"Non";"Non";"";"Sebastien Lecroq
+Rapport par mail à destination de la Préfecture et des Pompiers.";"DE";"DE";"Millet Frédéric";"";"DSI";"DSI Corp";"Depresle Frédéric";"";"";"58000 & ATN";"TMA";"TMA";"";"";"Axper";"";"Axper";"";"";"";"2-Progiciel + dev. spécifique";"VLAN CAS";"Client léger";"Non";"Non";"1 : Interfaçage applis homogènes RF";"False";"False";"False";"True";"False";"False";"False";"False";"";"False";"False";"";"15";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"Sauvegarde des données sur un NAS.";"";"Oui";"";"";"Non";"";"";"";"Non";"Non";"";"Sebastien Lecroq
 slecroq@axper.com
 www.axper.com
 Cell : +33 661 91 58 41 
@@ -4815,7 +4845,7 @@ Un serveur hébergeant la solution ReCo dédié à Reco.
 Le serveur est passé en os 2019 et les postes sont passés en W10.
 Le paiement par CB est désormais possible.
 
-Serveur WEB WW.popandpay.Com pour recharge carte à distance.";"DE, CE-PIDF";"CE-PIDF";"Lembach Céline";"";"DSI";"DSI Corp";"Chebboub Mahfoud (externe)";"";"";"";"Editeur";"Editeur";"";"";"X-GIL (Groupement informatique du Languedoc), Sylvie Bruchon";"";"X-GIL (Groupement informatique du Languedoc)";"X-GIL (Groupement informatique du Languedoc)";"";"X-GIL (Groupement informatique du Languedoc)";"1-Progiciel";"VLAN Monétique";"Client léger & client lourd";"Non";"Non";"1 : Interfaçage applis homogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"8";"0";"";"1-  7j/7";"4- 7j/7, 7h00- 21h00";"1- 07h00-21h00";"21h > 6h (cf lots de maintetenance)";"";"";"";"";"";"";"";"0 - Aucune indispo tolérée";"1 - Aucune perte tolérée";"4 - 1 jour";"";"Non";"";"Benoit DUFES
+Serveur WEB WW.popandpay.Com pour recharge carte à distance.";"DE, CE-PIDF";"CE-PIDF";"Lembach Céline";"";"DSI";"DSI Corp";"Depresle Frédéric";"";"";"";"Editeur";"Editeur";"";"";"X-GIL (Groupement informatique du Languedoc), Sylvie Bruchon";"";"X-GIL (Groupement informatique du Languedoc)";"X-GIL (Groupement informatique du Languedoc)";"";"X-GIL (Groupement informatique du Languedoc)";"1-Progiciel";"VLAN Monétique";"Client léger & client lourd";"Non";"Non";"1 : Interfaçage applis homogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"8";"0";"";"1-  7j/7";"4- 7j/7, 7h00- 21h00";"1- 07h00-21h00";"21h > 6h (cf lots de maintetenance)";"";"";"";"";"";"";"";"0 - Aucune indispo tolérée";"1 - Aucune perte tolérée";"4 - 1 jour";"";"Non";"";"Benoit DUFES
 Responsable Projets Installation
 Tél : 04.66.38.87.62 / 06.07.09.62.72
 benoit.dufes@x-gil.fr
@@ -4853,7 +4883,7 @@ ZETB2 Sécurité, Sûreté & Risques professionnels";"Direction de l'Immobilier 
 "Réseaux Sociaux TV";"Réseaux Sociaux TV";"Réseaux sociaux";"Application";"";"5-En production";"False";"";"Non Applicable";"";"";"False";"";"";"";"";"";"";"";"DN";"DN";"DN";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Non";"Non";"";"False";"False";"False";"False";"False";"False";"False";"True";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Fabrication radiophonique";"";"";"";""
 "GMAO - Bâtiment";"CARL Source";"Gestion des maintenances des immeubles";"Application";"0-Non Critique";"5-En production";"False";"Oui";"Oui";"Non";"Juillet 2021";"False";"";"";"Outil permettant à la DE de gérer la maintenance corrective et préventive des immeubles. 
 
-Gestion des équipements, de l'arborescence technique et géographique, des pièces détachées, des gammes de maintenance, des équipes de maintenance, des demandes d'interventions des usagers, des interventions, des CR d'intervention avec valorisation (pièces sorties de stock et mains d'oeuvre), contrats de maintenance, tableaux de bord et activités ...";"DE";"DE";"Younes Hamiche";"Hamel Rachid, Bonnot Kevin";"DSI";"DSI Corp";"Fanet Jean-Marie";"";"";"";"Editeur";"Editeur";"";"";"CARL Berger-Levrault";"";"";"CARL Berger-Levrault";"";"";"1-Progiciel";"Client HTTP";"SaaS";"Oui";"Non";"3 : Interfaçage applis RF et SI externe";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"False";"";"19";"19";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"Non";"";"";"";"";"Oui";"";"Francis Pattein - Ingénieur d'affaire - 04 26 29 49 49
+Gestion des équipements, de l'arborescence technique et géographique, des pièces détachées, des gammes de maintenance, des équipes de maintenance, des demandes d'interventions des usagers, des interventions, des CR d'intervention avec valorisation (pièces sorties de stock et mains d'oeuvre), contrats de maintenance, tableaux de bord et activités ...";"DE";"DE";"Younes Hamiche";"Hamel Rachid, Bonnot Kevin";"DSI";"DSI Corp";"Blanc Eric";"";"";"";"Editeur";"Editeur";"";"";"CARL Berger-Levrault";"";"";"CARL Berger-Levrault";"";"";"1-Progiciel";"Client HTTP";"SaaS";"Oui";"Non";"3 : Interfaçage applis RF et SI externe";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"False";"";"19";"19";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"Non";"";"";"";"";"Oui";"";"Francis Pattein - Ingénieur d'affaire - 04 26 29 49 49
 Stéphane Mollier - Chef de projet - 06 25 12 89 49
 Support : https://support.carl-software.com";"Commercial : Julien Bueno
 julien.bueno@carl.eu
@@ -5082,10 +5112,8 @@ Développement interne.";"Chaînes";"";"";"";"DSI";"DSI-SIC";"Printemps Olivier"
 SMDFT12ITM40
 SMDFT12ITM41
 SMDFT12ITM42
-SMDFT12RPL20
 SMDFT19RPL10
 SMDFT19RPL01
-SMDFT19RPL20
 SMRFGLXAPP24
 SMDFT22RPL10
 SMDFT22RPL20";"D_Conception et Construction des offres de Radio France
@@ -5138,11 +5166,7 @@ Direction de la Réalisation (DR)";"DCP - Vie professionnelle";"";""
 "Debussy";"Debussy";"Gestion des droits d'auteurs";"Application";"4-Critique pour l'entreprise";"5-En production";"False";"Oui";"Oui";"Non";"2019 06";"False";"";"";"Déclaration/Gestion des droits d'auteurs.";"Direction des affaires juridiques";"DNP";"Deric Marie-Alice";"Deric Marie-Alice";"DSI";"DSI-SIC";"Loison Mathilde (Documentation)";"Deric Marie-Alice";"";"58000 & ATN";"Services internes";"TMA";"";"";"";"";"Micropole";"";"RF";"";"3-Dev. Spécifique";"";"Client léger";"Non";"Non";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"200";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"3 - 4h";"3 - 4h";"";"";"";"";"";"<body>CGI
 -------
 Gouja Sihem sihem.gouja@cgi.com
-Tetart Laurent </body></html>";"";"Non";"";"";"";"";"SMRFG12APP54
-SMRFG12APP55
-SMRFG12APP56
-SMRFG12APP57
-SMRFG12APP58
+Tetart Laurent </body></html>";"";"Non";"";"";"";"";"SMRFG12APP58
 SMRFG19APP91
 SMRFG19APP126
 SMRFG19APP127
@@ -5220,7 +5244,7 @@ Utilisation : principalement les responsables sécurité à Paris (Luce Rabillé
 
 Application en mode SaaS, sans interface avec le SI Radio France
 
-Vigirisk est conforme aux prescriptions du règlement de sécurité du 25 juin 1980 applicable aux Etablissements Recevant du Public";"DE";"DE";"Millet Frédéric";"Millet Frédéric";"DSI";"DSI Corp";"Fanet Jean-Marie";"Millet Frédéric";"";"";"Editeur";"";"";"";"SECURIS";"";"SECURIS";"SECURIS";"OVH";"";"1-Progiciel";"";"SaaS";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"95";"47";"Redevance périodique";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"";"";"";"";"";"Séverin BRUNELLE
+Vigirisk est conforme aux prescriptions du règlement de sécurité du 25 juin 1980 applicable aux Etablissements Recevant du Public";"DE";"DE";"Millet Frédéric";"Millet Frédéric";"DSI";"DSI Corp";"Depresle Frédéric";"Millet Frédéric";"";"";"Editeur";"";"";"";"SECURIS";"";"SECURIS";"SECURIS";"OVH";"";"1-Progiciel";"";"SaaS";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"95";"47";"Redevance périodique";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"";"";"";"";"";"Séverin BRUNELLE
 P. : 06 07 11 73 96
 Directeur du développement
 SECURIS
@@ -5320,8 +5344,7 @@ SMRFGLXAWP02
 SMRFGLXAWR01
 SMRFGLXAWR02
 SMRFGLXSUP01
-SMRFGLXWIR01
-SMRFRSARLX04";"D_Informatique
+SMRFGLXWIR01";"D_Informatique
 IINF2.3.3 Install. des logiciels & config. sur postes de travail & serveurs
 IINF2.4.3 Config. & gestion des configurations des logiciels
 QINF2.1 Mise en prod / Install. & déploiement logiciels & matériels
@@ -5407,7 +5430,7 @@ PARIS
 OS : Debian 10 Buster";"DTSI-DI-ESI";"";"Merlet Stéphane";"Merlet Stéphane";"DTSI-RSSI";"SSI";"Merlet Stéphane";"Merlet Stéphane";"";"";"";"";"Merlet Stéphane";"";"Greenbone Networks";"MERLET";"";"Merlet";"";"";"1-Progiciel";"";"Client léger";"Non";"Non";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"5";"0";"";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"";"";"";"";"";"https://www.greenbone.net/en/about-greenbone/";"stephane.merlet@radiofrance.com";"";"";"";"";"";"";"";"";"D_Informatique
 QINF3.1 Protection des systèmes (Cybersécurité)
 ZINF3 Sécurité du SI & Conformité";"Pôle Système (SYS)";"";"";""
-"Novea";"Novea";"Gestion des coursiers à Paris";"Application";"0-Non Critique";"5-En production";"False";"Oui";"Oui";"Non";"2018 T3";"False";"";"";"Site Internet fourni avec les prestations de coursier. Pas de lien avec RF.";"DE";"DE";"Catherine Signol Dalmes";"";"DSI";"DSI Corp";"Fanet Jean-Marie";"";"";"";"";"";"";"";"NOVEA";"";"NOVEA";"NOVEA";"";"NOVEA";"1-Progiciel";"";"SaaS";"Non";"";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"Accès direct non filtré par RF.";"1";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Pierre Dezellus
+"Novea";"Novea";"Gestion des coursiers à Paris";"Application";"0-Non Critique";"5-En production";"False";"Oui";"Oui";"Non";"2018 T3";"False";"";"";"Site Internet fourni avec les prestations de coursier. Pas de lien avec RF.";"DE";"DE";"Catherine Signol Dalmes";"";"DSI";"DSI Corp";"Depresle Frédéric";"";"";"";"";"";"";"";"NOVEA";"";"NOVEA";"NOVEA";"";"NOVEA";"1-Progiciel";"";"SaaS";"Non";"";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"Accès direct non filtré par RF.";"1";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Pierre Dezellus
 Chef des ventes
 01 46 89 84 24
 06 23 45 47 51
@@ -5606,8 +5629,7 @@ Groupement Managers N2 Téléphone : 05 34 54 30 40";"";"";"Non";"";"";"TOIP Gro
 "Centreon";"Centreon";"Supervision des équipements et environnements Réseau & TOIP";"Application";"1-Participe à la productivité";"5-En production";"True";"Oui";"Oui";"Non";"2018";"True";"";"";"Logiciel de supervision informatique édité par la société du même nom.
 Supervision applications, système et réseau basée sur le concept Nagios, mais ne traitant pour RF que de Télécoms et de Réseaux.
 Coeur Open Source.
-Graphs de performance.";"DTSI-DI-ERT";"";"Pôle Réseaux, Télécoms et Salles Techniques";"Pôle Réseaux, Télécoms et Salles Techniques";"DI";"DI-ERT";"Pôle Réseaux, Télécoms et Salles Techniques";"Pôle Réseaux, Télécoms et Salles Techniques";"";"";"";"";"Pôle Réseaux, Télécoms et Salles Techniques";"";"Centreon";"";"";"";"";"";"1-Progiciel";"";"Client léger";"Oui";"Non";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"100";"0";"OpenSource";"1-  7j/7";"";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Logiciel Libre -> voir site web";"";"";"Non";"";"";"";"";"OLD-7747
-SMRFRSARLX47
+Graphs de performance.";"DTSI-DI-ERT";"";"Pôle Réseaux, Télécoms et Salles Techniques";"Pôle Réseaux, Télécoms et Salles Techniques";"DI";"DI-ERT";"Pôle Réseaux, Télécoms et Salles Techniques";"Pôle Réseaux, Télécoms et Salles Techniques";"";"";"";"";"Pôle Réseaux, Télécoms et Salles Techniques";"";"Centreon";"";"";"";"";"";"1-Progiciel";"";"Client léger";"Oui";"Non";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"100";"0";"OpenSource";"1-  7j/7";"";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Logiciel Libre -> voir site web";"";"";"Non";"";"";"";"";"SMRFRSARLX47
 SMRFRSARLX48
 SMRFGLXAPP124
 SMRFGLXAPP125
@@ -5690,7 +5712,7 @@ DCP - Coordonnées professionnelles
 DCP - Données de localisation (déplacements, données GPS, GSM, etc.)
 DCP - Vie personnelle (habitudes de vie, situation familiale, etc.)
 DCP - Vie professionnelle";"PA1 - applications les plus sensibles";"Alertes professionnelles (Sapin 2)"
-"Adobe Creative Cloud";"Creative Cloud";"Suite d'outils Adobe (inDesign, Premiere, After Effects, photoshop, ...)";"Application";"";"5-En production";"False";"";"Non";"Non";"";"False";"";"";"";"Pôles multimedia des chaînes, DN, Présidence";"";"";"";"DSC";"DSC-IPT";"Melkissian Christine";"";"";"";"";"";"";"";"Adobe";"Piart";"";"";"";"";"1-Progiciel";"";"Sur Poste de travail ou Machine autonome";"Non";"Non";"0 : Pas d'interfaçage";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Pôles multimedia des chaînes
+"Adobe Creative Cloud";"Creative Cloud";"Suite d'outils Adobe (inDesign, Premiere, After Effects, photoshop, ...)";"Application";"";"5-En production";"False";"";"Non";"Non";"";"False";"";"";"Suite logicielle appartenant au périmètre fonctionnel audiovisuel : Production vidéos, images, ...";"Pôles multimedia des chaînes, DN, Présidence";"";"";"";"DSC";"DSC-IPT";"Melkissian Christine";"";"";"";"";"";"";"";"Adobe";"Piart";"";"";"";"";"1-Progiciel";"";"Sur Poste de travail ou Machine autonome";"Non";"Non";"0 : Pas d'interfaçage";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Pôles multimedia des chaînes
 Présidence Direction Générale (PDG)";"";"";""
 "Broadcom VCF/VCenter/Vsphere";"VMware vSphere";"Outil de gestion d'infrastructures virtuelles : gestion & supervision des machines virtuelles, des hyperviseurs et des services de redondance (pour MRF)";"Application";"4-Critique pour l'entreprise";"5-En production";"False";"Oui";"Oui";"Non";"2013 t3";"False";"";"";"Broadcom vSphere est une suite logiciel d'infrastructure de Cloud computing de l'éditeur VMware, c'est un hyperviseur de type 1, basé sur l’architecture VMware ESXi. VMware vSphere nécessite une configuration matérielle restreinte précisée dans le guide de compatibilité VMware";"DI";"";"Pôle Systèmes";"Pôle Systèmes";"DI";"DI-PI";"Pôle Systèmes";"Pôle Systèmes";"";"";"";"";"Pôle Systèmes";"";"VMware";"Pôle Systèmes";"";"";"";"";"1-Progiciel";"";"Client léger";"Oui";"Non";"0 : Pas d'interfaçage";"False";"True";"False";"False";"False";"False";"False";"False";"";"True";"True";"Client web";"10";"0";"Par serveur";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"1 - 1h";"";"";"";"";"";"Jean-Baptiste DEKEYSER
 Account Director
@@ -6019,17 +6041,10 @@ SMBPT19OPR01
 SMBPT19OSC01
 SMBPTLXOWB01
 SMBPTLXOWB02
-SMFCT19ODAAWR1
-SMFCT19ODABWR1
-SMFCT19ODB01
 SMFCT19ODB02
-SMFCT19OPR01
 SMFCT19OPR02
-SMFCT19OSC01
 SMFCT19OSC02
-SMFCTLXOWB01
 SMFCTLXOWB02
-SMFCTLXOWB05
 SMFCTLXOWB06
 SMFMT19ODAA001
 SMFMT19ODAAWR1
@@ -6048,7 +6063,6 @@ SMFMTLXOWB02
 SMFMTLXOWB05
 SMFMTLXOWB06
 SMFMTNSOST02
-OLD-19303
 SMRFG19APP94
 SMRFGENEEX60
 SMRFGENEEX61
@@ -6599,7 +6613,6 @@ SMRFGLXAPP142
 SMRFGLXAPP143
 SMRFGUXBDB2
 SMRFGUXPDB2
-SMRFGUXTDB2
 SMRFG19APP200";"D_Conception et Construction des offres de Radio France
 D_Finance Comptabilité
 D_Programmation
@@ -6607,7 +6620,7 @@ D_Référentiels transverses
 D_Relation Client & Vente
 QFIN3.1 Opérations de clôture périodique / annuelle
 ZFIN3 Comptabilité Générale";"Régie Publicitaire (PUB)";"";"";""
-"Comete";"Comete (Aexae)";"Outil de planification des agents de sécurité";"Application";"3-Critique pour le métier";"5-En production";"False";"Non";"Oui";"Non";"01/10/2021";"False";"";"";"Outil de planification des agents de la Sécurité. Va être étendu ultérieurement à la population Pompiers et Energie/Clim (2021)";"DE";"Délégation accueil et Sécurité des Personnes et des Biens";"Poucel Loïc";"Ribeil Damien";"DSI";"DSI Corp";"Chebboub Mahfoud (externe)";"Ribeil Damien";"DSI-SIG";"";"";"";"";"";"AEXAE";"";"AEXAE";"AEXAE";"AEXAE";"AEXAE";"1-Progiciel";"";"SaaS";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"Non";"True";"True";"Application Comète Web";"140";"13";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"Celle de l'hébergeur";"";"Oui";"";"";"";"3 - 4h";"";"3 - 4H";"";"";"AEXAE SAS 
+"Comete";"Comete (Aexae)";"Outil de planification des agents de sécurité";"Application";"3-Critique pour le métier";"5-En production";"False";"Non";"Oui";"Non";"01/10/2021";"False";"";"";"Outil de planification des agents de la Sécurité. Va être étendu ultérieurement à la population Pompiers et Energie/Clim (2021)";"DE";"Délégation accueil et Sécurité des Personnes et des Biens";"Poucel Loïc";"Ribeil Damien";"DSI";"DSI Corp";"Depresle Frédéric";"Ribeil Damien";"DSI-SIG";"";"";"";"";"";"AEXAE";"";"AEXAE";"AEXAE";"AEXAE";"AEXAE";"1-Progiciel";"";"SaaS";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"Non";"True";"True";"Application Comète Web";"140";"13";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"Celle de l'hébergeur";"";"Oui";"";"";"";"3 - 4h";"";"3 - 4H";"";"";"AEXAE SAS 
 Monsieur Vincent GUERIN,
 1 rue de Terre Neuve 
 Bâtiment I 
@@ -6649,7 +6662,7 @@ Couplage avec Tablettes aux entrées des salles.
 
 Visualisation de photos et de plans des salles.
 
-Fonctions avancées de recherche de salle.";"MRF";"DE";"LESMARIE Catherine";"";"DSI";"DSI-SIC";"Chebboub Mahfoud (externe)";"";"";"58000 & ATN";"Services internes";"Editeur";"";"";"Houam";"";"";"";"";"";"";"";"";"Oui";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"L’AGENCE HOUAM
+Fonctions avancées de recherche de salle.";"MRF";"DE";"Signol Dalmes Catherine";"";"DSI";"DSI-SIC";"Depresle Frédéric";"";"";"58000 & ATN";"Services internes";"Editeur";"";"";"Houam";"";"";"";"";"";"";"";"";"Oui";"";"";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"L’AGENCE HOUAM
 121 rue d’Aguesseau
 92100 Boulogne-Billancourt
 Tel : + 33 (0) 1 81 89 19 70";"";"";"";"Oui";"Messagerie (Outlook)";"";"";"";"SMRFG19APP69";"D_Collaboratif
@@ -6693,7 +6706,7 @@ Direction de l'Offre et du Marketing Numérique
 Service des Archives Ecrites & Musée (SAEM)
 Délégation Aménagements Esp. et Déménagements
 Pôle Patrimoine";"";"PA7 - applications faible risque RGPD";""
-"Titan";"Titan";"Affichage Dynamique (Ecrans, Totem, bornes interactives)";"Application";"0-Non Critique";"5-En production";"False";"";"";"";"2020";"False";"";"";"Gestion de diffusion de contenu sur écran de son choix..";"MRF, Direction de la communication";"";"";"";"DSI";"DSI-SIC";"Chebboub Mahfoud (externe)";"";"";"58000";"Services internes";"Editeur";"";"";"Kardham Digital";"";"";"";"";"";"";"";"SaaS";"Non";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Direction de la Communication (COM) et des Relations Publiques
+"Titan";"Titan";"Affichage Dynamique (Ecrans, Totem, bornes interactives)";"Application";"0-Non Critique";"5-En production";"False";"";"";"";"2020";"False";"";"";"Gestion de diffusion de contenu sur écran de son choix..";"MRF, Direction de la communication";"";"";"";"DSI";"DSI-SIC";"Blanc Eric";"";"";"58000";"Services internes";"Editeur";"";"";"Kardham Digital";"";"";"";"";"";"";"";"SaaS";"Non";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Direction de la Communication (COM) et des Relations Publiques
 Maison de la Radio et de la Musique (MRM)
 FIP
 Direction de la Musique et de la Création (DMC)
@@ -6734,8 +6747,7 @@ yannick.lemagorou@metaline.fr  01 76 24 85 82
 
 ";"GFI : dbaonline-oracle@gfi.fr => Remplacé par Sopra Steria (en attente du mail de contact)";"";"";"Casewise Suite
 GLPI
-MDM (EBX5)";"";"";"SMRFGUXPDB1
-SMRFGLXAPP24
+MDM (EBX5)";"";"";"SMRFGLXAPP24
 SMRFG22APP04
 SMRFGLXFDB01
 SMRFGUXTDB3
@@ -6986,8 +6998,7 @@ escalade 'Incident Manager' =>
 If you need help escalating a case outside my business hours you can email 24x7casemanagement@microsoft.com and someone will respond to you within an hour. Please note this escalation help is only provided in English.";"";"";"";"";"";"";"";"SMRFG08APP01
 SMRFG12INF07
 SMRFG19INF01
-SMRFGENE8K05
-OLD-23306";"D_Informatique
+SMRFGENE8K05";"D_Informatique
 QINF1.4 Réalisation composants du SI (dév, intég, bugs, ...)
 QINF2.1 Mise en prod / Install. & déploiement logiciels & matériels
 QINF2.3 Production & administration des configurations
@@ -6996,8 +7007,7 @@ ZINF2 Production & MCO du SI (Run)";"Pôle Système (SYS)
 Direction Adjointe des Services aux Utilisateurs (DASU)
 Direction Adjointe des Services Socle IT (DSSIT)";"";"";""
 "NetBox";"NetBox";"Application Open Source gérant les ""réseaux informatiques au sens large"" (@IP, VLANs,  Racks, cablage, machines virtuelles, énergie, ...)";"Application";"4-Critique pour l'entreprise";"5-En production";"False";"Non";"Oui";"Non";"2021";"False";"";"";"... Surtout utilisé par les services d'exploitation Réseaux et câblages.
-Utilisé pour inventaire réseau incluant les liaisons - avec automation.";"DTSI";"";"Pôle Réseaux, Télécoms et Salles Techniques";"Pôle Réseaux, Télécoms et Salles Techniques";"DI";"DI-ERT-STCF";"Pôle Réseaux, Télécoms et Salles Techniques";"Pôle Réseaux, Télécoms et Salles Techniques";"";"";"";"";"Pôle Réseaux, Télécoms et Salles Techniques";"";"Open Source";"";"";"";"";"";"1-Progiciel";"Serveur Apache, Python";"Client léger";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"5 - 7 jours";"";"";"";"";"";"Logiciel libre -> site web";"";"";"";"";"";"Service_RTS_Infrastructure_Réseau";"";"SMRFRSARLX03
-SMRFRSARLX44
+Utilisé pour inventaire réseau incluant les liaisons - avec automation.";"DTSI";"";"Pôle Réseaux, Télécoms et Salles Techniques";"Pôle Réseaux, Télécoms et Salles Techniques";"DI";"DI-ERT-STCF";"Pôle Réseaux, Télécoms et Salles Techniques";"Pôle Réseaux, Télécoms et Salles Techniques";"";"";"";"";"Pôle Réseaux, Télécoms et Salles Techniques";"";"Open Source";"";"";"";"";"";"1-Progiciel";"Serveur Apache, Python";"Client léger";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"5 - 7 jours";"";"";"";"";"";"Logiciel libre -> site web";"";"";"";"";"";"Service_RTS_Infrastructure_Réseau";"";"SMRFRSARLX44
 SMRFRSARLX45
 SMRFGLXAPP101
 SMRFGLXINF25
@@ -7529,7 +7539,9 @@ S99AG12INF11
 SMRFG12INF04
 SMRFG12INF05
 SMRFG19INF04
-SMRFG19INF05	";"D_Informatique";"Radio France (RF)";"";"";""
+SMRFG19INF05	
+S06AG19INF11
+S37AG19INF11";"D_Informatique";"Radio France (RF)";"";"";""
 "DNS";"Domain Name System";"Service de noms (espace de nommage)";"Application";"4-Critique pour l'entreprise";"5-En production";"False";"Non";"";"Non";"";"False";"";"";"Le système DNS (Domain Name System) est l’une des gammes de protocoles standard qui composent le protocole TCP/IP, et le client DNS et le serveur DNS fournissent des services de résolution de noms de nom d’ordinateur à adresse IP aux ordinateurs et aux utilisateurs.";"N.A.";"";"Pôle Systèmes";"Pôle Systèmes";"DI";"DI-PI";"Pôle Systèmes";"Pôle Systèmes";"";"";"";"";"Pôle Systèmes";"";"Microsoft";"";"";"";"";"";"1-Progiciel";"";"Sur Serveur ou Machine autonome";"";"";"2 : Interfaçage applis hétérogènes RF";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"Par serveur";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"0 - Aucune indispo tolérée";"";"";"";"";"";"Pour les infras libres -> site web
 
 Pour Microsoft,
@@ -7770,7 +7782,9 @@ S87AG12INF11
 S87SG19INF11
 S89AG12INF11
 S90AG12INF11
-S99AG12INF11";"";"Radio France (RF)
+S99AG12INF11
+S06AG19INF11
+S37AG19INF11";"";"Radio France (RF)
 Service des Archives Ecrites & Musée (SAEM)";"";"";""
 "Microsoft IIS";"Internet Information Service";"Service WEB";"Application";"";"5-En production";"False";"";"";"";"";"False";"";"";"Service WEB HTTP";"MRF";"";"Pôle Systèmes";"Pôle Systèmes";"DI";"DI-PI";"Pôle Systèmes";"Pôle Systèmes";"";"";"";"";"Pôle Systèmes";"";"Microsoft";"";"";"";"";"";"1-Progiciel";"";"Sur Serveur ou Machine autonome";"";"";"2 : Interfaçage applis hétérogènes RF";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"Par serveur";"1-  7j/7";"";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Support MICROSOFT:
 Incidents en Sévérité 1 et Sévérité A - Impact Catastrophique ou Critique 24/7 - Prise en compte 1h : 
@@ -8531,7 +8545,6 @@ SMIRT12APP10
 SMIRT12BDD10
 SMIRT12BDD20
 SMRFIRT12APP10
-SMSOT12BDD02
 SR67ATECH2KDEC1
 S06AT12APP01
 S13AT12APP01
@@ -8809,7 +8822,8 @@ SMDFTLXFLX18
 SMDFTLXFLX19
 SMDFTLXFLX16
 SMRFTWSBRIO03
-SMRFTWSBRIO04";"D_Gestion des Actifs Média et leurs manifestations matérielles
+SMRFTWSBRIO04
+SMRFTWSBRIO02";"D_Gestion des Actifs Média et leurs manifestations matérielles
 QAMM1.1 Gestion, inventaire & valorisation des actifs média
 QAMM1.2 Stratégie & orchestration de l'Archivage des actifs média & leurs manif. matérielles
 QAMM1.3 Suivi (compteurs) & contrôle des données liées aux droits des actifs média
@@ -8885,7 +8899,9 @@ SMRFG19INF27
 SMRFG19INF28
 SMRFG19INF29
 SMRFG19INF30
-SMRFG19INF31";"D_Collaboratif
+SMRFG19INF31
+S06AG19INF11
+S37AG19INF11";"D_Collaboratif
 D_Informatique
 QCOLS2 Stockage & archivage données & documents collaboratifs
 QINF3.1 Protection des systèmes (Cybersécurité)
@@ -8907,7 +8923,7 @@ DPU";"";"";"";"D_Informatique";"";"";"";""
 "eAttestations/Aprovall";"Aprovall";"Vérification conformités des fournisseurs";"Application";"0-Non Critique";"5-En production";"False";"Oui";"";"";"2019";"False";"";"";"Utilisation par la Direction des Achats pour vérifier la conformité de nos fournisseurs";"DA";"DA";"Baudel Sandrine";"";"DSI";"DSI Corp";"Dubesset Sophie";"";"";"";"";"";"";"";"";"";"";"";"";"";"6-NA : SI Tiers";"";"SaaS";"Non";"Non";"0 : Pas d'interfaçage";"False";"False";"False";"False";"False";"False";"False";"True";"Non";"False";"True";"";"0";"0";"";"2-  Lundi-Vendredi";"";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Achats Marchés Approvisionnements
 ZACH4 Gestion des fournisseurs
 QACH4.2 Risques fournisseurs";"Direction des Achats (DA)";"";"";""
-"Utrack";"Utrack";"Traçabilité des colis du service Courrier";"Application";"1-Participe à la productivité";"5-En production";"False";"Oui";"Oui";"Non";"Janvier 2022";"False";"";"";"Outil permettant au service Courrier de suivre et distribuer les colis livrés à Radio France (Siège)";"DE";"DE";"Catherine Signol Dalmes";"Catherine Signol Dalmes";"DSI";"DSI Corp";"Fanet Jean-Marie";"";"";"";"Editeur";"";"";"";"Novea";"";"Novea";"Novea";"Novea";"Novea";"1-Progiciel";"";"SaaS";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Application Arlanda - Compris dans l'abonnement SaaS";"3";"0";"Redevance périodique";"2-  Lundi-Vendredi";"3- Lundi Vendredi, 7h00- 21h00";"1- 07h00-21h00";"";"";"Editeur SaaS";"";"";"";"";"";"";"";"";"";"";"David RIBEIRO 
+"Utrack";"Utrack";"Traçabilité des colis du service Courrier";"Application";"1-Participe à la productivité";"5-En production";"False";"Oui";"Oui";"Non";"Janvier 2022";"False";"";"";"Outil permettant au service Courrier de suivre et distribuer les colis livrés à Radio France (Siège)";"DE";"DE";"Veloso Paula";"Veloso Paula";"DSI";"DSI Corp";"Depresle Frédéric";"";"";"";"Editeur";"";"";"";"Novea";"";"Novea";"Novea";"Novea";"Novea";"1-Progiciel";"";"SaaS";"Non";"Non";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"True";"True";"Application Arlanda - Compris dans l'abonnement SaaS";"3";"0";"Redevance périodique";"2-  Lundi-Vendredi";"3- Lundi Vendredi, 7h00- 21h00";"1- 07h00-21h00";"";"";"Editeur SaaS";"";"";"";"";"";"";"";"";"";"";"David RIBEIRO 
 Responsable Service et Relation Clients 
 Mobile +33 (0)6 46 06 63 34 
 dribeiro@novea.fr  ";"David RIBEIRO 
@@ -9134,7 +9150,9 @@ QINF3.1 Protection des systèmes (Cybersécurité)
 ZINF3 Sécurité du SI & Conformité";"Radio France (RF)";"DCP - Données de connexion (adresse IP, logs, etc.)";"PA7 - applications faible risque RGPD";""
 "ClePass";"ClePass";"Application Serrurerie";"Application";"3-Critique pour le métier";"1-Approuvé/En Projet";"False";"Oui";"Oui";"Non";"12/2022";"False";"";"";"Gestion des clés, passes, portes, cylindres, utilisateurs.
 
-Utilisé en saisie par Serrurerie et en consultation par pompiers (recherche clé ou passe pour ouvrir une porte)";"Direction de l'établissement";"DE";"Gregory Dupire";"Gregory Dupire";"DSI";"DSI Corp";"Fanet Jean-Marie";"";"DSI-SAR";"58000 & ATN";"";"";"";"";"";"Montabord Marc";"Insight";"";"";"";"3-Dev. Spécifique";"	Microsoft Power Platform";"SaaS";"Oui";"";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"True";"False";"False";"";"False";"False";"";"20";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"Non";"";"";"N/A (Appli PowerApps => Pôle Apps)";"N/A (Appli PowerApps => Pôle Apps)";"N/A";"";"";"";"";"";"";"D_Etablissements & Services généraux
+Utilisé en saisie par Serrurerie et en consultation par pompiers (recherche clé ou passe pour ouvrir une porte)
+
+Application PowerApps non validée par les utilisateurs => abandon";"Direction de l'établissement";"DE";"Gregory Dupire";"Gregory Dupire";"DSI";"DSI Corp";"Fanet Jean-Marie";"";"DSI-SAR";"58000 & ATN";"";"";"";"";"";"Montabord Marc";"Insight";"";"";"";"3-Dev. Spécifique";"	Microsoft Power Platform";"SaaS";"Oui";"";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"True";"False";"False";"";"False";"False";"";"20";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"Non";"";"";"N/A (Appli PowerApps => Pôle Apps)";"N/A (Appli PowerApps => Pôle Apps)";"N/A";"";"";"";"";"";"";"D_Etablissements & Services généraux
 QETB2.2 Gestion des accès aux locaux
 ZETB2 Sécurité, Sûreté & Risques professionnels";"Délégation à la Sécurité et à la Prévention Incendie
 Direction de l'Immobilier de l'Environnement de travail et des SErvices (DIESE)
@@ -9718,7 +9736,6 @@ Support téléphonique en dehors de la plage 8h-18h : +33 6 82 08 15 98";"";"";"
 SMCMT19COD02
 SMCMT19COD03
 SMCMTLXCOD01
-SMCMTLXCOD02
 SMCMTLXCOD03
 SMCMT19COD04
 SMCMTLXCOD04
@@ -9929,8 +9946,9 @@ S89ATLXOWB07
 S90ATLXOWB07
 S99ATLXOWB07
 S99CTLXOWB07
-S99QTLXOWB07";"";"France Bleu Réseau";"";"";""
-"Alerte Sûreté";"Alerte Sûreté";"Système d'Alerte Sûreté - Sécurité des personnes";"Application";"4-Critique pour l'entreprise";"1-Approuvé/En Projet";"False";"Oui";"";"";"2024";"False";"";"";"Système d'Alerte Sûreté - Sécurité des personnes";"";"";"Poucel Loïc";"";"";"";"Chebboub Mahfoud (externe)";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"SaaS";"";"";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Baptiste MAULION
+S99QTLXOWB07
+SMRFGLXINF60";"";"France Bleu Réseau";"";"";""
+"Alerte Sûreté";"Alerte Sûreté";"Système d'Alerte Sûreté - Sécurité des personnes";"Application";"4-Critique pour l'entreprise";"1-Approuvé/En Projet";"False";"Oui";"";"";"2024";"False";"";"";"Système d'Alerte Sûreté - Sécurité des personnes";"";"";"Poucel Loïc";"";"";"";"Eric Blanc";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"SaaS";"";"";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Baptiste MAULION
 Responsable Grands Projets
 140 avenue Franklin Roosevelt
 69500 Bron
@@ -10044,7 +10062,6 @@ SMRFG19INF52
 SMRFG19INF53
 SMRFG19INF54
 SMRFG19INF55
-OLD-23152
 SMRFG19INF71
 SMRFG19INF72
 SMRFG19INF73
@@ -10432,7 +10449,6 @@ Thomas WACOGNE
 thomas@cyberwtch.fr / 06 89 55 25 53";"";"";"Non";"GLPI";"Microsoft Active Directory
 référentiel cyberwatch
 GLPI";"Service_SYS_Déploiements_et_Patching";"";"SMRFGLXINF11
-SMRFGLXAPP86
 SMRFGLXINF10
 SMRFGLXAPP93
 SMRFGLXAPP97";"D_Informatique
@@ -10515,8 +10531,7 @@ SMRFT22EDT17
 SMRFT22EDT27";"D_Conception et Construction des offres de Radio France
 ZDIPP Pilotage Distribution & Publication de média
 QDIP3.1 Catalogage des flux à livrer & clients de ces flux";"";"";"";""
-"Insy";"";"Sélection et traitement d'albums musicaux numériques, livrés sous formes dématérialisés";"Application";"3-Critique pour le métier";"5-En production";"False";"";"";"";"13/04/2026";"False";"";"";"Achat de flux numériques de musique enregistrée à destination de la direction de la Documentation (Discothèque)";"";"";"Vincent Chavanon";"Vincent Chavanon";"";"";"Vincent Chavanon";"Vincent Chavanon";"";"";"";"";"";"";"";"";"";"";"";"";"2-Progiciel + dev. spécifique";"";"SaaS";"Oui";"";"1 : Interfaçage applis homogènes RF";"True";"False";"False";"False";"False";"False";"False";"True";"";"False";"False";"";"30";"0";"Redevance à l'utilisation";"2-  Lundi-Vendredi";"3- Lundi Vendredi, 7h00- 21h00";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"RFDisco Groupe";"";"SMRFG22APP11
-SMRFG22APP12";"D_Gestion des Actifs Média et leurs manifestations matérielles
+"Insy";"";"Sélection et traitement d'albums musicaux numériques, livrés sous formes dématérialisés";"Application";"3-Critique pour le métier";"5-En production";"False";"";"";"";"13/04/2026";"False";"";"";"Achat de flux numériques de musique enregistrée à destination de la direction de la Documentation (Discothèque)";"";"";"Vincent Chavanon";"Vincent Chavanon";"";"";"Vincent Chavanon";"Vincent Chavanon";"";"";"";"";"";"";"";"";"";"";"";"";"2-Progiciel + dev. spécifique";"";"SaaS";"Oui";"";"1 : Interfaçage applis homogènes RF";"True";"False";"False";"False";"False";"False";"False";"True";"";"False";"False";"";"30";"0";"Redevance à l'utilisation";"2-  Lundi-Vendredi";"3- Lundi Vendredi, 7h00- 21h00";"1- 07h00-21h00";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"RFDisco Groupe";"";"";"D_Gestion des Actifs Média et leurs manifestations matérielles
 ZCAM3 Indexation, enrichissement & exploitation de la connaissance
 QCAM3.1 Gestion & Indexation contenus Connaissance (oeuvres, actus...)";"Discothèque";"";"";""
 "MusicMaster CS";"MusicMasterCS";"Programmation musicale antenne et webradios (FIP et France Musique)";"Application";"3-Critique pour le métier";"1-Approuvé/En Projet";"False";"Oui";"Non";"Non";"2026 S1";"False";"";"";"MusicMaster CS est une application métier de planification et d’optimisation de la programmation musicale utilisée par Fip et France Musique pour leur radio et webradios. Elle permet de gérer le référentiel de titres musicaux (métadonnées, catégories, rotations, règles éditoriales), de construire les grilles/horloges et de générer automatiquement des playlists conformes à des contraintes (répétition, quotas, équilibre artistes/genres/époques, contraintes antenne). Elle s’interface avec les outils de diffusion, Encom, la discothèque, l'outil de gestion des catalogue d'épisode de Radio France.";"";"";"Hertz Benjamin (FM), Riesen Hervé (Fip)";"";"";"";"LAPERT Nicolas";"DSI Exploitation";"";"ATN";"Services internes";"Editeur";"SYS";"";"";"";"";"";"";"";"2-Progiciel + dev. spécifique";"";"Client léger & client lourd";"Non";"Oui";"2 : Interfaçage applis hétérogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"Non";"False";"False";"";"30";"0";"Redevance périodique";"1-  7j/7";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"Veeam conservation 5 ans";"Non";"";"21h - 00h";"Non";"Non";"1 - 1h";"3 - 4h";"3 - 4H";"Non";"";"";"ON AIR DIGITAL
@@ -10560,7 +10575,9 @@ France Musique";"DCP - Données de connexion (adresse IP, logs, etc.)";"";""
 "SIA Divers test";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Informatique";"";"";"";""
 "ESR Divers test";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"SMRCTLXAPP01
 SMRCTLXAPP10
-SMRCTLXAPP11";"D_Informatique";"";"";"";""
+SMRCTLXAPP11
+SMRCTLXAPP12
+SMRCTLXAPP13";"D_Informatique";"";"";"";""
 "SI Corp Divers test";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Informatique";"";"";"";""
 "RTS Divers test";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Informatique";"";"";"";""
 "AID Divers test";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Informatique";"";"";"";""
@@ -10640,7 +10657,6 @@ QINF2.3 Production & administration des configurations";"";"";"";""
 "TrustBuilder MFA";"";"";"Application";"4-Critique pour l'entreprise";"5-En production";"False";"";"";"";"";"False";"";"";"";"";"";"Pôle Systèmes (SYS)";"Pôle Systèmes (SYS)";"";"";"Pôle Systèmes (SYS)";"Pôle Systèmes (SYS)";"";"";"";"";"Pôle Systèmes (SYS)";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Service_SYS_Infrastructure_Authentification";"";"";"D_Informatique";"";"";"";""
 "Kerberos";"";"";"Application";"4-Critique pour l'entreprise";"5-En production";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Service_SYS_Infrastructure_Authentification";"";"";"D_Informatique";"";"";"";""
 "Oracle";"";"Service infra Oracle";"Application";"4-Critique pour l'entreprise";"5-En production";"False";"";"";"";"";"False";"";"";"";"";"";"Pôle Systèmes (SYS)";"Pôle Systèmes (SYS)";"";"";"Pôle Systèmes (SYS)";"Pôle Systèmes (SYS)";"";"";"";"";"Pôle Systèmes (SYS)";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Service_SYS_Infrastructure_Base_de_données";"";"SMRFGUXTDB3
-SMRFGUXPDB1
 SMRFTUXBDB1
 SMRFTUXPDB1
 SMRFTUXRDB1
@@ -10648,7 +10664,6 @@ SMRFTUXTDB1
 SMRFTUXTDB2
 SMRFGUXBDB2
 SMRFGUXPDB2
-SMRFGUXTDB2
 SMRFGUXBDB4
 SMRFGUXTDB4
 SMRFTUXBDB2
@@ -10697,7 +10712,7 @@ NetBox";"";"D_Informatique";"";"";"";""
 "Service_RTS_Infrastructure_SallesTechniques";"";"";"Groupe Applicatif";"";"5-En production";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Raritan
 APC Suite";"";"D_Informatique";"";"";"";""
 "Service_RTS_Infrastructure_Télécoms";"";"";"Groupe Applicatif";"";"5-En production";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"TOIP Groupe";"";"D_Informatique";"";"";"";""
-"INFRA Divers Prod";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Informatique";"";"";"";""
+"INFRA Divers Prod";"A NE PAS SUPPRIMER - GLPI";"Applicatif fictif pour éviter l'administratif dans Casewize de déclarer des applications temporaires, en test ou en POC";"Application";"";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"SMRFGWDATABOX01";"D_Informatique";"";"";"";""
 "Talentplug";"Talentplug";"Multidiffusion d'offres d'emploi, Recherche CV, Recrutement.";"Application";"0-Non Critique";"5-En production";"False";"";"";"";"";"False";"";"";"Solution de multidiffusion qui s’intègre aux logiciels RH.
 Diffuse les offres d’emploi des recruteurs vers plus de 300 sites emplois.
 Gestion des abonnements sur une seule et même plateforme, sourcing des profils.
@@ -10727,3 +10742,28 @@ ZFAB4 Production & diffusion des sons";"";"";"";""
 "RedLight";"";"";"";"";"";"False";"";"";"";"";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"False";"False";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"D_Fabrication radiophonique
 QPRO4.2 Réalisation & conduite expression éditoriale - audio
 ZFAB4 Production & diffusion des sons";"";"";"";""
+"PagerDuty";"Pagerduty";"Gestion de l'accès aux Ressources dans le cadre de la résolution d'un incident (06, SMS, ...)";"Application";"2-Essentiel pour la productivité";"5-En production";"False";"Non";"Oui";"Non";"01/07/2025";"False";"";"";"Plateforme de gestion des Ressources équipe, dans le cadre de la résolution d'incidents (incident ressource management).
+A Radio France utilisé par les services IT d'exploitation (HO, HNO) et par la Cellule de Crise Opérationnelle IT (en cours de mise en place).
+Pour la production Infrastructure : 
+(1) Fonction principale d'accessibilité des équipes d'exploitation sur numéro unique.
+(2) Définition des Règles d'Escalade d'une ressource à une autre (Levels, Policies)
+(3) Tableau de Service Exploitation associés.";"";"";"Jean-Michel Destrez";"Jean-Michel Destrez";"";"";"";"";"";"";"Editeur";"Editeur";"";"";"";"";"";"";"";"";"1-Progiciel";"";"SaaS";"";"";"0 : Pas d'interfaçage";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"True";"";"50";"0";"Redevance périodique";"1-  7j/7";"1- 24h/24, 7j/7";"3- 24h/24";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Non";"";"";"";"";"";"D_Informatique
+ZINF2 Production & MCO du SI (Run)
+QINF2.2 Maintien en conditions (Opération, support, incidents, maintenance hors parc)
+IINF2.2.3 Support Utilisateur Informatique";"Direction Technique et des Systèmes d'Information (DTSI)";"";"";""
+"Boldo";"Boldo";"Architecture d'entreprise, urbanisation du SI.";"Application";"1-Participe à la productivité";"3-POC/Pilote";"False";"Oui";"Oui";"Non";"01/03/2027";"False";"";"";"En remplacement d'Erwin/Casewise/EVOLVE. Un seul et unique outil pour remplacer les quelques 8 ou 10 modules d'Erwin. Centré sur l'Urbanisation du SI et la gestion de patrimoine applicatif. En lien également avec la CMDB GLPI.
+Produit plus moderne, cartographies construites pour la pluspart en quelques minutes.
+Support français et plus immédiat. Métamodèle plus souple et modifiable.";"";"";"Sylvain PETIT";"Sylvain PETIT";"";"";"Sylvain PETIT";"Sylvain PETIT";"";"";"Editeur";"Editeur";"";"";"";"";"";"";"";"";"1-Progiciel";"bientôt SSO";"SaaS";"Oui";"Non";"1 : Interfaçage applis homogènes RF";"True";"False";"False";"False";"False";"False";"False";"False";"";"False";"True";"Accès SaaS";"2";"0";"";"2-  Lundi-Vendredi";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"Oui";"Non";"";"";"";"6 - Pas de besoin";"5 - 7 jours";"6 - Pas de besoin";"Non";"Non";"";"";"";"";"Non";"GLPI";"GLPI";"";"";"";"D_Informatique
+D_Gouvernance des Données
+D_Référentiels transverses
+IINF4.4.1 Identification & caractérisation des services IT
+QJUR2.1 Conformité RGPD
+ZINF4 Gestion du patrimoine IT
+ZINFP Pilotage de l'Informatique, Gouvernance du SI
+QINFR2  Référentiel Architecture SI (règles Urba & Sécurité, MCD, langages pivots, ...)
+QINFP1 Tableau de bord, Performance & Etat de santé du SI (Urba, agilité, sécu, perf...)
+QINF4.1 Inventaire & caractérisation des actifs IT";"Direction Technique et des Systèmes d'Information (DTSI)";"";"";""
+"Microsoft Purview";"Purview";"";"Application";"4-Critique pour l'entreprise";"1-Approuvé/En Projet";"False";"Non";"Oui";"Non";"01/07/2027";"False";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"1-Progiciel";"";"SaaS";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"";"False";"False";"";"0";"0";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"Non";"";"";"";"";"";"D_Informatique";"";"";"";""
+"Observana";"Observana";"Supervision des équipements d'infrastructure et des applications";"Application";"";"1-Approuvé/En Projet";"False";"Non";"Non";"Non";"Q4/2026";"False";"";"";"Supervision de l'infrastructure : serveurs (Windows ET Linux), réseau en SNMP et par télémétrie, et équipements Broadcast (ex Codec STL- IP, traitements d'antenne des locales, ...)";"";"";"Aurélien Trosseau";"";"";"";"Aurélien Trosseau";"";"";"CNS";"Services internes";"";"";"";"";"Aurélien Trosseau";"";"";"";"";"1-Progiciel";"";"";"";"";"";"False";"True";"False";"False";"False";"False";"False";"False";"Non";"False";"False";"";"0";"0";"OpenSource";"1-  7j/7";"1- 24h/24, 7j/7";"1- 07h00-21h00";"";"";"";"";"Non";"";"";"";"";"";"";"";"";"";"";"";"";"Non";"";"";"";"";"";"D_Informatique
+ZINF5 Métrologie & Supervision du SI
+QINF5.1  Supervision, alertes et métrologie du SI";"Direction Technique et des Systèmes d'Information (DTSI)";"";"";""
